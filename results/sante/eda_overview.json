@@ -1,0 +1,194 @@
+{
+  "n_total": 140225,
+  "n_normal": 130642,
+  "n_anomalie": 9583,
+  "taux_anomalie": 0.0683,
+  "n_features": 17,
+  "categories": {
+    "NORMAL": 130642,
+    "FRAUDE": 4487,
+    "ERREUR_OP": 3365,
+    "TECHNIQUE": 1684,
+    "BIAIS": 47
+  },
+  "scenarios": {
+    "RAS": 1296,
+    "Erreur codification": 673,
+    "Erreur de saisie": 673,
+    "Hors Garantie": 673,
+    "Dérive Nomenclature": 421,
+    "Schema Drift": 421,
+    "Nomadisme médical": 408,
+    "Forçage validation": 408,
+    "Surfacturation pure": 408,
+    "Prêt de carte": 408,
+    "Omission pathologie": 408,
+    "Soin Post-Mortem": 408,
+    "Anomalie Benford": 408,
+    "Upcoding": 408,
+    "Unbundling": 408,
+    "Détournement RIB": 407,
+    "Absence cachet": 349,
+    "Erreur conversion": 345,
+    "Doublon Technique": 205,
+    "Soumission multiple": 204,
+    "Panne Service OCR": 197,
+    "Biais Sélection OCR": 32,
+    "Biais Tarification": 15
+  },
+  "features_stats": {
+    "ratio_prix_mercuriale": {
+      "dtype": "float64",
+      "nan_pct": 0.0,
+      "n_unique": 58106,
+      "mean": 16.8546,
+      "std": 16.6649,
+      "min": 0.0249,
+      "max": 50.0
+    },
+    "flag_incoherence_sexe_acte": {
+      "dtype": "int64",
+      "nan_pct": 0.0,
+      "n_unique": 1,
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "historique_ratio_praticien": {
+      "dtype": "float64",
+      "nan_pct": 0.0,
+      "n_unique": 825,
+      "mean": 16.8546,
+      "std": 1.2759,
+      "min": 1.0,
+      "max": 50.0
+    },
+    "nb_sinistres_30j_assure": {
+      "dtype": "int64",
+      "nan_pct": 0.0,
+      "n_unique": 93,
+      "mean": 16.5437,
+      "std": 17.0496,
+      "min": 1.0,
+      "max": 182.0
+    },
+    "flag_weekend_care": {
+      "dtype": "int64",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.2645,
+      "std": 0.4411,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "document_altere": {
+      "dtype": "int64",
+      "nan_pct": 0.0,
+      "n_unique": 1,
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "praticien_hors_agrement": {
+      "dtype": "int64",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.0101,
+      "std": 0.1,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "ocr_confiance_faible": {
+      "dtype": "int64",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.0056,
+      "std": 0.0743,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "delai_soin_depot_anormal": {
+      "dtype": "int64",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.3186,
+      "std": 0.466,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "anciennete_contrat_courte": {
+      "dtype": "int64",
+      "nan_pct": 0.0,
+      "n_unique": 1,
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "saisie_hors_heures": {
+      "dtype": "int64",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.0867,
+      "std": 0.2814,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "montant_normalise_log": {
+      "dtype": "float64",
+      "nan_pct": 0.0,
+      "n_unique": 11032,
+      "mean": 8.4092,
+      "std": 3.0319,
+      "min": 1.1282,
+      "max": 16.2389
+    },
+    "post_mortem_flag": {
+      "dtype": "int64",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.0042,
+      "std": 0.0648,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "nb_sinistres_meme_iban": {
+      "dtype": "float64",
+      "nan_pct": 0.0,
+      "n_unique": 181,
+      "mean": 159.6978,
+      "std": 187.9231,
+      "min": 1.0,
+      "max": 642.0
+    },
+    "flag_doublon_sante": {
+      "dtype": "int8",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.013,
+      "std": 0.1132,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "community_score_sante": {
+      "dtype": "float32",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.0051,
+      "std": 0.0715,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "praticien_concentration": {
+      "dtype": "float32",
+      "nan_pct": 0.0,
+      "n_unique": 135,
+      "mean": 0.183,
+      "std": 0.1699,
+      "min": 0.0,
+      "max": 0.3893
+    }
+  }
+}

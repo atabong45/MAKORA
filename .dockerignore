@@ -1,0 +1,33 @@
+# Données volumineuses — non nécessaires à l'image
+data/raw/
+data/processed/
+data/models/
+*.parquet
+*.joblib
+*.csv
+
+# Environnement Python local
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+anaconda3/
+
+# Git et IDE
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# Tests (montés en volume au runtime)
+tests/
+
+# Frontend (service séparé)
+frontend/
+node_modules/
+
+# Fichiers temporaires
+*.log
+*.tmp
+.DS_Store

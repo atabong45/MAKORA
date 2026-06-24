@@ -1,0 +1,59 @@
+# ============================================================
+# MAKORA Phase 3 — Dépendances API FastAPI
+# Python >= 3.11 requis
+# ============================================================
+
+# ── Core FastAPI ─────────────────────────────────────────
+fastapi==0.115.5
+uvicorn[standard]==0.32.0
+starlette==0.41.2
+
+# ── Validation & Settings ────────────────────────────────
+pydantic==2.10.3
+pydantic-settings==2.6.1
+pydantic[email]==2.10.3
+
+# ── Database ─────────────────────────────────────────────
+sqlalchemy==2.0.36
+psycopg2-binary==2.9.10
+alembic==1.14.0
+
+# ── Authentication & Security ────────────────────────────
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.2.1
+
+# ── Rate Limiting ────────────────────────────────────────
+slowapi==0.1.9
+limits==3.14.0
+
+# ── File handling ────────────────────────────────────────
+python-multipart==0.0.20
+aiofiles==24.1.0
+
+# ── HTTP Client (healthcheck Ollama) ─────────────────────
+httpx==0.28.1
+
+# ── Export Rapports ──────────────────────────────────────
+openpyxl==3.1.5
+reportlab==4.2.5
+
+# ── ML Stack (partagé avec Phases 0-2) ───────────────────
+scikit-learn==1.6.0
+numpy==1.26.4
+pandas==2.2.3
+shap==0.46.0
+joblib==1.4.2
+
+# ── Graph (partagé avec Phase 2) ─────────────────────────
+networkx==3.4.2
+python-louvain==0.16
+
+# ── YAML (configs modules) ───────────────────────────────
+PyYAML==6.0.2
+
+# ── Tests ────────────────────────────────────────────────
+pytest==8.3.4
+pytest-asyncio==0.24.0
+pytest-cov==6.0.0
+httpx==0.28.1

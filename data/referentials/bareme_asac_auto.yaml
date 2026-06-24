@@ -1,0 +1,162 @@
+# data/referentials/bareme_asac_auto.yaml
+# Barème ASAC Auto — Réparations automobiles (Cameroun + France)
+# Devise : XAF (Franc CFA BEAC)
+# Source : Barème indicatif ASAC Auto (simulé pour prototype)
+#          + conversion depuis barème Argus France (EUR → XAF via BEAC)
+# Mise à jour : Mai 2026
+#
+# NOTE : Dans le module Auto, le "code acte" devient le "code réparation".
+# La colonne source dans le YAML du module sera :
+#   code_column: "Code_Reparation"
+#   price_column: "Prix_Ref_XAF"
+#
+# Ce fichier est utilisé pour calculer :
+#   ratio_devis_bareme = Montant_Devis / Prix_Ref_XAF
+# [Subudhi2017] : l'inflation de devis est le signal de fraude auto #1.
+
+entries:
+  # ── Carrosserie ────────────────────────────────────────────────────────────
+  - code: "CARROS_AILE_AV"
+    Libelle_Officiel: "Remplacement aile avant"
+    Prix_Ref_XAF: 85000
+    Categorie: "Carrosserie"
+
+  - code: "CARROS_AILE_AR"
+    Libelle_Officiel: "Remplacement aile arrière"
+    Prix_Ref_XAF: 95000
+    Categorie: "Carrosserie"
+
+  - code: "CARROS_PARE_CHOC_AV"
+    Libelle_Officiel: "Remplacement pare-choc avant"
+    Prix_Ref_XAF: 120000
+    Categorie: "Carrosserie"
+
+  - code: "CARROS_PARE_CHOC_AR"
+    Libelle_Officiel: "Remplacement pare-choc arrière"
+    Prix_Ref_XAF: 110000
+    Categorie: "Carrosserie"
+
+  - code: "CARROS_CAPOT"
+    Libelle_Officiel: "Remplacement capot moteur"
+    Prix_Ref_XAF: 145000
+    Categorie: "Carrosserie"
+
+  - code: "CARROS_PORTIERE_AV"
+    Libelle_Officiel: "Remplacement portière avant"
+    Prix_Ref_XAF: 160000
+    Categorie: "Carrosserie"
+
+  - code: "CARROS_PORTIERE_AR"
+    Libelle_Officiel: "Remplacement portière arrière"
+    Prix_Ref_XAF: 150000
+    Categorie: "Carrosserie"
+
+  - code: "CARROS_DEBOSSELER"
+    Libelle_Officiel: "Débosselage aile (sans remplacement)"
+    Prix_Ref_XAF: 35000
+    Categorie: "Carrosserie"
+
+  - code: "CARROS_PEINTURE_PIECE"
+    Libelle_Officiel: "Peinture pièce unitaire (hors vernis)"
+    Prix_Ref_XAF: 45000
+    Categorie: "Peinture"
+
+  - code: "CARROS_PEINTURE_TOTALE"
+    Libelle_Officiel: "Peinture complète véhicule"
+    Prix_Ref_XAF: 450000
+    Categorie: "Peinture"
+
+  # ── Vitrage ────────────────────────────────────────────────────────────────
+  - code: "VITRE_PARE_BRISE"
+    Libelle_Officiel: "Remplacement pare-brise (sans ADAS)"
+    Prix_Ref_XAF: 95000
+    Categorie: "Vitrage"
+
+  - code: "VITRE_PARE_BRISE_ADAS"
+    Libelle_Officiel: "Remplacement pare-brise avec recalibration ADAS"
+    Prix_Ref_XAF: 185000
+    Categorie: "Vitrage"
+
+  - code: "VITRE_LUNETTE_AR"
+    Libelle_Officiel: "Remplacement lunette arrière"
+    Prix_Ref_XAF: 75000
+    Categorie: "Vitrage"
+
+  - code: "VITRE_GLACE_PORTIERE"
+    Libelle_Officiel: "Remplacement glace de portière"
+    Prix_Ref_XAF: 55000
+    Categorie: "Vitrage"
+
+  # ── Mécanique ──────────────────────────────────────────────────────────────
+  - code: "MECA_MOTEUR_REVISION"
+    Libelle_Officiel: "Révision moteur complète"
+    Prix_Ref_XAF: 280000
+    Categorie: "Mécanique"
+
+  - code: "MECA_BOITE_VITESSE"
+    Libelle_Officiel: "Remplacement boîte de vitesses"
+    Prix_Ref_XAF: 650000
+    Categorie: "Mécanique"
+
+  - code: "MECA_SUSPENSION_AV"
+    Libelle_Officiel: "Remplacement suspension avant (kit complet)"
+    Prix_Ref_XAF: 195000
+    Categorie: "Mécanique"
+
+  - code: "MECA_FREINS_AV"
+    Libelle_Officiel: "Remplacement plaquettes et disques freins avant"
+    Prix_Ref_XAF: 85000
+    Categorie: "Mécanique"
+
+  - code: "MECA_FREINS_AR"
+    Libelle_Officiel: "Remplacement plaquettes et disques freins arrière"
+    Prix_Ref_XAF: 75000
+    Categorie: "Mécanique"
+
+  - code: "MECA_EMBRAYAGE"
+    Libelle_Officiel: "Remplacement kit embrayage"
+    Prix_Ref_XAF: 220000
+    Categorie: "Mécanique"
+
+  # ── Main d'œuvre (taux horaire référentiel) ────────────────────────────────
+  - code: "MO_TAUX_HORAIRE_STANDARD"
+    Libelle_Officiel: "Main d'œuvre — taux horaire standard (XAF/h)"
+    Prix_Ref_XAF: 8500
+    Categorie: "Main d'oeuvre"
+
+  - code: "MO_TAUX_HORAIRE_SPECIALISE"
+    Libelle_Officiel: "Main d'œuvre — taux horaire spécialisé électronique (XAF/h)"
+    Prix_Ref_XAF: 14000
+    Categorie: "Main d'oeuvre"
+
+  # ── Pneus ──────────────────────────────────────────────────────────────────
+  - code: "PNEU_195_65_R15"
+    Libelle_Officiel: "Pneu 195/65 R15 (unité)"
+    Prix_Ref_XAF: 45000
+    Categorie: "Pneu"
+
+  - code: "PNEU_205_55_R16"
+    Libelle_Officiel: "Pneu 205/55 R16 (unité)"
+    Prix_Ref_XAF: 58000
+    Categorie: "Pneu"
+
+  - code: "PNEU_225_45_R17"
+    Libelle_Officiel: "Pneu 225/45 R17 (unité)"
+    Prix_Ref_XAF: 75000
+    Categorie: "Pneu"
+
+  # ── Électronique / Électricité ─────────────────────────────────────────────
+  - code: "ELEC_CALCULATEUR"
+    Libelle_Officiel: "Remplacement calculateur moteur (ECU)"
+    Prix_Ref_XAF: 420000
+    Categorie: "Electronique"
+
+  - code: "ELEC_BATTERIE_12V"
+    Libelle_Officiel: "Remplacement batterie 12V standard"
+    Prix_Ref_XAF: 65000
+    Categorie: "Electronique"
+
+  - code: "ELEC_ALTERNATEUR"
+    Libelle_Officiel: "Remplacement alternateur"
+    Prix_Ref_XAF: 155000
+    Categorie: "Electronique"

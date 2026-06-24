@@ -1,0 +1,176 @@
+[
+  {
+    "algo": "ExtendedIsolationForest",
+    "metrics": {
+      "f1": 0.2858,
+      "precision": 0.2858,
+      "recall": 0.2858,
+      "auc_roc": 0.6981,
+      "n_pred_anomalie": 1200,
+      "n_true_anomalie": 1200,
+      "train_time_s": 0.379,
+      "extension_level": 1
+    },
+    "note": "métriques issues de T10.3 — modèle non persisté (incompatibilité Cython/joblib)"
+  },
+  {
+    "algo": "IsolationForest",
+    "metrics": {
+      "threshold": -0.004542,
+      "f1": 0.2697,
+      "precision": 0.2204,
+      "recall": 0.3475,
+      "auc_roc": 0.6843,
+      "avg_prec": 0.2127,
+      "mcc": 0.1966,
+      "fpr": 0.1069,
+      "tp": 417,
+      "fp": 1475,
+      "tn": 12325,
+      "fn": 783,
+      "bootstrap_ci": {
+        "f1": {
+          "mean": 0.2697,
+          "ci_lo": 0.2477,
+          "ci_hi": 0.2897
+        },
+        "auc": {
+          "mean": 0.6842,
+          "ci_lo": 0.666,
+          "ci_hi": 0.7014
+        },
+        "mcc": {
+          "mean": 0.1967,
+          "ci_lo": 0.1732,
+          "ci_hi": 0.2185
+        }
+      }
+    }
+  },
+  {
+    "algo": "IF_maxfeat07",
+    "metrics": {
+      "threshold": 0.007016,
+      "f1": 0.2759,
+      "precision": 0.2561,
+      "recall": 0.2992,
+      "auc_roc": 0.6855,
+      "avg_prec": 0.2169,
+      "mcc": 0.2084,
+      "fpr": 0.0756,
+      "tp": 359,
+      "fp": 1043,
+      "tn": 12757,
+      "fn": 841,
+      "bootstrap_ci": {
+        "f1": {
+          "mean": 0.2759,
+          "ci_lo": 0.2515,
+          "ci_hi": 0.2981
+        },
+        "auc": {
+          "mean": 0.6855,
+          "ci_lo": 0.6677,
+          "ci_hi": 0.7022
+        },
+        "mcc": {
+          "mean": 0.2085,
+          "ci_lo": 0.1824,
+          "ci_hi": 0.232
+        }
+      }
+    },
+    "mcnemar_vs_if": {
+      "ref": "IsolationForest",
+      "challenger": "IF_maxfeat07",
+      "b": 527,
+      "c": 37,
+      "pvalue": 0.0,
+      "significant": true
+    }
+  },
+  {
+    "algo": "LOF_k20",
+    "metrics": {
+      "threshold": 0.426575,
+      "f1": 0.3376,
+      "precision": 0.4437,
+      "recall": 0.2725,
+      "auc_roc": 0.6542,
+      "avg_prec": 0.2962,
+      "mcc": 0.3047,
+      "fpr": 0.0297,
+      "tp": 327,
+      "fp": 410,
+      "tn": 13390,
+      "fn": 873,
+      "bootstrap_ci": {
+        "f1": {
+          "mean": 0.3377,
+          "ci_lo": 0.3078,
+          "ci_hi": 0.3657
+        },
+        "auc": {
+          "mean": 0.6541,
+          "ci_lo": 0.6344,
+          "ci_hi": 0.6724
+        },
+        "mcc": {
+          "mean": 0.3049,
+          "ci_lo": 0.2741,
+          "ci_hi": 0.3341
+        }
+      }
+    },
+    "mcnemar_vs_if": {
+      "ref": "IsolationForest",
+      "challenger": "LOF_k20",
+      "b": 1415,
+      "c": 260,
+      "pvalue": 0.0,
+      "significant": true
+    }
+  },
+  {
+    "algo": "SGDOneClassSVM",
+    "metrics": {
+      "threshold": -0.012082,
+      "f1": 0.1481,
+      "precision": 0.08,
+      "recall": 1.0,
+      "auc_roc": 0.3746,
+      "avg_prec": 0.1392,
+      "mcc": 0.0,
+      "fpr": 1.0,
+      "tp": 1200,
+      "fp": 13800,
+      "tn": 0,
+      "fn": 0,
+      "bootstrap_ci": {
+        "f1": {
+          "mean": 0.148,
+          "ci_lo": 0.1408,
+          "ci_hi": 0.155
+        },
+        "auc": {
+          "mean": 0.3747,
+          "ci_lo": 0.3537,
+          "ci_hi": 0.3945
+        },
+        "mcc": {
+          "mean": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0
+        }
+      }
+    },
+    "mcnemar_vs_if": {
+      "ref": "IsolationForest",
+      "challenger": "SGDOneClassSVM",
+      "b": 0,
+      "c": 13108,
+      "pvalue": 0.0,
+      "significant": true
+    }
+  }
+]

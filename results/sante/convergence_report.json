@@ -1,0 +1,7 @@
+{
+  "n_pairs_compared": 31,
+  "tau_mean": 0.871,
+  "tau_std": 0.3942,
+  "convergence_strong": true,
+  "interpretation": "Convergence forte — SHAP et LIME s'accordent sur les features discriminantes. Explicabilité robuste [Doshi-Velez2017]."
+}

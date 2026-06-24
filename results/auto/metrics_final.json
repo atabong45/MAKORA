@@ -1,0 +1,259 @@
+{
+  "branch": "auto",
+  "generated_at": "2026-05-22T02:04:24.815656+00:00",
+  "protocol": "MAKORA Bloc B — T10.2 → T10.8",
+  "random_state": 42,
+  "summary_table": [
+    {
+      "algo": "ExtendedIsolationForest",
+      "f1": 0.2858,
+      "f1_ci_lo": null,
+      "f1_ci_hi": null,
+      "precision": 0.2858,
+      "recall": 0.2858,
+      "auc_roc": 0.6981,
+      "avg_precision": null,
+      "mcc": null,
+      "fpr": null,
+      "threshold": null,
+      "mcnemar_pvalue": null,
+      "significant_vs_if": null
+    },
+    {
+      "algo": "IsolationForest",
+      "f1": 0.2697,
+      "f1_ci_lo": 0.2477,
+      "f1_ci_hi": 0.2897,
+      "precision": 0.2204,
+      "recall": 0.3475,
+      "auc_roc": 0.6843,
+      "avg_precision": 0.2127,
+      "mcc": 0.1966,
+      "fpr": 0.1069,
+      "threshold": -0.004542,
+      "mcnemar_pvalue": null,
+      "significant_vs_if": null
+    },
+    {
+      "algo": "IF_maxfeat07",
+      "f1": 0.2759,
+      "f1_ci_lo": 0.2515,
+      "f1_ci_hi": 0.2981,
+      "precision": 0.2561,
+      "recall": 0.2992,
+      "auc_roc": 0.6855,
+      "avg_precision": 0.2169,
+      "mcc": 0.2084,
+      "fpr": 0.0756,
+      "threshold": 0.007016,
+      "mcnemar_pvalue": 0.0,
+      "significant_vs_if": true
+    },
+    {
+      "algo": "LOF_k20",
+      "f1": 0.3376,
+      "f1_ci_lo": 0.3078,
+      "f1_ci_hi": 0.3657,
+      "precision": 0.4437,
+      "recall": 0.2725,
+      "auc_roc": 0.6542,
+      "avg_precision": 0.2962,
+      "mcc": 0.3047,
+      "fpr": 0.0297,
+      "threshold": 0.426575,
+      "mcnemar_pvalue": 0.0,
+      "significant_vs_if": true
+    },
+    {
+      "algo": "SGDOneClassSVM",
+      "f1": 0.1481,
+      "f1_ci_lo": 0.1408,
+      "f1_ci_hi": 0.155,
+      "precision": 0.08,
+      "recall": 1.0,
+      "auc_roc": 0.3746,
+      "avg_precision": 0.1392,
+      "mcc": 0.0,
+      "fpr": 1.0,
+      "threshold": -0.012082,
+      "mcnemar_pvalue": 0.0,
+      "significant_vs_if": true
+    }
+  ],
+  "learning_curves": {
+    "branch": "auto",
+    "contamination": 0.1,
+    "points": [
+      {
+        "n_train": 2000,
+        "auc_mean": 0.684,
+        "auc_std": 0.003,
+        "f1_mean": 0.2643,
+        "f1_std": 0.0052,
+        "n_repeats": 5
+      },
+      {
+        "n_train": 5000,
+        "auc_mean": 0.6862,
+        "auc_std": 0.0023,
+        "f1_mean": 0.267,
+        "f1_std": 0.0034,
+        "n_repeats": 5
+      },
+      {
+        "n_train": 10000,
+        "auc_mean": 0.6795,
+        "auc_std": 0.0064,
+        "f1_mean": 0.2578,
+        "f1_std": 0.0113,
+        "n_repeats": 5
+      },
+      {
+        "n_train": 25000,
+        "auc_mean": 0.6833,
+        "auc_std": 0.0018,
+        "f1_mean": 0.2631,
+        "f1_std": 0.0072,
+        "n_repeats": 5
+      },
+      {
+        "n_train": 50000,
+        "auc_mean": 0.6818,
+        "auc_std": 0.0053,
+        "f1_mean": 0.2617,
+        "f1_std": 0.0084,
+        "n_repeats": 5
+      }
+    ]
+  },
+  "shap_lime_convergence": {
+    "n_pairs_compared": 80,
+    "tau_mean": 0.9333,
+    "tau_std": 0.3266,
+    "convergence_strong": true,
+    "interpretation": "Convergence forte — SHAP et LIME s'accordent sur les features discriminantes. Explicabilité robuste [Doshi-Velez2017]."
+  },
+  "raw_t10_3": [
+    {
+      "branch": "auto",
+      "features": [
+        "ratio_devis_bareme",
+        "vehicule_sur_value",
+        "sinistre_nuit_sans_temoin",
+        "document_altere",
+        "garage_concentration_score",
+        "garage_non_agree",
+        "constat_manquant",
+        "expertise_manquante",
+        "delai_declaration_anormal",
+        "anciennete_contrat_courte",
+        "ocr_confiance_faible",
+        "ratio_mo_reference",
+        "nb_sinistres_12m",
+        "montant_devis_log",
+        "saisie_hors_heures",
+        "flag_doublon_auto",
+        "community_score_auto",
+        "expert_garage_correlation"
+      ]
+    },
+    {
+      "algo": "IsolationForest",
+      "metrics": {
+        "f1": 0.265,
+        "precision": 0.2273,
+        "recall": 0.3175,
+        "auc_roc": 0.6843,
+        "n_pred_anomalie": 1676,
+        "n_true_anomalie": 1200,
+        "train_time_s": 5.399,
+        "contamination": 0.1,
+        "tuning_results": {
+          "0.03": {
+            "f1": 0.1772
+          },
+          "0.05": {
+            "f1": 0.2191
+          },
+          "0.07": {
+            "f1": 0.246
+          },
+          "0.08": {
+            "f1": 0.256
+          },
+          "0.1": {
+            "f1": 0.2621
+          },
+          "0.12": {
+            "f1": 0.2594
+          }
+        }
+      },
+      "model_key": "if_classic"
+    },
+    {
+      "algo": "IsolationForest_maxfeat07",
+      "metrics": {
+        "f1": 0.2609,
+        "precision": 0.2199,
+        "recall": 0.3208,
+        "auc_roc": 0.6855,
+        "n_pred_anomalie": 1751,
+        "n_true_anomalie": 1200,
+        "train_time_s": 6.481,
+        "contamination": 0.1,
+        "max_features": 0.7
+      },
+      "model_key": "if_maxfeatures07"
+    },
+    {
+      "algo": "ExtendedIsolationForest",
+      "metrics": {
+        "f1": 0.2858,
+        "precision": 0.2858,
+        "recall": 0.2858,
+        "auc_roc": 0.6981,
+        "n_pred_anomalie": 1200,
+        "n_true_anomalie": 1200,
+        "train_time_s": 0.379,
+        "extension_level": 1
+      },
+      "model_key": "eif_params"
+    }
+  ],
+  "raw_t10_4": [
+    {
+      "branch": "auto"
+    },
+    {
+      "algo": "LOF_k50",
+      "metrics": {
+        "f1": 0.3316,
+        "precision": 0.2844,
+        "recall": 0.3975,
+        "auc_roc": 0.6848,
+        "n_pred_anomalie": 1677,
+        "n_true_anomalie": 1200,
+        "train_time_s": 42.651,
+        "n_neighbors": 50,
+        "contamination": 0.1
+      },
+      "model_key": "lof_k50"
+    },
+    {
+      "algo": "SGDOneClassSVM",
+      "metrics": {
+        "f1": 0.1294,
+        "precision": 1.0,
+        "recall": 0.0692,
+        "auc_roc": 0.3746,
+        "n_pred_anomalie": 83,
+        "n_true_anomalie": 1200,
+        "train_time_s": 0.204,
+        "nu": 0.1,
+        "scaler": "StandardScaler"
+      },
+      "model_key": "ocsvm_sgd"
+    }
+  ]
+}

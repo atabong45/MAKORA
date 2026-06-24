@@ -1,0 +1,2342 @@
+[
+  {
+    "type": "FP",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "f6d2fac2081e11fb",
+    "anomaly_score": 0.5058,
+    "dist_seuil": 0.0058,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -2.4899
+      },
+      {
+        "feature": "nb_sinistres_meme_iban",
+        "shap": -0.7128
+      },
+      {
+        "feature": "montant_normalise_log",
+        "shap": -0.3155
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 345700.0,
+      "ratio_prix_mercuriale": 1.0132,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "47143e749a710767",
+    "anomaly_score": 0.5059,
+    "dist_seuil": 0.0059,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -2.4502
+      },
+      {
+        "feature": "flag_weekend_care",
+        "shap": -0.862
+      },
+      {
+        "feature": "delai_soin_depot_anormal",
+        "shap": -0.5914
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 127.77,
+      "ratio_prix_mercuriale": 5.0106,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "744fdc966e6538ef",
+    "anomaly_score": 0.5059,
+    "dist_seuil": 0.0059,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "flag_weekend_care",
+        "shap": -1.1038
+      },
+      {
+        "feature": "nb_sinistres_meme_iban",
+        "shap": -0.8511
+      },
+      {
+        "feature": "delai_soin_depot_anormal",
+        "shap": -0.6274
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 345700.0,
+      "ratio_prix_mercuriale": 1.0132,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "5c08bd3cfd58475b",
+    "anomaly_score": 0.5059,
+    "dist_seuil": 0.0059,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "flag_weekend_care",
+        "shap": -1.1038
+      },
+      {
+        "feature": "nb_sinistres_meme_iban",
+        "shap": -0.8511
+      },
+      {
+        "feature": "delai_soin_depot_anormal",
+        "shap": -0.6274
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 345700.0,
+      "ratio_prix_mercuriale": 1.0132,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "8758cfdf23631b4e",
+    "anomaly_score": 0.5059,
+    "dist_seuil": 0.0059,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "historique_ratio_praticien",
+        "shap": -1.4127
+      },
+      {
+        "feature": "nb_sinistres_meme_iban",
+        "shap": -1.2787
+      },
+      {
+        "feature": "ratio_prix_mercuriale",
+        "shap": -0.7505
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 344200.0,
+      "ratio_prix_mercuriale": 50.0,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "9dd1367827d1e628",
+    "anomaly_score": 0.5059,
+    "dist_seuil": 0.0059,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "nb_sinistres_meme_iban",
+        "shap": -1.581
+      },
+      {
+        "feature": "historique_ratio_praticien",
+        "shap": -1.0806
+      },
+      {
+        "feature": "ratio_prix_mercuriale",
+        "shap": -0.7426
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 345700.0,
+      "ratio_prix_mercuriale": 50.0,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "dffa79241be70141",
+    "anomaly_score": 0.5061,
+    "dist_seuil": 0.0061,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "praticien_hors_agrement",
+        "shap": -3.6002
+      },
+      {
+        "feature": "delai_soin_depot_anormal",
+        "shap": -0.4529
+      },
+      {
+        "feature": "flag_weekend_care",
+        "shap": 0.277
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 29750.0,
+      "ratio_prix_mercuriale": 6.6111,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "ca63c4f27f41b1ff",
+    "anomaly_score": 0.5063,
+    "dist_seuil": 0.0063,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -2.4867
+      },
+      {
+        "feature": "historique_ratio_praticien",
+        "shap": -0.8338
+      },
+      {
+        "feature": "ratio_prix_mercuriale",
+        "shap": -0.4274
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 160.06,
+      "ratio_prix_mercuriale": 33.0021,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "632ea1dd9df25c84",
+    "anomaly_score": 0.5063,
+    "dist_seuil": 0.0063,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "historique_ratio_praticien",
+        "shap": -1.7565
+      },
+      {
+        "feature": "nb_sinistres_meme_iban",
+        "shap": -1.1093
+      },
+      {
+        "feature": "ratio_prix_mercuriale",
+        "shap": -0.8417
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 1505.43,
+      "ratio_prix_mercuriale": 50.0,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "2b984aac34cd2988",
+    "anomaly_score": 0.5063,
+    "dist_seuil": 0.0063,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -2.6019
+      },
+      {
+        "feature": "flag_weekend_care",
+        "shap": -1.0162
+      },
+      {
+        "feature": "nb_sinistres_meme_iban",
+        "shap": 0.2854
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 4700.0,
+      "ratio_prix_mercuriale": 1.0,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "e57776ffc75d2931",
+    "anomaly_score": 0.4999,
+    "dist_seuil": 0.0001,
+    "label_reel": "FRAUDE",
+    "sous_type": "Omission pathologie",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "historique_ratio_praticien",
+        "shap": -2.0021
+      },
+      {
+        "feature": "community_score_sante",
+        "shap": -1.9089
+      },
+      {
+        "feature": "flag_weekend_care",
+        "shap": 0.3126
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 20250.0,
+      "ratio_prix_mercuriale": 4.5,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "b42afa01cddf7ecf",
+    "anomaly_score": 0.5002,
+    "dist_seuil": 0.0002,
+    "label_reel": "ERREUR_OP",
+    "sous_type": "Hors Garantie",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -2.5166
+      },
+      {
+        "feature": "delai_soin_depot_anormal",
+        "shap": -0.6097
+      },
+      {
+        "feature": "nb_sinistres_meme_iban",
+        "shap": 0.3196
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 753.76,
+      "ratio_prix_mercuriale": 29.8874,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "fa9eaf0c652bab4b",
+    "anomaly_score": 0.4995,
+    "dist_seuil": 0.0005,
+    "label_reel": "FRAUDE",
+    "sous_type": "RAS",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "historique_ratio_praticien",
+        "shap": -1.6798
+      },
+      {
+        "feature": "community_score_sante",
+        "shap": -1.4949
+      },
+      {
+        "feature": "delai_soin_depot_anormal",
+        "shap": -0.5129
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 256.49,
+      "ratio_prix_mercuriale": 9.9996,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "dfe81aeb989e1dd5",
+    "anomaly_score": 0.501,
+    "dist_seuil": 0.001,
+    "label_reel": "ERREUR_OP",
+    "sous_type": "RAS",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "nb_sinistres_30j_assure",
+        "shap": -2.2513
+      },
+      {
+        "feature": "ratio_prix_mercuriale",
+        "shap": -0.683
+      },
+      {
+        "feature": "historique_ratio_praticien",
+        "shap": -0.6205
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 422600.0,
+      "ratio_prix_mercuriale": 50.0,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "5ddfe2590611f124",
+    "anomaly_score": 0.5014,
+    "dist_seuil": 0.0014,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "RAS",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "nb_sinistres_meme_iban",
+        "shap": -1.3744
+      },
+      {
+        "feature": "flag_weekend_care",
+        "shap": -1.0538
+      },
+      {
+        "feature": "delai_soin_depot_anormal",
+        "shap": -0.557
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 1803.26,
+      "ratio_prix_mercuriale": 1.2109,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "12245ed2b0565813",
+    "anomaly_score": 0.5014,
+    "dist_seuil": 0.0014,
+    "label_reel": "FRAUDE",
+    "sous_type": "Prêt de carte",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -2.5016
+      },
+      {
+        "feature": "flag_weekend_care",
+        "shap": -0.9258
+      },
+      {
+        "feature": "nb_sinistres_meme_iban",
+        "shap": 0.2819
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 4400.0,
+      "ratio_prix_mercuriale": 1.0,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "6f434ac8f1ef8d3b",
+    "anomaly_score": 0.498,
+    "dist_seuil": 0.002,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Doublon Technique",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "flag_doublon_sante",
+        "shap": -3.1718
+      },
+      {
+        "feature": "ratio_prix_mercuriale",
+        "shap": -0.7766
+      },
+      {
+        "feature": "nb_sinistres_meme_iban",
+        "shap": 0.3064
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 16770.8948,
+      "ratio_prix_mercuriale": 50.0,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "a163acb978aba2d8",
+    "anomaly_score": 0.502,
+    "dist_seuil": 0.002,
+    "label_reel": "ERREUR_OP",
+    "sous_type": "Hors Garantie",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -2.4642
+      },
+      {
+        "feature": "flag_weekend_care",
+        "shap": -1.0043
+      },
+      {
+        "feature": "historique_ratio_praticien",
+        "shap": -0.284
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 40937.0,
+      "ratio_prix_mercuriale": 8.8993,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "27f46f6969e44854",
+    "anomaly_score": 0.502,
+    "dist_seuil": 0.002,
+    "label_reel": "ERREUR_OP",
+    "sous_type": "Erreur de saisie",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "flag_weekend_care",
+        "shap": -0.9628
+      },
+      {
+        "feature": "montant_normalise_log",
+        "shap": -0.9241
+      },
+      {
+        "feature": "ratio_prix_mercuriale",
+        "shap": -0.8081
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 5132412.0,
+      "ratio_prix_mercuriale": 50.0,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_sante",
+    "branch": "sante",
+    "dossier_id": "4848790b5fc4427d",
+    "anomaly_score": 0.4978,
+    "dist_seuil": 0.0022,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Doublon Technique",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "flag_doublon_sante",
+        "shap": -2.8512
+      },
+      {
+        "feature": "flag_weekend_care",
+        "shap": -0.746
+      },
+      {
+        "feature": "praticien_concentration",
+        "shap": -0.2544
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 299.37,
+      "ratio_prix_mercuriale": 12.2442,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "sante",
+    "dossier_id": "9e1f48aded12a238",
+    "anomaly_score": 0.5913,
+    "dist_seuil": 0.0913,
+    "label_reel": "FRAUDE",
+    "sous_type": "Détournement RIB",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 101.88,
+      "ratio_prix_mercuriale": 12.9783,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "sante",
+    "dossier_id": "5304f6e381c4a328",
+    "anomaly_score": 0.5913,
+    "dist_seuil": 0.0913,
+    "label_reel": "ERREUR_OP",
+    "sous_type": "Hors Garantie",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 99800.0,
+      "ratio_prix_mercuriale": 21.6957,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "sante",
+    "dossier_id": "7ad776993f00b311",
+    "anomaly_score": 0.5913,
+    "dist_seuil": 0.0913,
+    "label_reel": "ERREUR_OP",
+    "sous_type": "Erreur de saisie",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 346300.0,
+      "ratio_prix_mercuriale": 50.0,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "sante",
+    "dossier_id": "749b2c6c049ab78d",
+    "anomaly_score": 0.5913,
+    "dist_seuil": 0.0913,
+    "label_reel": "ERREUR_OP",
+    "sous_type": "Absence cachet",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 13700.0,
+      "ratio_prix_mercuriale": 3.0444,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "sante",
+    "dossier_id": "46a9887efd9c6f49",
+    "anomaly_score": 0.5913,
+    "dist_seuil": 0.0913,
+    "label_reel": "ERREUR_OP",
+    "sous_type": "Erreur conversion",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 9491.9982,
+      "ratio_prix_mercuriale": 50.0,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "sante",
+    "dossier_id": "6e4a6165a3be1069",
+    "anomaly_score": 0.5913,
+    "dist_seuil": 0.0913,
+    "label_reel": "ERREUR_OP",
+    "sous_type": "Hors Garantie",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 858.64,
+      "ratio_prix_mercuriale": 35.5103,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "sante",
+    "dossier_id": "f64a0bdc234d731b",
+    "anomaly_score": 0.5913,
+    "dist_seuil": 0.0913,
+    "label_reel": "ERREUR_OP",
+    "sous_type": "Hors Garantie",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 197.81,
+      "ratio_prix_mercuriale": 8.002,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "sante",
+    "dossier_id": "477564ed30280f93",
+    "anomaly_score": 0.5913,
+    "dist_seuil": 0.0913,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Dérive Nomenclature",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 87950.0,
+      "ratio_prix_mercuriale": 50.0,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "sante",
+    "dossier_id": "e93dd6dbce9ac3e5",
+    "anomaly_score": 0.5913,
+    "dist_seuil": 0.0913,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Schema Drift",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 51050.0,
+      "ratio_prix_mercuriale": 11.0978,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "sante",
+    "dossier_id": "e004b45dc5c475c5",
+    "anomaly_score": 0.5913,
+    "dist_seuil": 0.0913,
+    "label_reel": "ERREUR_OP",
+    "sous_type": "RAS",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Facture": 342700.0,
+      "ratio_prix_mercuriale": 50.0,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0082891",
+    "anomaly_score": 0.5,
+    "dist_seuil": 0.0,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "nb_sinistres_12m",
+        "shap": -1.6396
+      },
+      {
+        "feature": "constat_manquant",
+        "shap": -1.1225
+      },
+      {
+        "feature": "garage_non_agree",
+        "shap": -0.4681
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 150346.89,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0065336",
+    "anomaly_score": 0.4999,
+    "dist_seuil": 0.0001,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -2.4736
+      },
+      {
+        "feature": "nb_sinistres_12m",
+        "shap": -0.3698
+      },
+      {
+        "feature": "ratio_mo_reference",
+        "shap": -0.282
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 368951.14,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0050100",
+    "anomaly_score": 0.4999,
+    "dist_seuil": 0.0001,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "expertise_manquante",
+        "shap": -1.5446
+      },
+      {
+        "feature": "constat_manquant",
+        "shap": -1.2032
+      },
+      {
+        "feature": "expert_garage_correlation",
+        "shap": -0.3398
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 363.91,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0086716",
+    "anomaly_score": 0.5001,
+    "dist_seuil": 0.0001,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "delai_declaration_anormal",
+        "shap": -2.6939
+      },
+      {
+        "feature": "nb_sinistres_12m",
+        "shap": -0.4027
+      },
+      {
+        "feature": "expert_garage_correlation",
+        "shap": -0.3351
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 427122.15,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0088482",
+    "anomaly_score": 0.5001,
+    "dist_seuil": 0.0001,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -2.3392
+      },
+      {
+        "feature": "constat_manquant",
+        "shap": -0.9684
+      },
+      {
+        "feature": "ratio_mo_reference",
+        "shap": -0.2737
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 133046.52,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0035528",
+    "anomaly_score": 0.5001,
+    "dist_seuil": 0.0001,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "expertise_manquante",
+        "shap": -1.5283
+      },
+      {
+        "feature": "constat_manquant",
+        "shap": -1.1855
+      },
+      {
+        "feature": "sinistre_nuit_sans_temoin",
+        "shap": -0.3129
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 159.83,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0062616",
+    "anomaly_score": 0.4998,
+    "dist_seuil": 0.0002,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "constat_manquant",
+        "shap": -1.2271
+      },
+      {
+        "feature": "garage_non_agree",
+        "shap": -0.4894
+      },
+      {
+        "feature": "nb_sinistres_12m",
+        "shap": -0.3758
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 349249.49,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0058490",
+    "anomaly_score": 0.5002,
+    "dist_seuil": 0.0002,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "delai_declaration_anormal",
+        "shap": -2.7542
+      },
+      {
+        "feature": "nb_sinistres_12m",
+        "shap": -0.3604
+      },
+      {
+        "feature": "constat_manquant",
+        "shap": 0.2569
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 684897.61,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0021690",
+    "anomaly_score": 0.5002,
+    "dist_seuil": 0.0002,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "expertise_manquante",
+        "shap": -1.5225
+      },
+      {
+        "feature": "nb_sinistres_12m",
+        "shap": -0.4528
+      },
+      {
+        "feature": "garage_non_agree",
+        "shap": -0.4093
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 1009.8,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0068178",
+    "anomaly_score": 0.5003,
+    "dist_seuil": 0.0003,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -2.421
+      },
+      {
+        "feature": "garage_non_agree",
+        "shap": -0.3721
+      },
+      {
+        "feature": "ratio_mo_reference",
+        "shap": -0.312
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 570999.87,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0009663",
+    "anomaly_score": 0.4953,
+    "dist_seuil": 0.0047,
+    "label_reel": "FRAUDE",
+    "sous_type": "Antidatage_Contrat",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -2.614
+      },
+      {
+        "feature": "ratio_mo_reference",
+        "shap": -0.4763
+      },
+      {
+        "feature": "constat_manquant",
+        "shap": 0.2607
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 138.62,
+      "anciennete_contrat_courte": 1.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0020369",
+    "anomaly_score": 0.4951,
+    "dist_seuil": 0.0049,
+    "label_reel": "BIAIS",
+    "sous_type": "Rejet_OCR_Matriciel",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -2.8286
+      },
+      {
+        "feature": "nb_sinistres_12m",
+        "shap": -0.3821
+      },
+      {
+        "feature": "constat_manquant",
+        "shap": 0.2549
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 581.93,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0016185",
+    "anomaly_score": 0.4951,
+    "dist_seuil": 0.0049,
+    "label_reel": "FRAUDE",
+    "sous_type": "Expert_Corrompu",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "nb_sinistres_12m",
+        "shap": -1.5769
+      },
+      {
+        "feature": "expertise_manquante",
+        "shap": -1.4342
+      },
+      {
+        "feature": "garage_non_agree",
+        "shap": -0.4125
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 4397.87,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0044046",
+    "anomaly_score": 0.4945,
+    "dist_seuil": 0.0055,
+    "label_reel": "FRAUDE",
+    "sous_type": "Vol_Fictif",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "delai_declaration_anormal",
+        "shap": -2.8109
+      },
+      {
+        "feature": "constat_manquant",
+        "shap": -0.9329
+      },
+      {
+        "feature": "expertise_manquante",
+        "shap": 0.2046
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 243.84,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0027090",
+    "anomaly_score": 0.4942,
+    "dist_seuil": 0.0058,
+    "label_reel": "FRAUDE",
+    "sous_type": "Staging_Accident",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "constat_manquant",
+        "shap": -1.2758
+      },
+      {
+        "feature": "expert_garage_correlation",
+        "shap": -0.9812
+      },
+      {
+        "feature": "garage_non_agree",
+        "shap": -0.4828
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 670.97,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0005485",
+    "anomaly_score": 0.4941,
+    "dist_seuil": 0.0059,
+    "label_reel": "FRAUDE",
+    "sous_type": "Multi_Sinistres",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "nb_sinistres_12m",
+        "shap": -2.8243
+      },
+      {
+        "feature": "ratio_mo_reference",
+        "shap": -0.3228
+      },
+      {
+        "feature": "constat_manquant",
+        "shap": 0.277
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 945.39,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0077782",
+    "anomaly_score": 0.4922,
+    "dist_seuil": 0.0078,
+    "label_reel": "FRAUDE",
+    "sous_type": "Expert_Corrompu",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "expertise_manquante",
+        "shap": -1.5217
+      },
+      {
+        "feature": "constat_manquant",
+        "shap": -1.2059
+      },
+      {
+        "feature": "sinistre_nuit_sans_temoin",
+        "shap": -0.3016
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 296129.49,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0009358",
+    "anomaly_score": 0.4915,
+    "dist_seuil": 0.0085,
+    "label_reel": "FRAUDE",
+    "sous_type": "Falsification_Constat",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -2.6018
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.6726
+      },
+      {
+        "feature": "constat_manquant",
+        "shap": 0.2194
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 128.22,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 1.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0027093",
+    "anomaly_score": 0.4905,
+    "dist_seuil": 0.0095,
+    "label_reel": "FRAUDE",
+    "sous_type": "Falsification_Constat",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -2.7402
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.7056
+      },
+      {
+        "feature": "sinistre_nuit_sans_temoin",
+        "shap": -0.2276
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 567.52,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 1.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_auto",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0063080",
+    "anomaly_score": 0.49,
+    "dist_seuil": 0.01,
+    "label_reel": "FRAUDE",
+    "sous_type": "Pieces_Reemploi",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "ratio_devis_bareme",
+        "shap": -1.9363
+      },
+      {
+        "feature": "montant_devis_log",
+        "shap": -0.6424
+      },
+      {
+        "feature": "nb_sinistres_12m",
+        "shap": -0.3832
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 2065271.74,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0030712",
+    "anomaly_score": 0.9743,
+    "dist_seuil": 0.4743,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -5.9106
+      },
+      {
+        "feature": "saisie_hors_heures",
+        "shap": 0.2738
+      },
+      {
+        "feature": "document_altere",
+        "shap": 0.2339
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 1078.41,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0091188",
+    "anomaly_score": 0.9743,
+    "dist_seuil": 0.4743,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -5.9106
+      },
+      {
+        "feature": "saisie_hors_heures",
+        "shap": 0.2738
+      },
+      {
+        "feature": "document_altere",
+        "shap": 0.2339
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 162779.56,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0070364",
+    "anomaly_score": 0.9743,
+    "dist_seuil": 0.4743,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -5.9106
+      },
+      {
+        "feature": "saisie_hors_heures",
+        "shap": 0.2738
+      },
+      {
+        "feature": "document_altere",
+        "shap": 0.2339
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 202564.37,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0065208",
+    "anomaly_score": 0.9743,
+    "dist_seuil": 0.4743,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -5.9106
+      },
+      {
+        "feature": "saisie_hors_heures",
+        "shap": 0.2738
+      },
+      {
+        "feature": "document_altere",
+        "shap": 0.2339
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 48453.25,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0098905",
+    "anomaly_score": 0.9743,
+    "dist_seuil": 0.4743,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -5.9106
+      },
+      {
+        "feature": "saisie_hors_heures",
+        "shap": 0.2738
+      },
+      {
+        "feature": "document_altere",
+        "shap": 0.2339
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 791888.76,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0061557",
+    "anomaly_score": 0.9743,
+    "dist_seuil": 0.4743,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -5.9106
+      },
+      {
+        "feature": "saisie_hors_heures",
+        "shap": 0.2738
+      },
+      {
+        "feature": "document_altere",
+        "shap": 0.2339
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 138087.77,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0076952",
+    "anomaly_score": 0.9743,
+    "dist_seuil": 0.4743,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -5.9106
+      },
+      {
+        "feature": "saisie_hors_heures",
+        "shap": 0.2738
+      },
+      {
+        "feature": "document_altere",
+        "shap": 0.2339
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 2181684.31,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0090030",
+    "anomaly_score": 0.9743,
+    "dist_seuil": 0.4743,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -5.9106
+      },
+      {
+        "feature": "saisie_hors_heures",
+        "shap": 0.2738
+      },
+      {
+        "feature": "document_altere",
+        "shap": 0.2339
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 2716776.57,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0064611",
+    "anomaly_score": 0.9743,
+    "dist_seuil": 0.4743,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -5.9106
+      },
+      {
+        "feature": "saisie_hors_heures",
+        "shap": 0.2738
+      },
+      {
+        "feature": "document_altere",
+        "shap": 0.2339
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 809620.93,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FP",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0019834",
+    "anomaly_score": 0.9743,
+    "dist_seuil": 0.4743,
+    "label_reel": "NORMAL",
+    "sous_type": "RAS",
+    "cause_erreur": "SEUIL_MAL_CALITRE",
+    "cause_desc": "Contamination imparfaite — cas légitime proche du seuil",
+    "shap_top3": [
+      {
+        "feature": "ocr_confiance_faible",
+        "shap": -5.9106
+      },
+      {
+        "feature": "saisie_hors_heures",
+        "shap": 0.2738
+      },
+      {
+        "feature": "document_altere",
+        "shap": 0.2339
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 1397.45,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 1.0,
+      "saisie_hors_heures": 0.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0040591",
+    "anomaly_score": 0.8568,
+    "dist_seuil": 0.3568,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Doublon_Batch_API",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 458.9,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0077656",
+    "anomaly_score": 0.8568,
+    "dist_seuil": 0.3568,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Doublon_Batch_API",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 453467.13,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0080733",
+    "anomaly_score": 0.8568,
+    "dist_seuil": 0.3568,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Doublon_Batch_API",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 2711552.85,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0094046",
+    "anomaly_score": 0.8568,
+    "dist_seuil": 0.3568,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Doublon_Batch_API",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 274916.23,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0099927",
+    "anomaly_score": 0.8568,
+    "dist_seuil": 0.3568,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Doublon_Batch_API",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 2665419.73,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0022722",
+    "anomaly_score": 0.8568,
+    "dist_seuil": 0.3568,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Doublon_Batch_API",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 764.4,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0001772",
+    "anomaly_score": 0.8568,
+    "dist_seuil": 0.3568,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Doublon_Batch_API",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 353.85,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0054804",
+    "anomaly_score": 0.8568,
+    "dist_seuil": 0.3568,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Doublon_Batch_API",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 410.82,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_FR_0054498",
+    "anomaly_score": 0.8568,
+    "dist_seuil": 0.3568,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Doublon_Batch_API",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 211.92,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  },
+  {
+    "type": "FN",
+    "model": "M_makora",
+    "branch": "auto",
+    "dossier_id": "SIN_CM_0059550",
+    "anomaly_score": 0.8568,
+    "dist_seuil": 0.3568,
+    "label_reel": "TECHNIQUE",
+    "sous_type": "Doublon_Batch_API",
+    "cause_erreur": "CAS_LIMITE_METIER",
+    "cause_desc": "Fraude bien camouflée / dossier atypique légitimement suspect",
+    "shap_top3": [
+      {
+        "feature": "saisie_hors_heures",
+        "shap": -4.2352
+      },
+      {
+        "feature": "document_altere",
+        "shap": -0.3479
+      },
+      {
+        "feature": "anciennete_contrat_courte",
+        "shap": -0.1006
+      }
+    ],
+    "features_snapshot": {
+      "Montant_Devis": 169138.19,
+      "anciennete_contrat_courte": 0.0,
+      "document_altere": 0.0,
+      "ocr_confiance_faible": 0.0,
+      "saisie_hors_heures": 1.0
+    }
+  }
+]

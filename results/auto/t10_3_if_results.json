@@ -1,0 +1,88 @@
+[
+  {
+    "branch": "auto",
+    "features": [
+      "ratio_devis_bareme",
+      "vehicule_sur_value",
+      "sinistre_nuit_sans_temoin",
+      "document_altere",
+      "garage_concentration_score",
+      "garage_non_agree",
+      "constat_manquant",
+      "expertise_manquante",
+      "delai_declaration_anormal",
+      "anciennete_contrat_courte",
+      "ocr_confiance_faible",
+      "ratio_mo_reference",
+      "nb_sinistres_12m",
+      "montant_devis_log",
+      "saisie_hors_heures",
+      "flag_doublon_auto",
+      "community_score_auto",
+      "expert_garage_correlation"
+    ]
+  },
+  {
+    "algo": "IsolationForest",
+    "metrics": {
+      "f1": 0.265,
+      "precision": 0.2273,
+      "recall": 0.3175,
+      "auc_roc": 0.6843,
+      "n_pred_anomalie": 1676,
+      "n_true_anomalie": 1200,
+      "train_time_s": 5.399,
+      "contamination": 0.1,
+      "tuning_results": {
+        "0.03": {
+          "f1": 0.1772
+        },
+        "0.05": {
+          "f1": 0.2191
+        },
+        "0.07": {
+          "f1": 0.246
+        },
+        "0.08": {
+          "f1": 0.256
+        },
+        "0.1": {
+          "f1": 0.2621
+        },
+        "0.12": {
+          "f1": 0.2594
+        }
+      }
+    },
+    "model_key": "if_classic"
+  },
+  {
+    "algo": "IsolationForest_maxfeat07",
+    "metrics": {
+      "f1": 0.2609,
+      "precision": 0.2199,
+      "recall": 0.3208,
+      "auc_roc": 0.6855,
+      "n_pred_anomalie": 1751,
+      "n_true_anomalie": 1200,
+      "train_time_s": 6.481,
+      "contamination": 0.1,
+      "max_features": 0.7
+    },
+    "model_key": "if_maxfeatures07"
+  },
+  {
+    "algo": "ExtendedIsolationForest",
+    "metrics": {
+      "f1": 0.2858,
+      "precision": 0.2858,
+      "recall": 0.2858,
+      "auc_roc": 0.6981,
+      "n_pred_anomalie": 1200,
+      "n_true_anomalie": 1200,
+      "train_time_s": 0.379,
+      "extension_level": 1
+    },
+    "model_key": "eif_params"
+  }
+]

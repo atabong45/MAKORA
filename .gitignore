@@ -1,0 +1,39 @@
+# ===== Données volumineuses régénérables =====
+data/models/
+data/raw/
+data/processed/
+data/splits/
+
+# data/documents et data/referentials sont légers -> on les garde
+# (retire les lignes ci-dessus si tu veux versionner un sous-dossier précis)
+
+# ===== Résultats lourds (PNG, NPY) régénérables par les scripts =====
+results/**/*.png
+results/**/*.npy
+
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+*.log
+
+# ===== Environnements / secrets =====
+.env
+venv/
+env/
+.venv/
+
+# ===== Fichiers système / éditeurs =====
+.DS_Store
+*.swp
+*.swo
+
+# ===== Locks / artefacts divers déjà exclus du contexte =====
+pd
+pytest
+sys
+=1.24.0
+project_context.txt

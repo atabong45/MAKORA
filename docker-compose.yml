@@ -1,0 +1,133 @@
+# ============================================================
+# docker-compose.yml — MAKORA Stack complète
+# Tout passe par Docker : API, Tests, PostgreSQL
+#
+# Commandes :
+#   Démarrer la stack (API + DB) :
+#     docker compose up -d
+#
+#   Lancer tous les tests :
+#     docker compose --profile test run --rm tests
+#
+#   Lancer uniquement les tests API :
+#     docker compose --profile test run --rm -e TEST_SCOPE=api tests
+#
+#   Lancer uniquement les tests kernel (ADR-002) :
+#     docker compose --profile test run --rm -e TEST_SCOPE=kernel tests
+#
+#   Rebuild forcé (après modif requirements.txt) :
+#     docker compose build --no-cache api
+#
+# Auteur : ATABONG EFON STEPHANE FRITZ
+# ============================================================
+
+services:
+  # ── Base de données principale ─────────────────────────────
+  postgres:
+    image: postgres:15-alpine
+    container_name: makora_postgres
+    environment:
+      POSTGRES_USER: makora
+      POSTGRES_PASSWORD: makora
+      POSTGRES_DB: makora
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # Script RLS appliqué au démarrage si présent
+      - ./rls_setup.sql:/docker-entrypoint-initdb.d/02_rls_setup.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U makora -d makora"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+  # ── API FastAPI ────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: makora_api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Hot-reload en développement : les sources sont montées en live
+      - ./core:/app/core
+      - ./modules:/app/modules
+      - ./api:/app/api
+      - ./data:/app/data
+      - ./config:/app/config
+      - ./scripts:/app/scripts
+    environment:
+      ENV: development
+      PYTHONPATH: /app
+      DATABASE_URL: postgresql://makora:makora@postgres:5432/makora
+      SECRET_KEY: ${SECRET_KEY:-makora-dev-secret-CHANGE-IN-PROD}
+      SECRET_SALT: ${SECRET_SALT:-changeme_in_production_32chars}
+      MAKORA_DOCUMENTS_PATH: /app/data/documents
+      MAKORA_DATA_PATH: /app/data
+      DB_ECHO: "false"
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: >
+      uvicorn api.main:app
+      --host 0.0.0.0
+      --port 8000
+      --reload
+      --reload-dir /app/api
+      --reload-dir /app/core
+    restart: unless-stopped
+
+  # ── Tests (profile séparé, ne démarre pas avec `up`) ───────
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: makora_tests
+    volumes:
+      - ./core:/app/core
+      - ./modules:/app/modules
+      - ./api:/app/api
+      - ./tests:/app/tests
+      - ./scripts:/app/scripts
+      - ./pytest.ini:/app/pytest.ini
+    environment:
+      PYTHONPATH: /app
+      # Base dédiée aux tests — isolée de la DB principale
+      DATABASE_URL: postgresql://makora:makora@postgres:5432/makora_test
+      SECRET_KEY: makora-test-secret-key-not-for-prod
+      SECRET_SALT: test-salt-32-chars-padding-xxxxx
+      # Scope des tests : all | api | unit | integration | kernel
+      TEST_SCOPE: ${TEST_SCOPE:-all}
+      TESTING: "true"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: bash /app/scripts/docker-entrypoint-tests.sh
+    profiles:
+      - test
+
+  # ── Frontend Next.js (Phase 4) ─────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    container_name: makora_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    depends_on:
+      - api
+    restart: unless-stopped
+    # Désactivé jusqu'à la Phase 4
+    profiles:
+      - frontend
+
+volumes:
+  postgres_data:
+    driver: local

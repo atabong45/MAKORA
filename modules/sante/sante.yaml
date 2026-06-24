@@ -1,0 +1,566 @@
+# ====================================================================
+# PLUGIN CONTRACT — Module Santé MAKORA
+# Version : 0.5.0 — Scénarios A+B+C (20 features)
+# Références : [Bauder2017] [Chandola2009] [Sculley2015]
+#              [Jiang2014] [Blondel2008] [Xu2023]
+#
+# HISTORIQUE :
+#   v0.1.0 — 5 features (T10.1 baseline)
+#   v0.2.0 — 10 features (T10.2 + features_ext.py)
+#   v0.3.0 — 12 features (T10.3 + features réseau)
+#   v0.4.0 — 17 features (Session I + features réseau V3)
+#   v0.5.0 — 20 features (Scénarios A+B+C + correction dette document_age_anormal)
+#            Scénario A : 5 renommages + acte_incomplet
+#            Scénario B : nb_sinistres_recents + document_age_anormal (dette)
+#            Scénario C : montant_log (renommage montant_normalise_log)
+# ====================================================================
+branch: sante
+version: "0.5.0"
+display_name: "Module Santé (FR + CM)"
+description: >
+  Module Santé MAKORA — détection d'anomalies sur sinistres santé.
+  Couvre flux ASAC camerounais et scans documentaires (mercuriale CIMA).
+  Patterns couverts : surfacturation (upcoding), phantom billing,
+  unbundling, fraude documentaire, fraude fréquence, saisie hors heures,
+  fraude en réseau praticien-assuré, doublons de soumission,
+  acte incomplet, document périmé.
+  [Bauder2017] contamination estimée 3-10% → retenu 0.068 (calibré T10.3).
+  20 features dont 13 communes avec AutoModule pour M_makora_dif [Xu2023].
+
+# ====================================================================
+# SECTION 1 — SCHÉMA D'ENTRÉE
+# ====================================================================
+input_schema:
+  required_columns:
+    - ID_Sinistre
+    - ID_Assure
+    - ID_Praticien
+    - Code_Acte
+    - Montant_Facture
+    - Prix_Unitaire_Ref
+    - Date_Soin
+    - Source_Flux
+  optional_columns:
+    - Sexe_Assure
+    - Praticien_Actif
+    - Flag_Doc_Altere
+    - Confiance_OCR_Glob
+    - Delai_Soin_Depot # delai_depot_anormal (seuil 30j)
+    - Anciennete_Contrat
+    - Heure_Saisie
+    - Date_Deces_Assure
+    - Nb_Sinistres_Meme_IBAN
+    - Devise
+    - Taux_Change
+    - Flag_Doublon # flag_doublon
+    - community_id_sante # community_score (input GraphEngine)
+    - ID_Employeur
+    - Flag_Acte_Incomp # acte_incomplet (Scénario A)
+    - Date_Saisie_Systeme # document_age_anormal : horodatage saisie SI
+    - Nb_Sinistres_12m # nb_sinistres_recents (Scénario B)
+  types:
+    Montant_Facture: float
+    Prix_Unitaire_Ref: float
+    Code_Acte: string
+    Praticien_Actif: boolean
+    Flag_Doc_Altere: boolean
+    Confiance_OCR_Glob: float
+    Delai_Soin_Depot: float
+    Anciennete_Contrat: float
+    Heure_Saisie: float
+    Nb_Sinistres_Meme_IBAN: float
+    Flag_Doublon: boolean
+    community_id_sante: float
+    Flag_Acte_Incomp: boolean
+    Nb_Sinistres_12m: int
+
+# ====================================================================
+# SECTION 2 — FEATURES ML (20 features — v0.5.0)
+# [Liu2008] : recommandation ≤ 20 features pour IF/DIF
+# 13 features (★) communes avec AutoModule → M_makora_dif [Xu2023]
+# ====================================================================
+features:
+  # --- Features V1 (features.py via FEATURE_FUNCTIONS_SANTE_V1) -----------
+  # Ordre déclaratif = ordre de calcul garanti (dépendance ratio → historique)
+  - ratio_prix_mercuriale # [Bauder2017] — surfacturation vs mercuriale CIMA
+  - flag_incoherence_sexe_acte # [Bauder2017] — phantom billing / usurpation identité
+  - historique_ratio_praticien # [Subudhi2017] — comportement praticien sur fenêtre batch
+  - nb_sinistres_30j_assure # [Viaene2002]  — fréquence anormale (unbundling)
+  - is_weekend_event # ★ COMMUN [Bauder2017] — soin weekend, facturation fictive
+
+  # --- Features V2 (features_ext.py via FEATURE_EXT_FUNCTIONS) -----------
+  - document_altere # ★ COMMUN [Bauder2017] — Flag_Doc_Altere, fraude documentaire
+  - praticien_hors_agrement # [CIMA] — praticien non agréé, phantom billing
+  - ocr_confiance_faible # ★ COMMUN [CIMA] — cachet humide, scan dégradé (contexte CM)
+  - delai_depot_anormal # ★ COMMUN [CIMA Art.25] — Delai_Soin_Depot > 30j, antidatage
+  - anciennete_contrat_courte # ★ COMMUN [Viaene2002] — contrat < 90j, fraude à la souscription
+  - saisie_hors_heures # ★ COMMUN [Chandola2009] — saisie < 7h ou > 20h, signal contextuel
+  - montant_log # ★ COMMUN [Liu2008] — log1p(Montant_Facture), normalisation IF/DIF
+  - post_mortem_flag # [Bauder2017] — Date_Soin > Date_Deces, phantom billing
+  - nb_sinistres_meme_iban # [domaine] — IBAN partagé, détournement RIB
+  - acte_incomplet # ★ COMMUN [domaine] — Flag_Acte_Incomp, dossier incomplet (Scénario A)
+  - document_age_anormal # ★ COMMUN [Chandola2009] — Date_Saisie - Date_Soin > 180j (dette résolue)
+  - nb_sinistres_recents # ★ COMMUN [Viaene2002] — Nb_Sinistres_12m, fréquence anormale (Scénario B)
+
+  # --- Features V3 (features_reseau.py via FEATURE_RESEAU_FUNCTIONS_SANTE) -
+  - flag_doublon # ★ COMMUN [Bauder2017] — Duplicate Billing, hash composite
+  - community_score # ★ COMMUN [Jiang2014][Blondel2008] — communauté suspecte Louvain
+  - prestataire_concentration # ★ COMMUN [Bauder2017][Jiang2014] — concentration Pareto prestataire
+
+features_descriptions:
+  ratio_prix_mercuriale: >
+    Montant facturé / prix référence mercuriale CIMA (XAF). Seuil alerte > 1.5x.
+    Cap à 50.0 pour stabilité SHAP [Lundberg2017].
+  flag_incoherence_sexe_acte: >
+    Acte gynécologique ou obstétrique facturé pour un homme, ou acte masculin
+    pour une femme. Usurpation identité ou prêt de carte assuré [Bauder2017].
+  historique_ratio_praticien: >
+    Ratio moyen du praticien sur le batch courant. > 1.3 → comportement
+    systématique de surfacturation [Subudhi2017]. Stateless (dette DT-002).
+  nb_sinistres_30j_assure: >
+    Nombre de sinistres de l'assuré sur 30 jours glissants dans le batch.
+    > 5 → fréquence anormale, pattern unbundling [Viaene2002].
+  is_weekend_event: >
+    1 si le soin a lieu un samedi (5) ou dimanche (6). Signal comportemental
+    transverse. Santé : Date_Soin. ★ Commun avec Auto [Bauder2017].
+  document_altere: >
+    1 si Flag_Doc_Altere == True. Détection EXIF / modification PDF. Fraude
+    documentaire : falsification ordonnance, facture. ★ Commun [Bauder2017].
+  praticien_hors_agrement: >
+    1 si Praticien_Actif == False. Acte soumis par praticien radié / non agréé
+    CIMA. Phantom billing. Rejet automatique recommandé [CIMA Art.12].
+  ocr_confiance_faible: >
+    1 si Score_Confiance_OCR_Glob < 0.5. Contexte camerounais : cachet humide
+    dégrade la qualité OCR. ★ Commun (seuil calibré dataset UNITY).
+  delai_depot_anormal: >
+    1 si Delai_Soin_Depot > 30 jours. Dépôt tardif → antidatage ou batching
+    frauduleux. Délai réglementaire CIMA Art.25. ★ Commun [Chandola2009].
+  anciennete_contrat_courte: >
+    1 si Anciennete_Contrat < 90 jours. Souscription récente + soin précoce =
+    fraude à la souscription (maladie préexistante). ★ Commun [Viaene2002].
+  saisie_hors_heures: >
+    1 si Heure_Saisie < 7 ou > 20. Signal contextuel faible ; renforce d'autres
+    features (document_altere, delai_depot_anormal). ★ Commun [Chandola2009].
+  montant_log: >
+    log1p(Montant_Facture) — normalise la distribution très asymétrique.
+    Améliore la séparation IF/DIF sur surfacturations modérées. ★ Commun [Liu2008].
+  post_mortem_flag: >
+    1 si Date_Soin > Date_Deces_Assure. Quasi-déterministe (fraude certaine).
+    2-4% des fraudes Medicare [Bauder2017]. NaT → 0 (assuré vivant présumé).
+  nb_sinistres_meme_iban: >
+    Nombre de dossiers partageant l'IBAN de ce dossier. > 3 → détournement RIB.
+    Un IBAN partagé entre assurés non liés est un signal fort de fraude organisée.
+  acte_incomplet: >
+    1 si Flag_Acte_Incomp == True. Dossier incomplet soumis quand même — signal
+    d'intention frauduleuse ou d'erreur opérationnelle grave. ★ Commun [domaine].
+  document_age_anormal: >
+    1 si (Date_Saisie_Systeme - Date_Soin) > 180 jours. Document très tardif :
+    antidatage ou fabrication de document ancien. ★ Commun avec Auto [Chandola2009].
+  nb_sinistres_recents: >
+    Nb_Sinistres_12m — fréquence sinistres sur 12 mois glissants. Doctor Shopping.
+    Fenêtre 12M unifiée avec Auto pour M_makora_dif. ★ Commun [Viaene2002].
+  flag_doublon: >
+    1 si Flag_Doublon == True. Hash SHA-256 composite vu > 1 fois = Duplicate
+    Billing. 2e pattern Medicare par volume [Bauder2017]. ★ Commun.
+  community_score: >
+    Score [0–1] Louvain d'appartenance à une communauté suspecte praticien-assuré.
+    Grande communauté → kickbacks organisés [Jiang2014][Blondel2008]. ★ Commun.
+  prestataire_concentration: >
+    Part des sinistres du batch concentrée sur ce praticien (Pareto).
+    > 0.15 → pattern concentration frauduleux [Bauder2017]. ★ Commun.
+
+# ====================================================================
+# SECTION 3 — SEUILS DE DÉCISION
+# [Bauder2017] : taux fraude estimé 3-10% → contamination=0.068 (calibré T10.3)
+# ====================================================================
+thresholds:
+  contamination: 0.068
+  anomaly_score_alert: 0.65
+  anomaly_score_block: 0.90
+  delai_depot_anormal_jours: 30 # Code CIMA Art.25 — délai réglementaire
+  document_age_anormal_jours: 180 # Seuil document périmé [Chandola2009]
+  anciennete_contrat_jours: 90 # Période anti-sélection assureurs africains
+  ocr_confiance_seuil: 0.50 # Calibré dataset UNITY (cachet humide CM)
+  prestataire_concentration_seuil: 0.15 # Pareto prestataire [Bauder2017]
+  community_score_seuil: 0.30 # Seuil alerte communauté [Jiang2014]
+  saisie_heure_min: 7
+  saisie_heure_max: 20
+
+# ====================================================================
+# SECTION 4 — RÈGLES RCA (17 règles — priorisées)
+# Pattern Chain of Responsibility [GoF1994]
+# Toutes les références aux features utilisent les noms v0.5.0.
+# ====================================================================
+rca_rules:
+  # --- Priorité 1-5 : Fraude certaine (confidence élevée) ---
+
+  - id: "RCA_GHOST_001"
+    priority: 1
+    category: "Fraude Intentionnelle"
+    subcategory: "Phantom Billing Post-Mortem"
+    conditions:
+      - feature: "post_mortem_flag"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.99
+    message_template: >
+      Dossier {dossier_id} : soin daté après le décès de l'assuré
+      (post_mortem_flag=1). Probabilité fraude : 99%.
+      Action : blocage immédiat + transmission cellule anti-fraude CIMA.
+
+  - id: "RCA_DEAD_001"
+    priority: 2
+    category: "Fraude Intentionnelle"
+    subcategory: "Phantom Billing Praticien Radié"
+    conditions:
+      - feature: "praticien_hors_agrement"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.95
+    message_template: >
+      Dossier {dossier_id} : acte soumis par un praticien non agréé
+      (praticien_hors_agrement=1). Confidence : 0.95.
+      Action : rejet automatique + vérification annuaire CIMA.
+
+  - id: "RCA_DOC_001"
+    priority: 3
+    category: "Fraude Intentionnelle"
+    subcategory: "Fraude Documentaire"
+    conditions:
+      - feature: "document_altere"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.90
+    message_template: >
+      Dossier {dossier_id} : document altéré détecté (document_altere=1).
+      Métadonnées EXIF ou hash incohérent. Confidence : 0.90.
+      Action : mise en attente + demande de pièces originales.
+
+  - id: "RCA_DUP_001"
+    priority: 4
+    category: "Fraude Intentionnelle"
+    subcategory: "Duplicate Billing"
+    conditions:
+      - feature: "flag_doublon"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.88
+    message_template: >
+      Dossier {dossier_id} : soumission multiple détectée pour le même
+      acte et le même assuré (flag_doublon=1). Duplicate Billing.
+      [Bauder2017 — pattern Medicare le plus fréquent par volume].
+      Action : bloquer le remboursement. Vérifier les soumissions antérieures.
+
+  - id: "RCA_IBAN_001"
+    priority: 5
+    category: "Fraude Intentionnelle"
+    subcategory: "Détournement RIB / IBAN"
+    conditions:
+      - feature: "nb_sinistres_meme_iban"
+        operator: "gt"
+        threshold: 3
+    logic: "AND"
+    confidence_base: 0.88
+    message_template: >
+      Dossier {dossier_id} : IBAN partagé par {nb_sinistres_meme_iban}
+      dossiers non liés. Confidence : 0.88.
+      Action : gel remboursement + vérification coordonnées bancaires.
+
+  # --- Priorité 6-11 : Fraude réseau et surfacturation ---
+
+  - id: "RCA_NET_001"
+    priority: 6
+    category: "Fraude Intentionnelle"
+    subcategory: "Fraude en Réseau / Collusion Praticien-Assuré"
+    conditions:
+      - feature: "community_score"
+        operator: "gt"
+        threshold: 0.3
+    logic: "AND"
+    confidence_base: 0.80
+    message_template: >
+      Dossier {dossier_id} : appartient à une communauté suspecte
+      (community_score={community_score:.2f}). Schéma caractéristique
+      d'une entente praticien-assuré (kickbacks, soins fantômes organisés).
+      [Jiang2014 — fraude coordonnée / Blondel2008 — Louvain].
+      Action : suspendre remboursements vers ce praticien. Croiser avec assurés liés.
+
+  - id: "RCA_CONC_001"
+    priority: 7
+    category: "Fraude Intentionnelle"
+    subcategory: "Prestataire Surconcentré"
+    conditions:
+      - feature: "prestataire_concentration"
+        operator: "gt"
+        threshold: 0.15
+      - feature: "historique_ratio_praticien"
+        operator: "gt"
+        threshold: 1.2
+    logic: "AND"
+    confidence_base: 0.75
+    message_template: >
+      Prestataire concentrant {prestataire_concentration:.0%} des sinistres
+      du batch avec un ratio historique de {historique_ratio_praticien:.2f}.
+      Concentration anormale couplée à une surfacturation systématique.
+      [Bauder2017 — concentration Pareto praticiens fraudeurs Medicare].
+      Action : audit complet des dossiers du praticien sur 12 mois.
+
+  - id: "RCA_SURF_001"
+    priority: 8
+    category: "Fraude Intentionnelle"
+    subcategory: "Surfacturation Mercuriale CIMA"
+    conditions:
+      - feature: "ratio_prix_mercuriale"
+        operator: "gt"
+        threshold: 1.5
+    logic: "AND"
+    confidence_base: 0.80
+    message_template: >
+      Dossier {dossier_id} : montant facturé {ratio_prix_mercuriale:.2f}x
+      le tarif mercuriale CIMA. Seuil d'alerte : 1.5x. Confidence : 0.80.
+      Action : demande justificatif praticien + comparaison actes similaires.
+
+  - id: "RCA_HIST_001"
+    priority: 9
+    category: "Fraude Intentionnelle"
+    subcategory: "Comportement Praticien Systématique"
+    conditions:
+      - feature: "historique_ratio_praticien"
+        operator: "gt"
+        threshold: 1.3
+      - feature: "ratio_prix_mercuriale"
+        operator: "gt"
+        threshold: 1.2
+    logic: "AND"
+    confidence_base: 0.75
+    message_template: >
+      Dossier {dossier_id} : praticien avec historique ratio
+      {historique_ratio_praticien:.2f} (seuil 1.3) ET ratio courant
+      {ratio_prix_mercuriale:.2f}. Pattern de surfacturation systématique.
+      Action : audit complet des dossiers du praticien (12 derniers mois).
+
+  - id: "RCA_FREQ_001"
+    priority: 10
+    category: "Fraude Intentionnelle"
+    subcategory: "Fréquence Sinistres Anormale (Unbundling)"
+    conditions:
+      - feature: "nb_sinistres_30j_assure"
+        operator: "gt"
+        threshold: 5
+    logic: "AND"
+    confidence_base: 0.70
+    message_template: >
+      Dossier {dossier_id} : assuré avec {nb_sinistres_30j_assure}
+      sinistres sur 30 jours (seuil 5). Pattern d'unbundling suspecté.
+      Action : revue manuelle des actes + vérification cohérence médicale.
+
+  - id: "RCA_SEXE_001"
+    priority: 11
+    category: "Fraude Intentionnelle"
+    subcategory: "Incohérence Sexe / Acte (Usurpation)"
+    conditions:
+      - feature: "flag_incoherence_sexe_acte"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.85
+    message_template: >
+      Dossier {dossier_id} : acte incompatible avec le sexe déclaré
+      (flag_incoherence_sexe_acte=1). Possible usurpation d'identité.
+      Action : vérification pièces identité + comparaison carte assuré.
+
+  # --- Priorité 12-17 : Erreurs opérationnelles et risques contextuels ---
+
+  - id: "RCA_OCR_001"
+    priority: 12
+    category: "Erreur Opérationnelle"
+    subcategory: "Qualité Document OCR Dégradée"
+    conditions:
+      - feature: "ocr_confiance_faible"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.60
+    message_template: >
+      Dossier {dossier_id} : confiance OCR faible (< 0.5).
+      Contexte camerounais : cachet humide, scan dégradé ou photo floue.
+      Action : demande rescan document + vérification manuelle montants.
+
+  - id: "RCA_DATE_001"
+    priority: 13
+    category: "Erreur Opérationnelle"
+    subcategory: "Document Périmé (Dépôt > 180j)"
+    conditions:
+      - feature: "document_age_anormal"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.65
+    message_template: >
+      Dossier {dossier_id} : dossier déposé plus de 180 jours après le soin
+      (document_age_anormal=1). Document potentiellement antidaté ou prescrit.
+      [Chandola2009 — signal temporel de fraude préméditée].
+      Action : demande justificatif retard + vérification date prescription originale.
+
+  - id: "RCA_DELAI_001"
+    priority: 14
+    category: "Erreur Opérationnelle"
+    subcategory: "Délai Dépôt Anormal (> 30j)"
+    conditions:
+      - feature: "delai_depot_anormal"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.55
+    message_template: >
+      Dossier {dossier_id} : délai soin → dépôt supérieur à 30 jours
+      (delai_depot_anormal=1).
+      Peut indiquer antidatage ou retard légitime. Code CIMA Art.25.
+      Action : demande justificatif retard + vérification date prescription.
+
+  - id: "RCA_SOUSCR_001"
+    priority: 15
+    category: "Erreur Opérationnelle"
+    subcategory: "Fraude à la Souscription (Contrat Récent)"
+    conditions:
+      - feature: "anciennete_contrat_courte"
+        operator: "eq"
+        threshold: 1
+      - feature: "ratio_prix_mercuriale"
+        operator: "gt"
+        threshold: 1.2
+    logic: "AND"
+    confidence_base: 0.72
+    message_template: >
+      Dossier {dossier_id} : contrat < 90 jours ET surfacturation détectée.
+      Pattern fraude à la souscription (maladie préexistante non déclarée).
+      Action : vérification antécédents médicaux + questionnaire santé initial.
+
+  - id: "RCA_SAISIE_001"
+    priority: 16
+    category: "Risque Technique"
+    subcategory: "Saisie Hors Heures Ouvrées"
+    conditions:
+      - feature: "saisie_hors_heures"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.40
+    message_template: >
+      Dossier {dossier_id} : saisie effectuée hors heures ouvrées (< 7h ou > 20h).
+      Signal faible — renforce d'autres indicateurs.
+      Action : supervision si coïncide avec autre règle déclenchée.
+
+  - id: "RCA_WKD_001"
+    priority: 17
+    category: "Risque Technique"
+    subcategory: "Soin Weekend Suspect"
+    conditions:
+      - feature: "is_weekend_event"
+        operator: "eq"
+        threshold: 1
+      - feature: "ratio_prix_mercuriale"
+        operator: "gt"
+        threshold: 1.3
+    logic: "AND"
+    confidence_base: 0.50
+    message_template: >
+      Dossier {dossier_id} : soin un weekend ET surfacturation (ratio {ratio_prix_mercuriale:.2f}).
+      Pattern de facturation fictive antidatée [Bauder2017].
+      Action : vérification disponibilité cabinet le weekend (répertoire CIMA).
+
+# ====================================================================
+# SECTION 5 — SOURCE MAPPINGS
+# ====================================================================
+source_mappings:
+  noemie_api:
+    beneficiaire_id: ID_Assure
+    executant_id: ID_Praticien
+    code_prestation: Code_Acte
+    montant_base: Montant_Facture
+    date_soins: Date_Soin
+    taux_remboursement: Taux_Change
+
+  scan_cm:
+    num_assure: ID_Assure
+    ref_praticien: ID_Praticien
+    code_asac: Code_Acte
+    montant_xaf: Montant_Facture
+    date_consultation: Date_Soin
+    score_ocr: Confiance_OCR_Glob
+    cachet_present: Presence_Cachet_Humide
+
+# ====================================================================
+# SECTION 6 — DRIFT MONITORING (Phase 3 — T15)
+# [Gama2014] : PSI > 0.20 indique un drift significatif
+# Tous les noms de features reflètent la nomenclature v0.5.0.
+# ====================================================================
+drift:
+  monitored_features:
+    - ratio_prix_mercuriale # feature la plus discriminante [Bauder2017]
+    - historique_ratio_praticien # comportement prestataire — drift lent
+    - nb_sinistres_30j_assure # fréquence — sensible aux saisons
+    - ocr_confiance_faible # qualité documentaire — drift infrastructure
+    - montant_log # distribution montants — drift inflation XAF
+    - community_score # signal réseau — drift composition fraude
+  reference_window_days: 90
+  current_window_days: 30
+  thresholds:
+    warning: 0.10
+    critical: 0.20
+
+# ====================================================================
+# SECTION 7 — GRAPH ANALYSIS (Phase 3 — T13.1)
+# [Blondel2008] Louvain — fraude coordonnée réseau praticiens
+# score_output_col harmonisé avec AutoModule pour M_makora_dif.
+# ====================================================================
+graph_analysis:
+  enabled: true
+  entity_col: "ID_Praticien"
+  assure_col: "ID_Assure"
+  weight_col: "Montant_Facture"
+  min_community_size: 3
+  suspicious_density_threshold: 0.5
+  score_output_col: "community_score" # ★ COMMUN avec AutoModule (v0.5.0)
+
+# ─── DIF Production — contrat de features ────────────────────────────────────
+# Liste ordonnée des 17 features sur lesquelles dif_model.joblib [64,32]
+# a été entraîné. Correspond exactement à shap_background.npy shape=(50,17).
+#
+# ⚠️  CONTRAT D'ORDRE [Sculley2015] : cet ordre est immuable tant que le DIF
+# n'est pas ré-entraîné. Ajouter/déplacer une feature ici = ré-entraînement
+# obligatoire + régénération de shap_background.npy.
+#
+# Les 3 features v0.5.0 non incluses ici seront intégrées en DIF v2.0.0.
+#
+# Réf. : [Xu2023] Deep Isolation Forest — architecture [64,32]
+#         [Davis2006] threshold=0.349775 (phi_optimal, FPR=2.18%)
+dif_production:
+  version: "1.0.0"
+  threshold: 0.349775
+  n_features: 17
+  feature_names:
+    # V1 — 5 features
+    - ratio_prix_mercuriale
+    - flag_incoherence_sexe_acte
+    - historique_ratio_praticien
+    - nb_sinistres_30j_assure
+    - flag_weekend_care
+    # EXT — 9 features
+    - document_altere
+    - praticien_hors_agrement
+    - ocr_confiance_faible
+    - delai_soin_depot_anormal
+    - anciennete_contrat_courte
+    - saisie_hors_heures
+    - montant_normalise_log
+    - post_mortem_flag
+    - nb_sinistres_meme_iban
+    # RESEAU — 3 features
+    - flag_doublon_sante
+    - community_score_sante
+    - praticien_concentration

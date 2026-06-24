@@ -1,0 +1,35 @@
+[
+  {
+    "branch": "auto"
+  },
+  {
+    "algo": "LOF_k50",
+    "metrics": {
+      "f1": 0.3316,
+      "precision": 0.2844,
+      "recall": 0.3975,
+      "auc_roc": 0.6848,
+      "n_pred_anomalie": 1677,
+      "n_true_anomalie": 1200,
+      "train_time_s": 42.651,
+      "n_neighbors": 50,
+      "contamination": 0.1
+    },
+    "model_key": "lof_k50"
+  },
+  {
+    "algo": "SGDOneClassSVM",
+    "metrics": {
+      "f1": 0.1294,
+      "precision": 1.0,
+      "recall": 0.0692,
+      "auc_roc": 0.3746,
+      "n_pred_anomalie": 83,
+      "n_true_anomalie": 1200,
+      "train_time_s": 0.204,
+      "nu": 0.1,
+      "scaler": "StandardScaler"
+    },
+    "model_key": "ocsvm_sgd"
+  }
+]

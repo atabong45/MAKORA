@@ -1,0 +1,20 @@
+theme :
+framework générique et extensible pour la détection d'anomalies, la Root Cause Analysis et l'explicabilité par intelligence artificielle en assurance : architecture orientée plugins  déclaratifs et validation sur marchés hybrides Afrique-Europe
+
+
+question : Dans quelle mesure une architecture orientée plugins à schéma déclaratif permet-elle de généraliser la détection d'anomalies et la Root Cause Analysis à des branches d'assurance hétérogènes, tout en maintenant la précision de détection et l'intelligibilité des diagnostics pour les gestionnaires métiers ?
+
+
+
+python scripts/t10_2_split.py
+python scripts/t10_3_train_if.py --branch sante
+python scripts/t10_3_train_if.py --branch auto
+python scripts/t10_4_train_challengers.py --branch sante
+python scripts/t10_4_train_challengers.py --branch auto
+python scripts/t10_5_learning_curves.py --branch sante
+python scripts/t10_5_learning_curves.py --branch auto
+python scripts/t10_6_explainability.py --branch sante
+python scripts/t10_6_explainability.py --branch auto
+python scripts/t10_7_evaluation.py --branch sante
+python scripts/t10_7_evaluation.py --branch auto
+python scripts/t10_8_persist.py

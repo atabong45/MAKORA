@@ -1,0 +1,129 @@
+{
+  "algo": "RotatedIsolationForest",
+  "branch": "auto",
+  "metrics": {
+    "f1": 0.2377,
+    "precision": 0.1667,
+    "recall": 0.4142,
+    "auc_roc": 0.6622,
+    "avg_prec": 0.1793,
+    "mcc": 0.1592,
+    "fpr": 0.18,
+    "threshold": 0.321587,
+    "train_time_s": 5.306,
+    "contamination": 0.03,
+    "tp": 497,
+    "fp": 2484,
+    "tn": 11316,
+    "fn": 703,
+    "bootstrap_ci": {
+      "f1": {
+        "mean": 0.2379,
+        "ci_lo": 0.2213,
+        "ci_hi": 0.2551
+      },
+      "auc": {
+        "mean": 0.6625,
+        "ci_lo": 0.6453,
+        "ci_hi": 0.6785
+      },
+      "mcc": {
+        "mean": 0.1595,
+        "ci_lo": 0.1399,
+        "ci_hi": 0.1792
+      }
+    }
+  },
+  "feature_names": [
+    "ratio_devis_bareme",
+    "vehicule_sur_value",
+    "sinistre_nuit_sans_temoin",
+    "document_altere",
+    "garage_concentration_score",
+    "garage_non_agree",
+    "constat_manquant",
+    "expertise_manquante",
+    "delai_declaration_anormal",
+    "anciennete_contrat_courte",
+    "ocr_confiance_faible",
+    "ratio_mo_reference",
+    "nb_sinistres_12m",
+    "montant_devis_log",
+    "saisie_hors_heures",
+    "flag_doublon_auto",
+    "community_score_auto",
+    "expert_garage_correlation"
+  ],
+  "rotation_seed": 42,
+  "shap_top3_features": [
+    "expert_garage_correlation",
+    "ratio_devis_bareme",
+    "garage_non_agree"
+  ],
+  "comparison_table": [
+    {
+      "algo": "RIF (approx-EIF)",
+      "f1": 0.2377,
+      "ci_lo": 0.2213,
+      "ci_hi": 0.2551,
+      "auc_roc": 0.6622,
+      "mcc": 0.1592,
+      "fpr": 0.18
+    },
+    {
+      "algo": "ExtendedIsolationForest",
+      "f1": 0.2858,
+      "ci_lo": null,
+      "ci_hi": null,
+      "auc_roc": 0.6981,
+      "mcc": null,
+      "fpr": null
+    },
+    {
+      "algo": "IsolationForest",
+      "f1": 0.2697,
+      "ci_lo": 0.2477,
+      "ci_hi": 0.2897,
+      "auc_roc": 0.6843,
+      "mcc": 0.1966,
+      "fpr": 0.1069
+    },
+    {
+      "algo": "IF_maxfeat07",
+      "f1": 0.2759,
+      "ci_lo": 0.2515,
+      "ci_hi": 0.2981,
+      "auc_roc": 0.6855,
+      "mcc": 0.2084,
+      "fpr": 0.0756
+    },
+    {
+      "algo": "LOF_k20",
+      "f1": 0.3376,
+      "ci_lo": 0.3078,
+      "ci_hi": 0.3657,
+      "auc_roc": 0.6542,
+      "mcc": 0.3047,
+      "fpr": 0.0297
+    },
+    {
+      "algo": "SGDOneClassSVM",
+      "f1": 0.1481,
+      "ci_lo": 0.1408,
+      "ci_hi": 0.155,
+      "auc_roc": 0.3746,
+      "mcc": 0.0,
+      "fpr": 1.0
+    },
+    {
+      "algo": "EIF[Hariri2019]",
+      "f1": 0.2858,
+      "auc_roc": 0.6981,
+      "mcc": null,
+      "fpr": null,
+      "ci_lo": null,
+      "ci_hi": null
+    }
+  ],
+  "note": "RIF = IF(X @ R) où R est orthogonale — approximation EIF [Hariri2019]. 100% sklearn, joblib-compatible, SHAP-compatible. Déploiement : rif_model.joblib + rif_rotation_matrix.npy + best_contamination dans rif_params.json"
+}

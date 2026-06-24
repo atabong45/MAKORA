@@ -1,0 +1,3402 @@
+[
+  {
+    "sample_idx": 571,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.086357
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055333
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046973
+      }
+    ]
+  },
+  {
+    "sample_idx": 825,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083433
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.05503
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047794
+      }
+    ]
+  },
+  {
+    "sample_idx": 741,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084773
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055954
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048227
+      }
+    ]
+  },
+  {
+    "sample_idx": 148,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083904
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055929
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046786
+      }
+    ]
+  },
+  {
+    "sample_idx": 145,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084676
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.056276
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047643
+      }
+    ]
+  },
+  {
+    "sample_idx": 538,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083078
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054865
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045833
+      }
+    ]
+  },
+  {
+    "sample_idx": 766,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082645
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.053936
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046541
+      }
+    ]
+  },
+  {
+    "sample_idx": 1046,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084156
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054878
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047146
+      }
+    ]
+  },
+  {
+    "sample_idx": 379,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.080957
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053097
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047468
+      }
+    ]
+  },
+  {
+    "sample_idx": 972,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.086067
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055006
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.045963
+      }
+    ]
+  },
+  {
+    "sample_idx": 908,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083485
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055182
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046388
+      }
+    ]
+  },
+  {
+    "sample_idx": 1494,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.082314
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053633
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047676
+      }
+    ]
+  },
+  {
+    "sample_idx": 882,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.086462
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.053329
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.044993
+      }
+    ]
+  },
+  {
+    "sample_idx": 1244,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085631
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.05585
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046339
+      }
+    ]
+  },
+  {
+    "sample_idx": 1143,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083619
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.051205
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047278
+      }
+    ]
+  },
+  {
+    "sample_idx": 608,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084415
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055046
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046804
+      }
+    ]
+  },
+  {
+    "sample_idx": 1235,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085051
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055541
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047842
+      }
+    ]
+  },
+  {
+    "sample_idx": 1064,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084702
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.057031
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046232
+      }
+    ]
+  },
+  {
+    "sample_idx": 1282,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.08301
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054029
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047049
+      }
+    ]
+  },
+  {
+    "sample_idx": 342,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082993
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055466
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045914
+      }
+    ]
+  },
+  {
+    "sample_idx": 1272,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082826
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055454
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046654
+      }
+    ]
+  },
+  {
+    "sample_idx": 1253,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083763
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054557
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046093
+      }
+    ]
+  },
+  {
+    "sample_idx": 117,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083915
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.057972
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046913
+      }
+    ]
+  },
+  {
+    "sample_idx": 1191,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085615
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053475
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.045874
+      }
+    ]
+  },
+  {
+    "sample_idx": 56,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083172
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.05651
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047911
+      }
+    ]
+  },
+  {
+    "sample_idx": 250,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.087875
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055781
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047551
+      }
+    ]
+  },
+  {
+    "sample_idx": 276,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.086705
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054857
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.045054
+      }
+    ]
+  },
+  {
+    "sample_idx": 1451,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.085778
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055502
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045858
+      }
+    ]
+  },
+  {
+    "sample_idx": 890,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084704
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054652
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048161
+      }
+    ]
+  },
+  {
+    "sample_idx": 1508,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085476
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054002
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047331
+      }
+    ]
+  },
+  {
+    "sample_idx": 561,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085093
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054813
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046336
+      }
+    ]
+  },
+  {
+    "sample_idx": 661,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084139
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.056629
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046503
+      }
+    ]
+  },
+  {
+    "sample_idx": 293,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085538
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.057592
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047534
+      }
+    ]
+  },
+  {
+    "sample_idx": 1172,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083169
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054422
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.04853
+      }
+    ]
+  },
+  {
+    "sample_idx": 729,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.087502
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053907
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045715
+      }
+    ]
+  },
+  {
+    "sample_idx": 641,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083761
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054775
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047235
+      }
+    ]
+  },
+  {
+    "sample_idx": 1080,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.087613
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055021
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.049843
+      }
+    ]
+  },
+  {
+    "sample_idx": 1397,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083097
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054227
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.04779
+      }
+    ]
+  },
+  {
+    "sample_idx": 1341,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085025
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054522
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047862
+      }
+    ]
+  },
+  {
+    "sample_idx": 458,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.086323
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054103
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.045556
+      }
+    ]
+  },
+  {
+    "sample_idx": 502,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082877
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055707
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.044834
+      }
+    ]
+  },
+  {
+    "sample_idx": 274,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.080545
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055664
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046389
+      }
+    ]
+  },
+  {
+    "sample_idx": 804,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083133
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.052805
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046807
+      }
+    ]
+  },
+  {
+    "sample_idx": 1392,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084798
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055468
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048988
+      }
+    ]
+  },
+  {
+    "sample_idx": 206,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.081774
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054075
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047109
+      }
+    ]
+  },
+  {
+    "sample_idx": 103,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.087641
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054472
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047972
+      }
+    ]
+  },
+  {
+    "sample_idx": 1093,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083953
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.057751
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.04698
+      }
+    ]
+  },
+  {
+    "sample_idx": 1259,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083539
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054961
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.04673
+      }
+    ]
+  },
+  {
+    "sample_idx": 717,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083829
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055903
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046578
+      }
+    ]
+  },
+  {
+    "sample_idx": 94,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082641
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054224
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.04701
+      }
+    ]
+  },
+  {
+    "sample_idx": 397,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.085048
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055208
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.04787
+      }
+    ]
+  },
+  {
+    "sample_idx": 1566,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084546
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055595
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046436
+      }
+    ]
+  },
+  {
+    "sample_idx": 1665,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.088264
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055948
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046595
+      }
+    ]
+  },
+  {
+    "sample_idx": 1650,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084783
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055025
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048182
+      }
+    ]
+  },
+  {
+    "sample_idx": 447,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084092
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054568
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046401
+      }
+    ]
+  },
+  {
+    "sample_idx": 1088,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085112
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055316
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046328
+      }
+    ]
+  },
+  {
+    "sample_idx": 1261,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.086535
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054999
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.044706
+      }
+    ]
+  },
+  {
+    "sample_idx": 220,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.081234
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.056298
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.045749
+      }
+    ]
+  },
+  {
+    "sample_idx": 1013,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.086897
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054149
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047432
+      }
+    ]
+  },
+  {
+    "sample_idx": 725,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084295
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054563
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047845
+      }
+    ]
+  },
+  {
+    "sample_idx": 1141,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.08423
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054545
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.04793
+      }
+    ]
+  },
+  {
+    "sample_idx": 1095,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082892
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055127
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046813
+      }
+    ]
+  },
+  {
+    "sample_idx": 763,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085032
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055263
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048422
+      }
+    ]
+  },
+  {
+    "sample_idx": 1559,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083275
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.052802
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.044818
+      }
+    ]
+  },
+  {
+    "sample_idx": 453,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.081796
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.056551
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047203
+      }
+    ]
+  },
+  {
+    "sample_idx": 174,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.08257
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054553
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047612
+      }
+    ]
+  },
+  {
+    "sample_idx": 67,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.086917
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054209
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048133
+      }
+    ]
+  },
+  {
+    "sample_idx": 555,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083849
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.0556
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046998
+      }
+    ]
+  },
+  {
+    "sample_idx": 222,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.08364
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.05697
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.044851
+      }
+    ]
+  },
+  {
+    "sample_idx": 1019,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.087306
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055874
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048147
+      }
+    ]
+  },
+  {
+    "sample_idx": 957,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.086545
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053803
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045925
+      }
+    ]
+  },
+  {
+    "sample_idx": 488,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084224
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055258
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.045946
+      }
+    ]
+  },
+  {
+    "sample_idx": 1630,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085722
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055093
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046833
+      }
+    ]
+  },
+  {
+    "sample_idx": 738,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.087589
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.05499
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048491
+      }
+    ]
+  },
+  {
+    "sample_idx": 1658,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.082656
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054569
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046252
+      }
+    ]
+  },
+  {
+    "sample_idx": 1550,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085584
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055623
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047298
+      }
+    ]
+  },
+  {
+    "sample_idx": 670,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.08071
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055151
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045757
+      }
+    ]
+  },
+  {
+    "sample_idx": 1361,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084704
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.057733
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048876
+      }
+    ]
+  },
+  {
+    "sample_idx": 299,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083453
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.05377
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048039
+      }
+    ]
+  },
+  {
+    "sample_idx": 967,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085804
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055896
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048017
+      }
+    ]
+  },
+  {
+    "sample_idx": 564,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084635
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055051
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.04552
+      }
+    ]
+  },
+  {
+    "sample_idx": 512,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083908
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.053842
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.0463
+      }
+    ]
+  },
+  {
+    "sample_idx": 705,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083538
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055022
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.049385
+      }
+    ]
+  },
+  {
+    "sample_idx": 1145,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.085951
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054274
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047369
+      }
+    ]
+  },
+  {
+    "sample_idx": 1532,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085572
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055254
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047494
+      }
+    ]
+  },
+  {
+    "sample_idx": 549,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085493
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054529
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048011
+      }
+    ]
+  },
+  {
+    "sample_idx": 347,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084725
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055477
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047112
+      }
+    ]
+  },
+  {
+    "sample_idx": 702,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082628
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055003
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047658
+      }
+    ]
+  },
+  {
+    "sample_idx": 146,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.087299
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053784
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045217
+      }
+    ]
+  },
+  {
+    "sample_idx": 900,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.087267
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.056535
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047621
+      }
+    ]
+  },
+  {
+    "sample_idx": 139,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083818
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.0541
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047785
+      }
+    ]
+  },
+  {
+    "sample_idx": 315,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.08465
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055767
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047288
+      }
+    ]
+  },
+  {
+    "sample_idx": 905,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083388
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.0548
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047731
+      }
+    ]
+  },
+  {
+    "sample_idx": 820,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083618
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053844
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047605
+      }
+    ]
+  },
+  {
+    "sample_idx": 708,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085027
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.057158
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.049043
+      }
+    ]
+  },
+  {
+    "sample_idx": 439,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.087151
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.05511
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046347
+      }
+    ]
+  },
+  {
+    "sample_idx": 151,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083481
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.056669
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046743
+      }
+    ]
+  },
+  {
+    "sample_idx": 131,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.08519
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055496
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046524
+      }
+    ]
+  },
+  {
+    "sample_idx": 1336,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084721
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.052749
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.044971
+      }
+    ]
+  },
+  {
+    "sample_idx": 1298,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083169
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054277
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.04671
+      }
+    ]
+  },
+  {
+    "sample_idx": 922,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.08279
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055069
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048144
+      }
+    ]
+  },
+  {
+    "sample_idx": 567,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.086556
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055819
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048531
+      }
+    ]
+  },
+  {
+    "sample_idx": 1477,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.085777
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.056486
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048586
+      }
+    ]
+  },
+  {
+    "sample_idx": 1118,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.088512
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055933
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.04595
+      }
+    ]
+  },
+  {
+    "sample_idx": 762,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.081396
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055896
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047391
+      }
+    ]
+  },
+  {
+    "sample_idx": 478,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.086487
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055033
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046945
+      }
+    ]
+  },
+  {
+    "sample_idx": 1185,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083783
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054603
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046947
+      }
+    ]
+  },
+  {
+    "sample_idx": 11,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083367
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055906
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047669
+      }
+    ]
+  },
+  {
+    "sample_idx": 667,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083119
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055173
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047593
+      }
+    ]
+  },
+  {
+    "sample_idx": 1201,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.082987
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055438
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046359
+      }
+    ]
+  },
+  {
+    "sample_idx": 266,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084149
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054145
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048785
+      }
+    ]
+  },
+  {
+    "sample_idx": 1368,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.086096
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053816
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047883
+      }
+    ]
+  },
+  {
+    "sample_idx": 633,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084306
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054023
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.043911
+      }
+    ]
+  },
+  {
+    "sample_idx": 1255,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082633
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054151
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.049002
+      }
+    ]
+  },
+  {
+    "sample_idx": 1053,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.08913
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.056279
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048644
+      }
+    ]
+  },
+  {
+    "sample_idx": 1603,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082913
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054347
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047771
+      }
+    ]
+  },
+  {
+    "sample_idx": 685,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085231
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054353
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048124
+      }
+    ]
+  },
+  {
+    "sample_idx": 1042,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.088087
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055667
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048907
+      }
+    ]
+  },
+  {
+    "sample_idx": 753,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.086558
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.057955
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046676
+      }
+    ]
+  },
+  {
+    "sample_idx": 837,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.0825
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055859
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048675
+      }
+    ]
+  },
+  {
+    "sample_idx": 782,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084926
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055152
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.04862
+      }
+    ]
+  },
+  {
+    "sample_idx": 1034,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083468
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.05565
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047766
+      }
+    ]
+  },
+  {
+    "sample_idx": 1384,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084726
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053554
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045115
+      }
+    ]
+  },
+  {
+    "sample_idx": 236,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.0834
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054997
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046458
+      }
+    ]
+  },
+  {
+    "sample_idx": 1417,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.088502
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055612
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046477
+      }
+    ]
+  },
+  {
+    "sample_idx": 556,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.079356
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055555
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046213
+      }
+    ]
+  },
+  {
+    "sample_idx": 1068,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083413
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055009
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047078
+      }
+    ]
+  },
+  {
+    "sample_idx": 673,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082926
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.053838
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.0471
+      }
+    ]
+  },
+  {
+    "sample_idx": 968,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.080724
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.052295
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.049904
+      }
+    ]
+  },
+  {
+    "sample_idx": 419,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085878
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.059752
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.043742
+      }
+    ]
+  },
+  {
+    "sample_idx": 352,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085882
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054181
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045909
+      }
+    ]
+  },
+  {
+    "sample_idx": 1464,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.085905
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054598
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045703
+      }
+    ]
+  },
+  {
+    "sample_idx": 1522,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084619
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054893
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046529
+      }
+    ]
+  },
+  {
+    "sample_idx": 1049,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.08209
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055592
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046674
+      }
+    ]
+  },
+  {
+    "sample_idx": 37,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.085763
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055351
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047469
+      }
+    ]
+  },
+  {
+    "sample_idx": 1280,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082805
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.05533
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047432
+      }
+    ]
+  },
+  {
+    "sample_idx": 527,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084845
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055806
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048299
+      }
+    ]
+  },
+  {
+    "sample_idx": 1150,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083264
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053386
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.045915
+      }
+    ]
+  },
+  {
+    "sample_idx": 1390,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083199
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054812
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045614
+      }
+    ]
+  },
+  {
+    "sample_idx": 1239,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.081434
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055112
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046158
+      }
+    ]
+  },
+  {
+    "sample_idx": 1558,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.087332
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055409
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046405
+      }
+    ]
+  },
+  {
+    "sample_idx": 1173,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.087034
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.056067
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046782
+      }
+    ]
+  },
+  {
+    "sample_idx": 910,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083725
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055033
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048802
+      }
+    ]
+  },
+  {
+    "sample_idx": 1074,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084798
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054803
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046299
+      }
+    ]
+  },
+  {
+    "sample_idx": 749,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.086191
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055363
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.045751
+      }
+    ]
+  },
+  {
+    "sample_idx": 376,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083878
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.057078
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046498
+      }
+    ]
+  },
+  {
+    "sample_idx": 1033,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083013
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055505
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046388
+      }
+    ]
+  },
+  {
+    "sample_idx": 1237,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.081543
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055637
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048242
+      }
+    ]
+  },
+  {
+    "sample_idx": 1612,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.088244
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054373
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046864
+      }
+    ]
+  },
+  {
+    "sample_idx": 604,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.082059
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.057454
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048376
+      }
+    ]
+  },
+  {
+    "sample_idx": 127,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085001
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054149
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.045854
+      }
+    ]
+  },
+  {
+    "sample_idx": 182,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.085601
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.056584
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047849
+      }
+    ]
+  },
+  {
+    "sample_idx": 1489,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.081673
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055551
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.04734
+      }
+    ]
+  },
+  {
+    "sample_idx": 59,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085246
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054836
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047489
+      }
+    ]
+  },
+  {
+    "sample_idx": 1134,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083611
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055514
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048786
+      }
+    ]
+  },
+  {
+    "sample_idx": 197,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085754
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055423
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047339
+      }
+    ]
+  },
+  {
+    "sample_idx": 1270,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.082792
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053605
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046643
+      }
+    ]
+  },
+  {
+    "sample_idx": 1155,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084084
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054545
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048125
+      }
+    ]
+  },
+  {
+    "sample_idx": 1320,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084335
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054703
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046479
+      }
+    ]
+  },
+  {
+    "sample_idx": 829,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.087049
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.05415
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047665
+      }
+    ]
+  },
+  {
+    "sample_idx": 1648,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083912
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054228
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047247
+      }
+    ]
+  },
+  {
+    "sample_idx": 823,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.086464
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054166
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047935
+      }
+    ]
+  },
+  {
+    "sample_idx": 1230,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084078
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054783
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046722
+      }
+    ]
+  },
+  {
+    "sample_idx": 747,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.086255
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055821
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046805
+      }
+    ]
+  },
+  {
+    "sample_idx": 391,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084216
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.056836
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048384
+      }
+    ]
+  },
+  {
+    "sample_idx": 1490,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.085503
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054825
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048074
+      }
+    ]
+  },
+  {
+    "sample_idx": 126,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.081987
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054897
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046912
+      }
+    ]
+  },
+  {
+    "sample_idx": 649,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083968
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055573
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047367
+      }
+    ]
+  },
+  {
+    "sample_idx": 1609,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.090389
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054346
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045267
+      }
+    ]
+  },
+  {
+    "sample_idx": 877,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084929
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.057031
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.049279
+      }
+    ]
+  },
+  {
+    "sample_idx": 678,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084336
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.053695
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046015
+      }
+    ]
+  },
+  {
+    "sample_idx": 1410,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.086801
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054146
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048824
+      }
+    ]
+  },
+  {
+    "sample_idx": 1313,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.0842
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054305
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046768
+      }
+    ]
+  },
+  {
+    "sample_idx": 1589,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084189
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054572
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048195
+      }
+    ]
+  },
+  {
+    "sample_idx": 714,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083802
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055647
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046175
+      }
+    ]
+  },
+  {
+    "sample_idx": 1227,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.086117
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053904
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.049208
+      }
+    ]
+  },
+  {
+    "sample_idx": 96,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.084423
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054735
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.04679
+      }
+    ]
+  },
+  {
+    "sample_idx": 1601,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.086231
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.056933
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046152
+      }
+    ]
+  },
+  {
+    "sample_idx": 252,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.082807
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.055279
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047673
+      }
+    ]
+  },
+  {
+    "sample_idx": 273,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.085999
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053754
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047074
+      }
+    ]
+  },
+  {
+    "sample_idx": 666,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085916
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055674
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046592
+      }
+    ]
+  },
+  {
+    "sample_idx": 681,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083804
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.056137
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.04933
+      }
+    ]
+  },
+  {
+    "sample_idx": 191,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083723
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055122
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046286
+      }
+    ]
+  },
+  {
+    "sample_idx": 1069,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082587
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054908
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.0467
+      }
+    ]
+  },
+  {
+    "sample_idx": 1051,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083261
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054829
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047409
+      }
+    ]
+  },
+  {
+    "sample_idx": 573,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.083326
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.057928
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048206
+      }
+    ]
+  },
+  {
+    "sample_idx": 983,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.081204
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.058853
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046312
+      }
+    ]
+  },
+  {
+    "sample_idx": 1139,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083176
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.058666
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048664
+      }
+    ]
+  },
+  {
+    "sample_idx": 489,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.083639
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.052968
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.047019
+      }
+    ]
+  },
+  {
+    "sample_idx": 1187,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.079372
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.054661
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046644
+      }
+    ]
+  },
+  {
+    "sample_idx": 1669,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085462
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.056248
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.048835
+      }
+    ]
+  },
+  {
+    "sample_idx": 1160,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085858
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.057144
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.046368
+      }
+    ]
+  },
+  {
+    "sample_idx": 634,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.085019
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.052334
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.047919
+      }
+    ]
+  },
+  {
+    "sample_idx": 1335,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.08827
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.056758
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045597
+      }
+    ]
+  },
+  {
+    "sample_idx": 297,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.085418
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.053288
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046541
+      }
+    ]
+  },
+  {
+    "sample_idx": 1303,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.084615
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.056362
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.045861
+      }
+    ]
+  },
+  {
+    "sample_idx": 49,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.086204
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.05502
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.048233
+      }
+    ]
+  },
+  {
+    "sample_idx": 1002,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082179
+      },
+      {
+        "name": "expertise_manquante <= 0.00",
+        "lime_weight": -0.055346
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.045919
+      }
+    ]
+  },
+  {
+    "sample_idx": 1554,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible > 0.00",
+        "lime_weight": 0.08344
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.053781
+      },
+      {
+        "name": "constat_manquant <= 0.00",
+        "lime_weight": -0.046509
+      }
+    ]
+  },
+  {
+    "sample_idx": 201,
+    "top_features": [
+      {
+        "name": "ocr_confiance_faible <= 0.00",
+        "lime_weight": -0.082476
+      },
+      {
+        "name": "expertise_manquante > 0.00",
+        "lime_weight": 0.054628
+      },
+      {
+        "name": "constat_manquant > 0.00",
+        "lime_weight": 0.04801
+      }
+    ]
+  }
+]

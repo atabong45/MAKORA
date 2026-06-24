@@ -1,0 +1,3641 @@
+{
+  "branch": "sante",
+  "ks_alpha": 0.05,
+  "cohen_d_min": 0.3,
+  "n_scenarios_total": 22,
+  "n_go": 11,
+  "n_warn": 8,
+  "n_no_go": 3,
+  "scenarios": [
+    {
+      "scenario": "Absence cachet",
+      "category": "INCONNU",
+      "n_dossiers": 349,
+      "n_detectable": 2,
+      "decision": "go",
+      "top_feature": "ocr_confiance_faible",
+      "top_cohens_d": 1.3921,
+      "comment": "2/17 features discriminantes. Signal fort — IF attendu performant. ✅",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.056,
+          "p_value": 0.216883,
+          "cohens_d": 0.09,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.0584,
+          "p_value": 0.178747,
+          "cohens_d": 0.0314,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.061,
+          "p_value": 0.144316,
+          "cohens_d": 0.0248,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0225,
+          "p_value": 0.992998,
+          "cohens_d": 0.0503,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0072,
+          "p_value": 1.0,
+          "cohens_d": 0.0902,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.4928,
+          "p_value": 0.0,
+          "cohens_d": 1.3921,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.002,
+          "p_value": 1.0,
+          "cohens_d": 0.0044,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0127,
+          "p_value": 1.0,
+          "cohens_d": 0.0474,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.4639,
+          "p_value": 0.0,
+          "cohens_d": 1.0971,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0714,
+          "p_value": 0.054835,
+          "cohens_d": 0.0571,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.0443,
+          "p_value": 0.487861,
+          "cohens_d": 0.0731,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 349
+        }
+      ]
+    },
+    {
+      "scenario": "Anomalie Benford",
+      "category": "INCONNU",
+      "n_dossiers": 408,
+      "n_detectable": 4,
+      "decision": "go",
+      "top_feature": "ratio_prix_mercuriale",
+      "top_cohens_d": 1.091,
+      "comment": "4/17 features discriminantes. Signal fort — IF attendu performant. ✅",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.468,
+          "p_value": 0.0,
+          "cohens_d": 1.091,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.1391,
+          "p_value": 0.0,
+          "cohens_d": 0.3493,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.1809,
+          "p_value": 0.0,
+          "cohens_d": 0.1529,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.008,
+          "p_value": 1.0,
+          "cohens_d": 0.0181,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0003,
+          "p_value": 1.0,
+          "cohens_d": 0.003,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0243,
+          "p_value": 0.965532,
+          "cohens_d": 0.0516,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0231,
+          "p_value": 0.97849,
+          "cohens_d": 0.0888,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.5073,
+          "p_value": 0.0,
+          "cohens_d": 1.0747,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0785,
+          "p_value": 0.012478,
+          "cohens_d": 0.1006,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.1814,
+          "p_value": 0.0,
+          "cohens_d": 0.6649,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.1757,
+          "p_value": 0.0,
+          "cohens_d": 0.2023,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        }
+      ]
+    },
+    {
+      "scenario": "Biais Sélection OCR",
+      "category": "INCONNU",
+      "n_dossiers": 32,
+      "n_detectable": 4,
+      "decision": "go",
+      "top_feature": "nb_sinistres_30j_assure",
+      "top_cohens_d": 0.9569,
+      "comment": "4/17 features discriminantes. Signal fort — IF attendu performant. ✅",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.2697,
+          "p_value": 0.015139,
+          "cohens_d": 0.5599,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.2377,
+          "p_value": 0.044876,
+          "cohens_d": 0.2238,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.5398,
+          "p_value": 0.0,
+          "cohens_d": 0.9569,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0485,
+          "p_value": 0.999993,
+          "cohens_d": 0.1063,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0211,
+          "p_value": 1.0,
+          "cohens_d": 0.1472,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0625,
+          "p_value": 0.998828,
+          "cohens_d": 0.3594,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0064,
+          "p_value": 1.0,
+          "cohens_d": 0.0136,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0218,
+          "p_value": 1.0,
+          "cohens_d": 0.0832,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.3195,
+          "p_value": 0.002098,
+          "cohens_d": 0.8063,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.3771,
+          "p_value": 0.000135,
+          "cohens_d": 0.6623,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 32
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.2338,
+          "p_value": 0.050727,
+          "cohens_d": 0.5139,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 32
+        }
+      ]
+    },
+    {
+      "scenario": "Biais Tarification",
+      "category": "INCONNU",
+      "n_dossiers": 15,
+      "n_detectable": 2,
+      "decision": "go",
+      "top_feature": "ratio_prix_mercuriale",
+      "top_cohens_d": 0.9673,
+      "comment": "2/17 features discriminantes. Signal fort — IF attendu performant. ✅",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.4196,
+          "p_value": 0.006572,
+          "cohens_d": 0.9673,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.2252,
+          "p_value": 0.375609,
+          "cohens_d": 0.2048,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.2908,
+          "p_value": 0.128383,
+          "cohens_d": 0.4467,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0693,
+          "p_value": 0.999992,
+          "cohens_d": 0.149,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0101,
+          "p_value": 1.0,
+          "cohens_d": 0.1429,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0145,
+          "p_value": 1.0,
+          "cohens_d": 0.0303,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0843,
+          "p_value": 0.999534,
+          "cohens_d": 0.4292,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.3028,
+          "p_value": 0.102278,
+          "cohens_d": 0.2811,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.4534,
+          "p_value": 0.002462,
+          "cohens_d": 0.9261,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.178,
+          "p_value": 0.664937,
+          "cohens_d": 0.2434,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 15
+        }
+      ]
+    },
+    {
+      "scenario": "Doublon Technique",
+      "category": "INCONNU",
+      "n_dossiers": 205,
+      "n_detectable": 2,
+      "decision": "go",
+      "top_feature": "flag_doublon_sante",
+      "top_cohens_d": 13.5245,
+      "comment": "2/17 features discriminantes. Signal fort — IF attendu performant. ✅",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.0407,
+          "p_value": 0.871986,
+          "cohens_d": 0.0032,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.0374,
+          "p_value": 0.925727,
+          "cohens_d": 0.098,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.0453,
+          "p_value": 0.776373,
+          "cohens_d": 0.0831,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0433,
+          "p_value": 0.820956,
+          "cohens_d": 0.0958,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0045,
+          "p_value": 1.0,
+          "cohens_d": 0.0409,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0457,
+          "p_value": 0.767569,
+          "cohens_d": 0.1001,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0112,
+          "p_value": 1.0,
+          "cohens_d": 0.0414,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.4843,
+          "p_value": 0.0,
+          "cohens_d": 1.1165,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0629,
+          "p_value": 0.376011,
+          "cohens_d": 0.0502,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.9892,
+          "p_value": 0.0,
+          "cohens_d": 13.5245,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.0338,
+          "p_value": 0.967489,
+          "cohens_d": 0.0227,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 205
+        }
+      ]
+    },
+    {
+      "scenario": "Dérive Nomenclature",
+      "category": "INCONNU",
+      "n_dossiers": 421,
+      "n_detectable": 1,
+      "decision": "warn",
+      "top_feature": "ratio_prix_mercuriale",
+      "top_cohens_d": 2.5352,
+      "comment": "1/17 feature discriminante. Signal faible — F1 attendu modéré. ⚠️",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.7956,
+          "p_value": 0.0,
+          "cohens_d": 2.5352,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.0428,
+          "p_value": 0.414868,
+          "cohens_d": 0.1387,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.022,
+          "p_value": 0.984427,
+          "cohens_d": 0.0643,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0234,
+          "p_value": 0.971719,
+          "cohens_d": 0.0523,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0006,
+          "p_value": 1.0,
+          "cohens_d": 0.0061,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0291,
+          "p_value": 0.859004,
+          "cohens_d": 0.0632,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0036,
+          "p_value": 1.0,
+          "cohens_d": 0.013,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.0603,
+          "p_value": 0.09018,
+          "cohens_d": 0.0831,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0653,
+          "p_value": 0.053432,
+          "cohens_d": 0.112,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.0388,
+          "p_value": 0.53836,
+          "cohens_d": 0.0525,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        }
+      ]
+    },
+    {
+      "scenario": "Détournement RIB",
+      "category": "INCONNU",
+      "n_dossiers": 407,
+      "n_detectable": 2,
+      "decision": "go",
+      "top_feature": "community_score_sante",
+      "top_cohens_d": 0.4918,
+      "comment": "2/17 features discriminantes. Signal fort — IF attendu performant. ✅",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.0499,
+          "p_value": 0.255774,
+          "cohens_d": 0.079,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.0654,
+          "p_value": 0.059138,
+          "cohens_d": 0.1686,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.1003,
+          "p_value": 0.000521,
+          "cohens_d": 0.1964,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0011,
+          "p_value": 1.0,
+          "cohens_d": 0.0026,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0052,
+          "p_value": 1.0,
+          "cohens_d": 0.0601,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0227,
+          "p_value": 0.982326,
+          "cohens_d": 0.0482,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.018,
+          "p_value": 0.999149,
+          "cohens_d": 0.0682,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.0548,
+          "p_value": 0.168265,
+          "cohens_d": 0.0782,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.4169,
+          "p_value": 0.0,
+          "cohens_d": 0.4467,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.1081,
+          "p_value": 0.000138,
+          "cohens_d": 0.4918,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 407
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.1052,
+          "p_value": 0.000231,
+          "cohens_d": 0.1139,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 407
+        }
+      ]
+    },
+    {
+      "scenario": "Erreur codification",
+      "category": "INCONNU",
+      "n_dossiers": 673,
+      "n_detectable": 0,
+      "decision": "no-go",
+      "top_feature": "flag_doublon_sante",
+      "top_cohens_d": 0.1479,
+      "comment": "0/17 features discriminantes (critère : p < 0.05, |d| > 0.3). IF ne détectera pas ce scénario. ❌ → Documenter comme limite mémoire.",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.0388,
+          "p_value": 0.259387,
+          "cohens_d": 0.0046,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.0262,
+          "p_value": 0.735248,
+          "cohens_d": 0.0239,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.0211,
+          "p_value": 0.921572,
+          "cohens_d": 0.009,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0034,
+          "p_value": 1.0,
+          "cohens_d": 0.0077,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0042,
+          "p_value": 1.0,
+          "cohens_d": 0.0466,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0113,
+          "p_value": 0.999992,
+          "cohens_d": 0.0243,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0026,
+          "p_value": 1.0,
+          "cohens_d": 0.0095,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.0338,
+          "p_value": 0.41968,
+          "cohens_d": 0.0027,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0332,
+          "p_value": 0.440096,
+          "cohens_d": 0.0036,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 0.999998,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.0298,
+          "p_value": 0.579053,
+          "cohens_d": 0.034,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        }
+      ]
+    },
+    {
+      "scenario": "Erreur conversion",
+      "category": "INCONNU",
+      "n_dossiers": 345,
+      "n_detectable": 2,
+      "decision": "go",
+      "top_feature": "ratio_prix_mercuriale",
+      "top_cohens_d": 2.8634,
+      "comment": "2/17 features discriminantes. Signal fort — IF attendu performant. ✅",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.8552,
+          "p_value": 0.0,
+          "cohens_d": 2.8634,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.0918,
+          "p_value": 0.005634,
+          "cohens_d": 0.1769,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.0283,
+          "p_value": 0.937973,
+          "cohens_d": 0.014,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0055,
+          "p_value": 1.0,
+          "cohens_d": 0.0125,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0014,
+          "p_value": 1.0,
+          "cohens_d": 0.0146,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0087,
+          "p_value": 1.0,
+          "cohens_d": 0.0185,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0032,
+          "p_value": 1.0,
+          "cohens_d": 0.0116,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.4639,
+          "p_value": 0.0,
+          "cohens_d": 0.6807,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0714,
+          "p_value": 0.056956,
+          "cohens_d": 0.0139,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.032,
+          "p_value": 0.862191,
+          "cohens_d": 0.047,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 345
+        }
+      ]
+    },
+    {
+      "scenario": "Erreur de saisie",
+      "category": "INCONNU",
+      "n_dossiers": 673,
+      "n_detectable": 0,
+      "decision": "no-go",
+      "top_feature": "ratio_prix_mercuriale",
+      "top_cohens_d": 0.2597,
+      "comment": "0/17 features discriminantes (critère : p < 0.05, |d| > 0.3). IF ne détectera pas ce scénario. ❌ → Documenter comme limite mémoire.",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.2285,
+          "p_value": 0.0,
+          "cohens_d": 0.2597,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.0211,
+          "p_value": 0.920215,
+          "cohens_d": 0.0431,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.0158,
+          "p_value": 0.995415,
+          "cohens_d": 0.0082,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0248,
+          "p_value": 0.79446,
+          "cohens_d": 0.0572,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0071,
+          "p_value": 1.0,
+          "cohens_d": 0.0886,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0083,
+          "p_value": 1.0,
+          "cohens_d": 0.0179,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0026,
+          "p_value": 1.0,
+          "cohens_d": 0.0095,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.2212,
+          "p_value": 0.0,
+          "cohens_d": 0.0992,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0377,
+          "p_value": 0.290885,
+          "cohens_d": 0.0419,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 0.999998,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.0242,
+          "p_value": 0.817942,
+          "cohens_d": 0.0402,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        }
+      ]
+    },
+    {
+      "scenario": "Forçage validation",
+      "category": "INCONNU",
+      "n_dossiers": 408,
+      "n_detectable": 2,
+      "decision": "go",
+      "top_feature": "saisie_hors_heures",
+      "top_cohens_d": 4.6596,
+      "comment": "2/17 features discriminantes. Signal fort — IF attendu performant. ✅",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.0351,
+          "p_value": 0.685796,
+          "cohens_d": 0.0332,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.0935,
+          "p_value": 0.001519,
+          "cohens_d": 0.1952,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.1405,
+          "p_value": 0.0,
+          "cohens_d": 0.0747,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.008,
+          "p_value": 1.0,
+          "cohens_d": 0.0181,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0022,
+          "p_value": 1.0,
+          "cohens_d": 0.0204,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 1.0,
+          "p_value": 0.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0218,
+          "p_value": 0.988026,
+          "cohens_d": 0.0464,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.9157,
+          "p_value": 0.0,
+          "cohens_d": 4.6596,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.0464,
+          "p_value": 0.33366,
+          "cohens_d": 0.044,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0464,
+          "p_value": 0.3342,
+          "cohens_d": 0.0625,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.1422,
+          "p_value": 0.0,
+          "cohens_d": 0.575,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.1432,
+          "p_value": 0.0,
+          "cohens_d": 0.0541,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        }
+      ]
+    },
+    {
+      "scenario": "Hors Garantie",
+      "category": "INCONNU",
+      "n_dossiers": 673,
+      "n_detectable": 2,
+      "decision": "go",
+      "top_feature": "nb_sinistres_30j_assure",
+      "top_cohens_d": 0.8756,
+      "comment": "2/17 features discriminantes. Signal fort — IF attendu performant. ✅",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.044,
+          "p_value": 0.145735,
+          "cohens_d": 0.0543,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.0292,
+          "p_value": 0.607741,
+          "cohens_d": 0.0275,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.6479,
+          "p_value": 0.0,
+          "cohens_d": 0.8756,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0361,
+          "p_value": 0.338435,
+          "cohens_d": 0.0803,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0048,
+          "p_value": 1.0,
+          "cohens_d": 0.0428,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0318,
+          "p_value": 0.497123,
+          "cohens_d": 0.0674,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.019,
+          "p_value": 0.965728,
+          "cohens_d": 0.0721,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.0355,
+          "p_value": 0.359985,
+          "cohens_d": 0.0142,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.2719,
+          "p_value": 0.0,
+          "cohens_d": 0.8636,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0235,
+          "p_value": 0.845962,
+          "cohens_d": 0.0288,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 0.999998,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.0183,
+          "p_value": 0.97484,
+          "cohens_d": 0.0159,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 673
+        }
+      ]
+    },
+    {
+      "scenario": "Nomadisme médical",
+      "category": "INCONNU",
+      "n_dossiers": 408,
+      "n_detectable": 1,
+      "decision": "warn",
+      "top_feature": "community_score_sante",
+      "top_cohens_d": 0.6758,
+      "comment": "1/17 feature discriminante. Signal faible — F1 attendu modéré. ⚠️",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.0455,
+          "p_value": 0.358656,
+          "cohens_d": 0.0696,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.1213,
+          "p_value": 1.1e-05,
+          "cohens_d": 0.2447,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.1907,
+          "p_value": 0.0,
+          "cohens_d": 0.1602,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0287,
+          "p_value": 0.879996,
+          "cohens_d": 0.0664,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0071,
+          "p_value": 1.0,
+          "cohens_d": 0.0608,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0321,
+          "p_value": 0.783032,
+          "cohens_d": 0.0699,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0088,
+          "p_value": 1.0,
+          "cohens_d": 0.0309,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.0279,
+          "p_value": 0.899368,
+          "cohens_d": 0.0154,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0301,
+          "p_value": 0.842374,
+          "cohens_d": 0.0342,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.1863,
+          "p_value": 0.0,
+          "cohens_d": 0.6758,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.1869,
+          "p_value": 0.0,
+          "cohens_d": 0.1869,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        }
+      ]
+    },
+    {
+      "scenario": "Omission pathologie",
+      "category": "INCONNU",
+      "n_dossiers": 408,
+      "n_detectable": 1,
+      "decision": "warn",
+      "top_feature": "community_score_sante",
+      "top_cohens_d": 0.6092,
+      "comment": "1/17 feature discriminante. Signal faible — F1 attendu modéré. ⚠️",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.2577,
+          "p_value": 0.0,
+          "cohens_d": 0.1647,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.1017,
+          "p_value": 0.000405,
+          "cohens_d": 0.2547,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.1637,
+          "p_value": 0.0,
+          "cohens_d": 0.223,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0056,
+          "p_value": 1.0,
+          "cohens_d": 0.0126,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0052,
+          "p_value": 1.0,
+          "cohens_d": 0.0603,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0346,
+          "p_value": 0.702503,
+          "cohens_d": 0.0753,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0182,
+          "p_value": 0.998994,
+          "cohens_d": 0.0689,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.1533,
+          "p_value": 0.0,
+          "cohens_d": 0.2103,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0483,
+          "p_value": 0.289249,
+          "cohens_d": 0.1006,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.1569,
+          "p_value": 0.0,
+          "cohens_d": 0.6092,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.1481,
+          "p_value": 0.0,
+          "cohens_d": 0.2211,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        }
+      ]
+    },
+    {
+      "scenario": "Panne Service OCR",
+      "category": "INCONNU",
+      "n_dossiers": 197,
+      "n_detectable": 1,
+      "decision": "warn",
+      "top_feature": "montant_normalise_log",
+      "top_cohens_d": 1.1066,
+      "comment": "1/17 feature discriminante. Signal faible — F1 attendu modéré. ⚠️",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.0667,
+          "p_value": 0.329372,
+          "cohens_d": 0.0451,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.0269,
+          "p_value": 0.998129,
+          "cohens_d": 0.0232,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.0588,
+          "p_value": 0.485042,
+          "cohens_d": 0.0329,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0304,
+          "p_value": 0.990893,
+          "cohens_d": 0.0677,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0005,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 1.0,
+          "p_value": 0.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.006,
+          "p_value": 1.0,
+          "cohens_d": 0.0128,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0121,
+          "p_value": 1.0,
+          "cohens_d": 0.0422,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.462,
+          "p_value": 0.0,
+          "cohens_d": 1.1066,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0917,
+          "p_value": 0.068131,
+          "cohens_d": 0.0539,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.0428,
+          "p_value": 0.847254,
+          "cohens_d": 0.0562,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 197
+        }
+      ]
+    },
+    {
+      "scenario": "Prêt de carte",
+      "category": "INCONNU",
+      "n_dossiers": 408,
+      "n_detectable": 1,
+      "decision": "warn",
+      "top_feature": "community_score_sante",
+      "top_cohens_d": 0.6261,
+      "comment": "1/17 feature discriminante. Signal faible — F1 attendu modéré. ⚠️",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.0303,
+          "p_value": 0.836837,
+          "cohens_d": 0.0209,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.1163,
+          "p_value": 3e-05,
+          "cohens_d": 0.2297,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.1577,
+          "p_value": 0.0,
+          "cohens_d": 0.0647,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0325,
+          "p_value": 0.769397,
+          "cohens_d": 0.0724,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0095,
+          "p_value": 1.0,
+          "cohens_d": 0.0786,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.012,
+          "p_value": 1.0,
+          "cohens_d": 0.0256,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0112,
+          "p_value": 1.0,
+          "cohens_d": 0.0393,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.054,
+          "p_value": 0.179071,
+          "cohens_d": 0.063,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0296,
+          "p_value": 0.85611,
+          "cohens_d": 0.0426,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.1642,
+          "p_value": 0.0,
+          "cohens_d": 0.6261,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.1748,
+          "p_value": 0.0,
+          "cohens_d": 0.2154,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        }
+      ]
+    },
+    {
+      "scenario": "Schema Drift",
+      "category": "INCONNU",
+      "n_dossiers": 421,
+      "n_detectable": 0,
+      "decision": "no-go",
+      "top_feature": "flag_doublon_sante",
+      "top_cohens_d": 0.1479,
+      "comment": "0/17 features discriminantes (critère : p < 0.05, |d| > 0.3). IF ne détectera pas ce scénario. ❌ → Documenter comme limite mémoire.",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.0674,
+          "p_value": 0.042041,
+          "cohens_d": 0.0854,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.0257,
+          "p_value": 0.937539,
+          "cohens_d": 0.0607,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.0413,
+          "p_value": 0.458057,
+          "cohens_d": 0.0621,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0218,
+          "p_value": 0.986242,
+          "cohens_d": 0.05,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0041,
+          "p_value": 1.0,
+          "cohens_d": 0.0378,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0065,
+          "p_value": 1.0,
+          "cohens_d": 0.014,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0107,
+          "p_value": 1.0,
+          "cohens_d": 0.0397,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.0561,
+          "p_value": 0.136648,
+          "cohens_d": 0.0095,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0487,
+          "p_value": 0.264398,
+          "cohens_d": 0.065,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.0408,
+          "p_value": 0.474442,
+          "cohens_d": 0.0267,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 421
+        }
+      ]
+    },
+    {
+      "scenario": "Soin Post-Mortem",
+      "category": "INCONNU",
+      "n_dossiers": 408,
+      "n_detectable": 1,
+      "decision": "warn",
+      "top_feature": "community_score_sante",
+      "top_cohens_d": 0.575,
+      "comment": "1/17 feature discriminante. Signal faible — F1 attendu modéré. ⚠️",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.0304,
+          "p_value": 0.834968,
+          "cohens_d": 0.0036,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.122,
+          "p_value": 1e-05,
+          "cohens_d": 0.2359,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.147,
+          "p_value": 0.0,
+          "cohens_d": 0.1367,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.035,
+          "p_value": 0.688053,
+          "cohens_d": 0.0778,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0095,
+          "p_value": 1.0,
+          "cohens_d": 0.0786,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0272,
+          "p_value": 0.915811,
+          "cohens_d": 0.0591,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0059,
+          "p_value": 1.0,
+          "cohens_d": 0.0216,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.045,
+          "p_value": 0.370666,
+          "cohens_d": 0.0494,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 1.0,
+          "p_value": 0.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0288,
+          "p_value": 0.878351,
+          "cohens_d": 0.0305,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.1422,
+          "p_value": 0.0,
+          "cohens_d": 0.575,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.1557,
+          "p_value": 0.0,
+          "cohens_d": 0.0901,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        }
+      ]
+    },
+    {
+      "scenario": "Soumission multiple",
+      "category": "INCONNU",
+      "n_dossiers": 204,
+      "n_detectable": 2,
+      "decision": "go",
+      "top_feature": "flag_doublon_sante",
+      "top_cohens_d": 13.5245,
+      "comment": "2/17 features discriminantes. Signal fort — IF attendu performant. ✅",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.0514,
+          "p_value": 0.633959,
+          "cohens_d": 0.0398,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.0877,
+          "p_value": 0.081412,
+          "cohens_d": 0.1682,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.1515,
+          "p_value": 0.00015,
+          "cohens_d": 0.1007,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0056,
+          "p_value": 1.0,
+          "cohens_d": 0.0126,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0052,
+          "p_value": 1.0,
+          "cohens_d": 0.0603,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0248,
+          "p_value": 0.999367,
+          "cohens_d": 0.0536,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0333,
+          "p_value": 0.971841,
+          "cohens_d": 0.1105,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.0599,
+          "p_value": 0.43947,
+          "cohens_d": 0.0412,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0445,
+          "p_value": 0.796362,
+          "cohens_d": 0.0526,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.9892,
+          "p_value": 0.0,
+          "cohens_d": 13.5245,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.1667,
+          "p_value": 2e-05,
+          "cohens_d": 0.6309,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 204
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.152,
+          "p_value": 0.000141,
+          "cohens_d": 0.1546,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 204
+        }
+      ]
+    },
+    {
+      "scenario": "Surfacturation pure",
+      "category": "INCONNU",
+      "n_dossiers": 408,
+      "n_detectable": 2,
+      "decision": "go",
+      "top_feature": "community_score_sante",
+      "top_cohens_d": 0.6483,
+      "comment": "2/17 features discriminantes. Signal fort — IF attendu performant. ✅",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.2152,
+          "p_value": 0.0,
+          "cohens_d": 0.3128,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.1155,
+          "p_value": 3.5e-05,
+          "cohens_d": 0.2093,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.1784,
+          "p_value": 0.0,
+          "cohens_d": 0.2051,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0129,
+          "p_value": 1.0,
+          "cohens_d": 0.0291,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0052,
+          "p_value": 1.0,
+          "cohens_d": 0.0603,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0169,
+          "p_value": 0.999713,
+          "cohens_d": 0.036,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0035,
+          "p_value": 1.0,
+          "cohens_d": 0.0126,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.1503,
+          "p_value": 0.0,
+          "cohens_d": 0.2237,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0345,
+          "p_value": 0.704659,
+          "cohens_d": 0.0499,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.174,
+          "p_value": 0.0,
+          "cohens_d": 0.6483,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.1617,
+          "p_value": 0.0,
+          "cohens_d": 0.1848,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        }
+      ]
+    },
+    {
+      "scenario": "Unbundling",
+      "category": "FRAUDE",
+      "n_dossiers": 408,
+      "n_detectable": 1,
+      "decision": "warn",
+      "top_feature": "community_score_sante",
+      "top_cohens_d": 0.6205,
+      "comment": "1/17 feature discriminante. Signal faible — F1 attendu modéré. ⚠️",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.0224,
+          "p_value": 0.984129,
+          "cohens_d": 0.0037,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.1136,
+          "p_value": 4.9e-05,
+          "cohens_d": 0.1687,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.1466,
+          "p_value": 0.0,
+          "cohens_d": 0.1598,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0459,
+          "p_value": 0.347372,
+          "cohens_d": 0.1074,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0028,
+          "p_value": 1.0,
+          "cohens_d": 0.0296,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0076,
+          "p_value": 1.0,
+          "cohens_d": 0.0163,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0088,
+          "p_value": 1.0,
+          "cohens_d": 0.0309,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.0632,
+          "p_value": 0.073885,
+          "cohens_d": 0.0445,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0392,
+          "p_value": 0.545245,
+          "cohens_d": 0.0369,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.1618,
+          "p_value": 0.0,
+          "cohens_d": 0.6205,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.1512,
+          "p_value": 0.0,
+          "cohens_d": 0.2068,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        }
+      ]
+    },
+    {
+      "scenario": "Upcoding",
+      "category": "FRAUDE",
+      "n_dossiers": 408,
+      "n_detectable": 1,
+      "decision": "warn",
+      "top_feature": "community_score_sante",
+      "top_cohens_d": 0.6483,
+      "comment": "1/17 feature discriminante. Signal faible — F1 attendu modéré. ⚠️",
+      "feature_signals": [
+        {
+          "feature": "ratio_prix_mercuriale",
+          "ks_stat": 0.1853,
+          "p_value": 0.0,
+          "cohens_d": 0.0802,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_incoherence_sexe_acte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "historique_ratio_praticien",
+          "ks_stat": 0.1098,
+          "p_value": 0.0001,
+          "cohens_d": 0.2673,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_30j_assure",
+          "ks_stat": 0.1887,
+          "p_value": 0.0,
+          "cohens_d": 0.2099,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_weekend_care",
+          "ks_stat": 0.0276,
+          "p_value": 0.906478,
+          "cohens_d": 0.0617,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "document_altere",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_hors_agrement",
+          "ks_stat": 0.0095,
+          "p_value": 1.0,
+          "cohens_d": 0.0786,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "ocr_confiance_faible",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "delai_soin_depot_anormal",
+          "ks_stat": 0.0002,
+          "p_value": 1.0,
+          "cohens_d": 0.0005,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "anciennete_contrat_courte",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "saisie_hors_heures",
+          "ks_stat": 0.0084,
+          "p_value": 1.0,
+          "cohens_d": 0.0308,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "montant_normalise_log",
+          "ks_stat": 0.0801,
+          "p_value": 0.010216,
+          "cohens_d": 0.1316,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "post_mortem_flag",
+          "ks_stat": 0.0,
+          "p_value": 1.0,
+          "cohens_d": 0.0,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "nb_sinistres_meme_iban",
+          "ks_stat": 0.0374,
+          "p_value": 0.606964,
+          "cohens_d": 0.0202,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "flag_doublon_sante",
+          "ks_stat": 0.0108,
+          "p_value": 1.0,
+          "cohens_d": 0.1479,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "community_score_sante",
+          "ks_stat": 0.174,
+          "p_value": 0.0,
+          "cohens_d": 0.6483,
+          "detectable": true,
+          "n_normal": 130642,
+          "n_scenario": 408
+        },
+        {
+          "feature": "praticien_concentration",
+          "ks_stat": 0.1691,
+          "p_value": 0.0,
+          "cohens_d": 0.1968,
+          "detectable": false,
+          "n_normal": 130642,
+          "n_scenario": 408
+        }
+      ]
+    }
+  ]
+}

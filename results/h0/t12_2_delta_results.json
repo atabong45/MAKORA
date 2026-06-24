@@ -1,0 +1,138 @@
+{
+  "deltas": [
+    {
+      "branch": "sante",
+      "f1_specialized": 0.2004,
+      "f1_makora": 0.1554,
+      "delta_f1": 0.045,
+      "delta_pct": 4.5,
+      "ci_specialized": [
+        0.1824,
+        0.2187
+      ],
+      "ci_makora": [
+        0.1316,
+        0.1796
+      ],
+      "auc_specialized": 0.6221,
+      "auc_makora": 0.5434,
+      "mcc_specialized": 0.1343,
+      "mcc_makora": 0.2809,
+      "fpr_specialized": 0.0792,
+      "fpr_makora": 0.0,
+      "precision_specialized": 0.1771,
+      "recall_specialized": 0.2308,
+      "precision_makora": 1.0,
+      "recall_makora": 0.0842,
+      "verdict": "CONTRIBUTION_VALIDÉE",
+      "comment": "Trade-off généricité/précision acceptable (Δ=0.045 ∈ [0.02,0.07])."
+    },
+    {
+      "branch": "auto",
+      "f1_specialized": 0.2654,
+      "f1_makora": 0.2482,
+      "delta_f1": 0.0172,
+      "delta_pct": 1.72,
+      "ci_specialized": [
+        0.2412,
+        0.2878
+      ],
+      "ci_makora": [
+        0.2226,
+        0.2729
+      ],
+      "auc_specialized": 0.6843,
+      "auc_makora": 0.6086,
+      "mcc_specialized": 0.1974,
+      "mcc_makora": 0.1916,
+      "fpr_specialized": 0.0746,
+      "fpr_makora": 0.0507,
+      "precision_specialized": 0.2489,
+      "recall_specialized": 0.2842,
+      "precision_makora": 0.2779,
+      "recall_makora": 0.2242,
+      "verdict": "GÉNÉRICITÉ_SANS_COÛT",
+      "comment": "M_makora rivalise avec le spécialisé — contribution forte."
+    }
+  ],
+  "all_metrics": [
+    {
+      "model": "M_sante",
+      "branch_eval": "sante",
+      "f1": 0.2004,
+      "f1_ci_low": 0.1824,
+      "f1_ci_high": 0.2187,
+      "precision": 0.1771,
+      "recall": 0.2308,
+      "auc_roc": 0.6221,
+      "avg_precision": 0.1605,
+      "mcc": 0.1343,
+      "fpr": 0.0792,
+      "n_test": 21228,
+      "n_anomalies": 1460,
+      "train_time_s": 3.12
+    },
+    {
+      "model": "M_auto",
+      "branch_eval": "auto",
+      "f1": 0.2654,
+      "f1_ci_low": 0.2412,
+      "f1_ci_high": 0.2878,
+      "precision": 0.2489,
+      "recall": 0.2842,
+      "auc_roc": 0.6843,
+      "avg_precision": 0.2127,
+      "mcc": 0.1974,
+      "fpr": 0.0746,
+      "n_test": 15000,
+      "n_anomalies": 1200,
+      "train_time_s": 2.78
+    },
+    {
+      "model": "M_makora",
+      "branch_eval": "sante",
+      "f1": 0.1554,
+      "f1_ci_low": 0.1316,
+      "f1_ci_high": 0.1796,
+      "precision": 1.0,
+      "recall": 0.0842,
+      "auc_roc": 0.5434,
+      "avg_precision": 0.1518,
+      "mcc": 0.2809,
+      "fpr": 0.0,
+      "n_test": 21228,
+      "n_anomalies": 1460,
+      "train_time_s": 2.46,
+      "common_features": [
+        "anciennete_contrat_courte",
+        "document_altere",
+        "ocr_confiance_faible",
+        "saisie_hors_heures"
+      ],
+      "n_common_features": 4
+    },
+    {
+      "model": "M_makora",
+      "branch_eval": "auto",
+      "f1": 0.2482,
+      "f1_ci_low": 0.2226,
+      "f1_ci_high": 0.2729,
+      "precision": 0.2779,
+      "recall": 0.2242,
+      "auc_roc": 0.6086,
+      "avg_precision": 0.133,
+      "mcc": 0.1916,
+      "fpr": 0.0507,
+      "n_test": 15000,
+      "n_anomalies": 1200,
+      "train_time_s": 2.46,
+      "common_features": [
+        "anciennete_contrat_courte",
+        "document_altere",
+        "ocr_confiance_faible",
+        "saisie_hors_heures"
+      ],
+      "n_common_features": 4
+    }
+  ]
+}

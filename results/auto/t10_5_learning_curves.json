@@ -1,0 +1,46 @@
+{
+  "branch": "auto",
+  "contamination": 0.1,
+  "points": [
+    {
+      "n_train": 2000,
+      "auc_mean": 0.684,
+      "auc_std": 0.003,
+      "f1_mean": 0.2643,
+      "f1_std": 0.0052,
+      "n_repeats": 5
+    },
+    {
+      "n_train": 5000,
+      "auc_mean": 0.6862,
+      "auc_std": 0.0023,
+      "f1_mean": 0.267,
+      "f1_std": 0.0034,
+      "n_repeats": 5
+    },
+    {
+      "n_train": 10000,
+      "auc_mean": 0.6795,
+      "auc_std": 0.0064,
+      "f1_mean": 0.2578,
+      "f1_std": 0.0113,
+      "n_repeats": 5
+    },
+    {
+      "n_train": 25000,
+      "auc_mean": 0.6833,
+      "auc_std": 0.0018,
+      "f1_mean": 0.2631,
+      "f1_std": 0.0072,
+      "n_repeats": 5
+    },
+    {
+      "n_train": 50000,
+      "auc_mean": 0.6818,
+      "auc_std": 0.0053,
+      "f1_mean": 0.2617,
+      "f1_std": 0.0084,
+      "n_repeats": 5
+    }
+  ]
+}

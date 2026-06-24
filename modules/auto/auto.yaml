@@ -1,0 +1,456 @@
+# ====================================================================
+# PLUGIN CONTRACT — Module Auto MAKORA
+# Version : 1.2.0 — Scénarios A+B+C (21 features)
+# Références : [Viaene2002] [Subudhi2017] [Jiang2014] [Blondel2008] [Xu2023]
+#
+# HISTORIQUE :
+#   v1.0.0 — 15 features (T10.1 baseline)
+#   v1.1.0 — 18 features (Session I + features réseau V3)
+#   v1.2.0 — 21 features (Scénarios A+B+C)
+#            Scénario A : 4 renommages + is_weekend_event + acte_incomplet
+#            Scénario B : nb_sinistres_recents (renommage) + document_age_anormal
+#            Scénario C : montant_log (renommage montant_devis_log)
+# ====================================================================
+branch: auto
+version: "1.2.0"
+description: >
+  Module Auto MAKORA — détection d'anomalies sur sinistres automobile.
+  Couvre flux France (numérique, EUR) et Cameroun (documentaire, XAF).
+  Patterns couverts : staging accident, surfacturation réparation,
+  véhicule sur-valorisé, falsification constat, collusion garagiste-assuré,
+  fraude en réseau garage-expert, doublons de déclaration,
+  sinistre weekend, acte incomplet, document périmé.
+  21 features dont 13 communes avec SanteModule pour M_makora_dif [Xu2023].
+
+# ====================================================================
+# SECTION 1 — Schéma d'entrée
+# ====================================================================
+input_schema:
+  required_columns:
+    - ID_Sinistre
+    - ID_Assure
+    - Anciennete_Contrat
+    - BonusMalus
+    - Score_Risk_Assure
+    - Type_Sinistre
+    - Nb_Temoins
+    - Rapport_Police_Present
+    - Constat_Amiable_Present
+    - Rapport_Expertise_Signe
+    - Code_Reparation
+    - Nb_Heures_MO
+    - Nb_Heures_MO_Reference
+    - Ratio_MO
+    - ID_Garage
+    - Agrement_CIMA
+    - Valeur_Venale_EUR
+    - Flag_Doc_Altere
+    - Montant_Devis
+    - Montant_Reference_Bareme
+    - Devise
+    - Date_Sinistre # is_weekend_event : Date_Sinistre.dayofweek >= 5
+    - Date_Declaration
+    - Heure_Saisie
+    - Heure_Sinistre
+    - Delai_Declaration # delai_depot_anormal (> 30j) + document_age_anormal (> 180j)
+    - Flag_Sinistre_Nuit
+    - Nb_Sinistres_12m # nb_sinistres_recents : source column conservée
+    - Source_Flux
+    - Confiance_OCR_Glob
+  optional_columns:
+    - Flag_Doublon_Auto # flag_doublon
+    - community_id_auto # community_score (input GraphEngine)
+    - ID_Expert_Stable # expert_garage_correlation
+    - Nb_Declarations
+    - Flag_Acte_Incomp # acte_incomplet (Scénario A)
+  types:
+    Montant_Devis: float
+    Montant_Reference_Bareme: float
+    Valeur_Venale_EUR: float
+    Anciennete_Contrat: int
+    Nb_Temoins: int
+    Nb_Sinistres_12m: int
+    Heure_Saisie: int
+    Delai_Declaration: int
+    Ratio_MO: float
+    Agrement_CIMA: bool
+    Constat_Amiable_Present: bool
+    Rapport_Expertise_Signe: bool
+    Flag_Sinistre_Nuit: bool
+    Flag_Doc_Altere: bool
+    Flag_Doublon_Auto: bool
+    community_id_auto: float
+    Flag_Acte_Incomp: bool
+
+# ====================================================================
+# SECTION 2 — Features ML (21 features — v1.2.0)
+# [Liu2008] : recommandation ≤ 20 features pour IF/DIF (légèrement dépassé
+#             mais justifié par richesse du contexte auto et réseau)
+# 13 features (★) communes avec SanteModule → M_makora_dif [Xu2023]
+# ====================================================================
+features:
+  # --- Features V1 (features.py via FEATURE_FUNCTIONS) ---
+  - ratio_devis_bareme # CRITIQUE — [Subudhi2017] feature #1 fraude auto
+  - vehicule_sur_value # CRITIQUE — devis > valeur vénale * 0.80
+  - sinistre_nuit_sans_temoin # CRITIQUE — staging accident nocturne [Viaene2002]
+  - document_altere # ★ COMMUN [Bauder2017] — Flag_Doc_Altere, fraude documentaire
+  - prestataire_concentration # ★ COMMUN [Jiang2014] — concentration sinistres sur garage
+  - garage_non_agree # HAUTE — garage sans agrément CIMA
+  - constat_manquant # HAUTE — absence constat amiable obligatoire
+  - expertise_manquante # HAUTE — absence rapport expertise signé
+  - delai_depot_anormal # ★ COMMUN [Viaene2002] — Delai_Declaration > 30j
+  - anciennete_contrat_courte # ★ COMMUN [Viaene2002] — contrat < 90j, fraude souscription
+  - ocr_confiance_faible # ★ COMMUN [CIMA] — Confiance_OCR_Glob < 0.5 (flux CM)
+  - ratio_mo_reference # HAUTE — surfacturation main d'œuvre [Subudhi2017]
+  - nb_sinistres_recents # ★ COMMUN [Viaene2002] — Nb_Sinistres_12m, fréquence anormale
+  - montant_log # ★ COMMUN [Liu2008] — log1p(Montant_Devis), normalisation IF/DIF
+  - saisie_hors_heures # ★ COMMUN [Chandola2009] — Heure_Saisie < 7h ou > 20h
+  - is_weekend_event # ★ COMMUN [Bauder2017] — Date_Sinistre.dayofweek >= 5 (Scénario A)
+  - acte_incomplet # ★ COMMUN [domaine] — Flag_Acte_Incomp (Scénario A)
+  - document_age_anormal # ★ COMMUN [Chandola2009] — Delai_Declaration > 180j (Scénario B)
+
+  # --- Features V3 (features_reseau.py via FEATURE_RESEAU_FUNCTIONS_AUTO) ---
+  - flag_doublon # ★ COMMUN [Viaene2002] — Flag_Doublon_Auto, double déclaration
+  - community_score # ★ COMMUN [Jiang2014][Blondel2008] — communauté garage-assuré
+  - expert_garage_correlation # [Viaene2002] — collusion expert-réparateur (spécifique Auto)
+
+features_descriptions:
+  ratio_devis_bareme: >
+    Montant_Devis / prix_référence_barème ASAC/Argus. Feature #1 fraude auto.
+    Cap 50.0. Seuil surfacturation > 1.30 [Subudhi2017].
+  vehicule_sur_value: >
+    1 si Montant_Devis > Valeur_Venale_EUR * 0.80. Sur-valorisation frauduleuse
+    des dommages. Conversion XAF/EUR via taux BEAC [Viaene2002].
+  sinistre_nuit_sans_temoin: >
+    1 si Flag_Sinistre_Nuit ET Nb_Temoins == 0. Signal staging accident.
+    [Viaene2002] — pattern le plus fréquent en fraude auto nocturne.
+  document_altere: >
+    1 si Flag_Doc_Altere == True. Falsification constat ou rapport expertise.
+    ★ Commun avec SanteModule [Bauder2017].
+  prestataire_concentration: >
+    Proportion des sinistres du batch concentrée sur ce garage (Pareto).
+    Un garage normal < 33% ; un garage fraudeur peut dépasser 80%.
+    ★ Commun (proxy de garage_concentration_score v1.1) [Jiang2014].
+  garage_non_agree: >
+    1 si Agrement_CIMA == False. Réparation dans un garage non agréé.
+    Collusion garagiste-assuré hors réseau CIMA [Viaene2002].
+  constat_manquant: >
+    1 si Constat_Amiable_Present == False. Pièce obligatoire absente.
+    Signal d'accident simulé ou dossier incomplet intentionnel.
+  expertise_manquante: >
+    1 si Rapport_Expertise_Signe == False. Rapport expertise non signé.
+    Couplé à sinistre_nuit_sans_temoin : profil staging [Viaene2002].
+  delai_depot_anormal: >
+    1 si Delai_Declaration > 30 jours. Délai de déclaration anormal.
+    ★ Commun (seuil 30j, CIMA Art.25). Seuil séparé de document_age_anormal
+    (180j) pour capturer deux niveaux de retard [Viaene2002].
+  anciennete_contrat_courte: >
+    1 si Anciennete_Contrat < 90 jours. Souscription récente + sinistre précoce.
+    ★ Commun — fraude à la souscription [Viaene2002].
+  ocr_confiance_faible: >
+    1 si Confiance_OCR_Glob < 0.5. Document dégradé (scan constat, flux CM).
+    ★ Commun — contexte africain CIMA.
+  ratio_mo_reference: >
+    Taux horaire MO facturé / référence barème. Cap 10.0. > 1.30 suspect.
+    Fast path : Ratio_MO si présent dans ARGUS [Subudhi2017].
+  nb_sinistres_recents: >
+    Nb_Sinistres_12m — sinistres assuré sur 12 mois glissants. Fréquence anormale.
+    ★ Commun (fenêtre 12M unifiée avec Santé pour M_makora_dif) [Viaene2002].
+  montant_log: >
+    log1p(Montant_Devis). Distribution très asymétrique normalisée pour IF/DIF.
+    ★ Commun avec SanteModule [Liu2008].
+  saisie_hors_heures: >
+    1 si Heure_Saisie < 7 ou > 20. Signal contextuel de fraude interne.
+    ★ Commun — renforce document_altere et delai_depot_anormal [Chandola2009].
+  is_weekend_event: >
+    1 si Date_Sinistre.dayofweek >= 5 (samedi=5 ou dimanche=6). Sinistres
+    weekend suspectes (accidents simulés fréquents le weekend).
+    ★ Commun avec SanteModule [Bauder2017].
+  acte_incomplet: >
+    1 si Flag_Acte_Incomp == True. Dossier incomplet soumis = signal intentionnel
+    ou erreur grave. ★ Commun avec SanteModule [domaine CIMA].
+  document_age_anormal: >
+    1 si Delai_Declaration > 180 jours. Document déposé très tardivement.
+    Proxy de fabrication documentaire (différent de delai_depot_anormal/30j).
+    ★ Commun avec SanteModule [Chandola2009].
+  flag_doublon: >
+    1 si Flag_Doublon_Auto == True. Même sinistre déclaré deux fois (hash composite).
+    ★ Commun — ~2% des fraudes auto [Viaene2002].
+  community_score: >
+    Score [0–1] Louvain d'appartenance à une communauté garage-assuré suspecte.
+    ★ Commun — communautés garage 1-3 / assurés 15-40 [Jiang2014][Blondel2008].
+  expert_garage_correlation: >
+    Fraction des sinistres d'un expert vers le même garage. Proche 1.0 = collusion.
+    Spécifique Auto — pas d'équivalent Santé [Viaene2002].
+
+# ====================================================================
+# SECTION 3 — Seuils de décision
+# Tous les noms de clés reflètent la nomenclature v1.2.0.
+# ====================================================================
+thresholds:
+  contamination: 0.080
+  anomaly_score_alert: 0.65
+  ratio_devis_bareme_fraude: 1.30
+  ratio_devis_bareme_warning: 1.10
+  vehicule_sur_value_ratio: 0.80
+  delai_depot_jours: 30 # seuil delai_depot_anormal (30j)
+  document_age_anormal_jours: 180 # seuil document_age_anormal (180j) [Chandola2009]
+  anciennete_contrat_jours: 90
+  prestataire_concentration_seuil: 0.50 # seuil alerte collusion garage [Jiang2014]
+  ocr_confiance_seuil: 0.50
+  ratio_mo_fraude: 1.30
+  saisie_heure_min: 7
+  saisie_heure_max: 20
+  community_score_seuil: 0.30 # seuil alerte communauté [Jiang2014]
+
+# ====================================================================
+# SECTION 4 — Règles RCA
+# Toutes les références aux features utilisent les noms v1.2.0.
+# ====================================================================
+rca_rules:
+  - id: "RCA_AUTO_001"
+    priority: 1
+    category: "Fraude Intentionnelle"
+    subcategory: "Falsification documentaire"
+    conditions:
+      - feature: "document_altere"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.90
+    message_template: >
+      Document sinistre potentiellement altéré détecté
+      (score authenticité anormal). Suspicion de falsification
+      du constat amiable ou du rapport d'expertise.
+    action: "Demander les originaux physiques. Soumettre à l'expert judiciaire."
+
+  - id: "RCA_AUTO_002"
+    priority: 2
+    category: "Fraude Intentionnelle"
+    subcategory: "Double déclaration sinistre"
+    conditions:
+      - feature: "flag_doublon"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.87
+    message_template: >
+      Sinistre soumis en double déclaration (flag_doublon=1).
+      Même véhicule, même type de sinistre, montant similaire.
+      [Viaene2002 — doublons représentent ~2% des sinistres auto frauduleux].
+    action: "Bloquer le remboursement. Identifier et clore le doublon."
+
+  - id: "RCA_AUTO_003"
+    priority: 3
+    category: "Fraude Intentionnelle"
+    subcategory: "Surfacturation réparation"
+    conditions:
+      - feature: "ratio_devis_bareme"
+        operator: "gt"
+        threshold: 1.30
+    logic: "AND"
+    confidence_base: 0.82
+    message_template: >
+      Montant du devis dépasse de {deviation}% le barème de référence
+      ASAC/Argus pour ce type de réparation. Seuil de surfacturation
+      fixé à 30% [Subudhi2017].
+    action: "Demander contre-expertise indépendante. Vérifier le barème garage."
+
+  - id: "RCA_AUTO_004"
+    priority: 4
+    category: "Fraude Intentionnelle"
+    subcategory: "Fraude en Réseau / Collusion Garage-Assuré"
+    conditions:
+      - feature: "community_score"
+        operator: "gt"
+        threshold: 0.3
+    logic: "AND"
+    confidence_base: 0.82
+    message_template: >
+      Ce sinistre appartient à une communauté suspecte
+      (community_score={community_score:.2f}). Concentration anormale
+      entre le garage et un groupe d'assurés.
+      [Jiang2014 — fraude coordonnée / Blondel2008 — Louvain].
+    action: "Suspendre les remboursements vers ce garage. Alerter le réseau CIMA."
+
+  - id: "RCA_AUTO_005"
+    priority: 5
+    category: "Fraude Intentionnelle"
+    subcategory: "Collusion Expert-Réparateur"
+    conditions:
+      - feature: "expert_garage_correlation"
+        operator: "gt"
+        threshold: 0.7
+    logic: "AND"
+    confidence_base: 0.75
+    message_template: >
+      L'expert mandate valide {expert_garage_correlation:.0%} de ses
+      dossiers vers le même garage. Corrélation expert-réparateur anormale.
+      [Viaene2002 — collusion expert-garage pattern auto].
+    action: "Demander une contre-expertise indépendante. Signaler l'expert au bureau CIMA."
+
+  - id: "RCA_AUTO_006"
+    priority: 6
+    category: "Fraude Intentionnelle"
+    subcategory: "Staging accident"
+    conditions:
+      - feature: "sinistre_nuit_sans_temoin"
+        operator: "eq"
+        threshold: 1
+      - feature: "expertise_manquante"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.78
+    message_template: >
+      Sinistre nocturne sans témoin déclaré, combiné à l'absence
+      de rapport d'expertise signé. Profil caractéristique d'un
+      accident simulé (staging) [Viaene2002].
+    action: "Diligenter une enquête terrain. Croiser avec historique conducteur."
+
+  - id: "RCA_AUTO_007"
+    priority: 7
+    category: "Fraude Intentionnelle"
+    subcategory: "Véhicule sur-valorisé"
+    conditions:
+      - feature: "vehicule_sur_value"
+        operator: "eq"
+        threshold: 1
+      - feature: "constat_manquant"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.75
+    message_template: >
+      Montant du devis représente plus de 80% de la valeur vénale
+      du véhicule, sans constat amiable fourni. Suspicion de
+      sur-valorisation frauduleuse des dommages.
+    action: "Vérifier la valeur vénale Argus/ASAC. Exiger le constat original."
+
+  - id: "RCA_AUTO_008"
+    priority: 8
+    category: "Fraude Intentionnelle"
+    subcategory: "Collusion garagiste-assuré (prestataire concentré)"
+    conditions:
+      - feature: "prestataire_concentration"
+        operator: "gt"
+        threshold: 0.50
+      - feature: "garage_non_agree"
+        operator: "eq"
+        threshold: 1
+    logic: "AND"
+    confidence_base: 0.72
+    message_template: >
+      Concentration anormale de sinistres sur un même garage non agréé
+      CIMA. Schéma caractéristique d'une entente entre le garagiste
+      et l'assuré [Jiang2014 — fraude coordonnée].
+    action: "Suspendre les remboursements vers ce garage. Alerter le réseau CIMA."
+
+  - id: "RCA_AUTO_009"
+    priority: 9
+    category: "Erreur Opérationnelle"
+    subcategory: "Surfacturation main d'oeuvre"
+    conditions:
+      - feature: "ratio_mo_reference"
+        operator: "gt"
+        threshold: 1.30
+    logic: "AND"
+    confidence_base: 0.65
+    message_template: >
+      Taux horaire main d'œuvre facturé dépasse de {deviation}%
+      le taux de référence barème. Peut être une erreur de
+      facturation ou une surfacturation intentionnelle.
+    action: "Vérifier le barème horaire du garage. Demander facture détaillée."
+
+# ====================================================================
+# SECTION 5 — Source mappings
+# ====================================================================
+source_mappings:
+  argus_csv:
+    ID_Sinistre: ID_Sinistre
+    ID_Assure: ID_Assure
+    Anciennete_Contrat: Anciennete_Contrat
+    Montant_Devis: Montant_Devis
+    Code_Reparation: Code_Reparation
+    ID_Garage: ID_Garage
+    Agrement_CIMA: Agrement_CIMA
+    Constat_Amiable_Present: Constat_Amiable_Present
+    Rapport_Expertise_Signe: Rapport_Expertise_Signe
+    Flag_Sinistre_Nuit: Flag_Sinistre_Nuit
+    Nb_Temoins: Nb_Temoins
+    Flag_Doc_Altere: Flag_Doc_Altere
+    Valeur_Venale_EUR: Valeur_Venale_EUR
+    Montant_Reference_Bareme: Montant_Reference_Bareme
+    Ratio_MO: Ratio_MO
+    Devise: Devise
+    Delai_Declaration: Delai_Declaration
+    Heure_Saisie: Heure_Saisie
+    Nb_Sinistres_12m: Nb_Sinistres_12m
+    Confiance_OCR_Glob: Confiance_OCR_Glob
+    Source_Flux: Source_Flux
+    Label_Anomalie: Label_Anomalie
+    Date_Sinistre: Date_Sinistre
+    Flag_Acte_Incomp: Flag_Acte_Incomp
+
+  api_json_fr:
+    sinistre_id: ID_Sinistre
+    assure_id: ID_Assure
+    anciennete_jours: Anciennete_Contrat
+    montant_devis: Montant_Devis
+    code_reparation: Code_Reparation
+    garage_id: ID_Garage
+    agree_cima: Agrement_CIMA
+    constat_present: Constat_Amiable_Present
+    expertise_signee: Rapport_Expertise_Signe
+    sinistre_nuit: Flag_Sinistre_Nuit
+    nb_temoins: Nb_Temoins
+    devise: Devise
+    delai_declaration: Delai_Declaration
+    heure_saisie: Heure_Saisie
+    date_sinistre: Date_Sinistre
+
+# ====================================================================
+# SECTION 6 — Mercuriale Auto
+# ====================================================================
+mercuriale:
+  enabled: true
+  path: "data/referentials/bareme_asac_auto.yaml"
+  currency: "XAF"
+  tolerance_pct: 10
+  code_column: "Code_Reparation"
+  price_column: "Prix_Ref_XAF"
+  fallback_column: "Montant_Reference_Bareme"
+  strict: false
+
+# ====================================================================
+# SECTION 7 — Graph analysis (T13.1)
+# [Blondel2008] Louvain — fraude coordonnée garage↔assuré
+# score_output_col harmonisé avec SanteModule pour M_makora_dif.
+# ====================================================================
+graph_analysis:
+  enabled: true
+  entity_col: "ID_Garage"
+  assure_col: "ID_Assure"
+  weight_col: "Montant_Devis"
+  min_community_size: 2
+  suspicious_density_threshold: 0.4
+  score_output_col: "community_score" # ★ COMMUN avec SanteModule (v1.2.0)
+
+# ====================================================================
+# SECTION 8 — Drift monitoring
+# [Gama2014] : PSI > 0.2 → réentraînement recommandé
+# Tous les noms reflètent la nomenclature v1.2.0.
+# ====================================================================
+drift:
+  monitored_features:
+    - ratio_devis_bareme # feature #1 fraude auto
+    - vehicule_sur_value # sur-valorisation — drift marché auto
+    - prestataire_concentration # concentration garage — drift réseau
+    - nb_sinistres_recents # fréquence — drift comportemental
+    - montant_log # distribution montants — drift inflation
+    - community_score # signal réseau — drift composition fraude
+  reference_window_days: 90
+  current_window_days: 30
+  thresholds:
+    warning: 0.10
+    critical: 0.20

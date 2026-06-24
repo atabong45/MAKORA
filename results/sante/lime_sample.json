@@ -1,0 +1,3402 @@
+[
+  {
+    "sample_idx": 669,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085586
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042328
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027084
+      }
+    ]
+  },
+  {
+    "sample_idx": 958,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085907
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042074
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.036317
+      }
+    ]
+  },
+  {
+    "sample_idx": 858,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.087329
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.04227
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.038885
+      }
+    ]
+  },
+  {
+    "sample_idx": 172,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.082498
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.040707
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037891
+      }
+    ]
+  },
+  {
+    "sample_idx": 169,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.089935
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041846
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.035229
+      }
+    ]
+  },
+  {
+    "sample_idx": 632,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084019
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042687
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.038238
+      }
+    ]
+  },
+  {
+    "sample_idx": 901,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.08595
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041362
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035542
+      }
+    ]
+  },
+  {
+    "sample_idx": 1861,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085096
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042354
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.036616
+      }
+    ]
+  },
+  {
+    "sample_idx": 441,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083783
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042476
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.025964
+      }
+    ]
+  },
+  {
+    "sample_idx": 1130,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.082352
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041971
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037216
+      }
+    ]
+  },
+  {
+    "sample_idx": 1057,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084321
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.040285
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027482
+      }
+    ]
+  },
+  {
+    "sample_idx": 1736,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.087357
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.043964
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035159
+      }
+    ]
+  },
+  {
+    "sample_idx": 1029,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083829
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.043788
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.038026
+      }
+    ]
+  },
+  {
+    "sample_idx": 1451,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.081555
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041892
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.027629
+      }
+    ]
+  },
+  {
+    "sample_idx": 1347,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084427
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041413
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.02822
+      }
+    ]
+  },
+  {
+    "sample_idx": 1832,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.086615
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042563
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.036285
+      }
+    ]
+  },
+  {
+    "sample_idx": 1845,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085938
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.045769
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035228
+      }
+    ]
+  },
+  {
+    "sample_idx": 1248,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083977
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042369
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.033436
+      }
+    ]
+  },
+  {
+    "sample_idx": 1488,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.08521
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.039384
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.036942
+      }
+    ]
+  },
+  {
+    "sample_idx": 402,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083806
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042108
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.036367
+      }
+    ]
+  },
+  {
+    "sample_idx": 1498,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084507
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041797
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037678
+      }
+    ]
+  },
+  {
+    "sample_idx": 1470,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085209
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041683
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027565
+      }
+    ]
+  },
+  {
+    "sample_idx": 138,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085422
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.040416
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.03906
+      }
+    ]
+  },
+  {
+    "sample_idx": 1381,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084003
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.040655
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035379
+      }
+    ]
+  },
+  {
+    "sample_idx": 65,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.080989
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.04325
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.0273
+      }
+    ]
+  },
+  {
+    "sample_idx": 294,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.082777
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041737
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.040363
+      }
+    ]
+  },
+  {
+    "sample_idx": 320,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.082363
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042353
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.02829
+      }
+    ]
+  },
+  {
+    "sample_idx": 1708,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083429
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043791
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.033042
+      }
+    ]
+  },
+  {
+    "sample_idx": 1035,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085117
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042405
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.03703
+      }
+    ]
+  },
+  {
+    "sample_idx": 163,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.086587
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042234
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.036943
+      }
+    ]
+  },
+  {
+    "sample_idx": 1877,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083854
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040763
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.03623
+      }
+    ]
+  },
+  {
+    "sample_idx": 769,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.082606
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.04101
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.030922
+      }
+    ]
+  },
+  {
+    "sample_idx": 343,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.082501
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042044
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027979
+      }
+    ]
+  },
+  {
+    "sample_idx": 1379,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.08608
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041802
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.036496
+      }
+    ]
+  },
+  {
+    "sample_idx": 850,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084694
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042784
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.028104
+      }
+    ]
+  },
+  {
+    "sample_idx": 755,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.082813
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.040604
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.036348
+      }
+    ]
+  },
+  {
+    "sample_idx": 1254,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084821
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041537
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.036847
+      }
+    ]
+  },
+  {
+    "sample_idx": 1635,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085086
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042726
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.035866
+      }
+    ]
+  },
+  {
+    "sample_idx": 1575,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083282
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043167
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037993
+      }
+    ]
+  },
+  {
+    "sample_idx": 532,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084649
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.04071
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.038083
+      }
+    ]
+  },
+  {
+    "sample_idx": 588,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.082456
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042282
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.034867
+      }
+    ]
+  },
+  {
+    "sample_idx": 318,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084625
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.040693
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.026553
+      }
+    ]
+  },
+  {
+    "sample_idx": 937,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084728
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041144
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027296
+      }
+    ]
+  },
+  {
+    "sample_idx": 1617,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084046
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041434
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037266
+      }
+    ]
+  },
+  {
+    "sample_idx": 239,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085087
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.04341
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.036643
+      }
+    ]
+  },
+  {
+    "sample_idx": 121,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.08499
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.0428
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037772
+      }
+    ]
+  },
+  {
+    "sample_idx": 1277,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083027
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.04335
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.036104
+      }
+    ]
+  },
+  {
+    "sample_idx": 1469,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083666
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043618
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.026603
+      }
+    ]
+  },
+  {
+    "sample_idx": 838,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085669
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041175
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035435
+      }
+    ]
+  },
+  {
+    "sample_idx": 110,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.086931
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.04012
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.03765
+      }
+    ]
+  },
+  {
+    "sample_idx": 460,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.082578
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042737
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037897
+      }
+    ]
+  },
+  {
+    "sample_idx": 1829,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.08525
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.044706
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.034331
+      }
+    ]
+  },
+  {
+    "sample_idx": 581,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.086478
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042715
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035044
+      }
+    ]
+  },
+  {
+    "sample_idx": 1333,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085594
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041791
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.040068
+      }
+    ]
+  },
+  {
+    "sample_idx": 520,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.082725
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042095
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027892
+      }
+    ]
+  },
+  {
+    "sample_idx": 1262,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.08559
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042415
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.033121
+      }
+    ]
+  },
+  {
+    "sample_idx": 1473,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084338
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043727
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.027508
+      }
+    ]
+  },
+  {
+    "sample_idx": 257,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085299
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041384
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035755
+      }
+    ]
+  },
+  {
+    "sample_idx": 1173,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085272
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041841
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.031283
+      }
+    ]
+  },
+  {
+    "sample_idx": 849,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.080532
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042139
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.03713
+      }
+    ]
+  },
+  {
+    "sample_idx": 1336,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084644
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040909
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037925
+      }
+    ]
+  },
+  {
+    "sample_idx": 1289,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.086734
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.039693
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.036811
+      }
+    ]
+  },
+  {
+    "sample_idx": 884,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.086741
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042184
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.027315
+      }
+    ]
+  },
+  {
+    "sample_idx": 1517,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.086033
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.044186
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037806
+      }
+    ]
+  },
+  {
+    "sample_idx": 529,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084341
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.039437
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.036588
+      }
+    ]
+  },
+  {
+    "sample_idx": 202,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084196
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040413
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.028424
+      }
+    ]
+  },
+  {
+    "sample_idx": 78,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083569
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043217
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.028267
+      }
+    ]
+  },
+  {
+    "sample_idx": 652,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.086226
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.04268
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.036257
+      }
+    ]
+  },
+  {
+    "sample_idx": 259,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085652
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.038946
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.03685
+      }
+    ]
+  },
+  {
+    "sample_idx": 1186,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085175
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041385
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.036708
+      }
+    ]
+  },
+  {
+    "sample_idx": 1123,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085727
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.044052
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.034324
+      }
+    ]
+  },
+  {
+    "sample_idx": 570,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083923
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042557
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027791
+      }
+    ]
+  },
+  {
+    "sample_idx": 1892,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.0844
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041059
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.028542
+      }
+    ]
+  },
+  {
+    "sample_idx": 863,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085007
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042683
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.028217
+      }
+    ]
+  },
+  {
+    "sample_idx": 955,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084344
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.045282
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.02713
+      }
+    ]
+  },
+  {
+    "sample_idx": 1245,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.087702
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042888
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.033955
+      }
+    ]
+  },
+  {
+    "sample_idx": 778,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.082428
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042723
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035595
+      }
+    ]
+  },
+  {
+    "sample_idx": 1596,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083738
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043506
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.038632
+      }
+    ]
+  },
+  {
+    "sample_idx": 352,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083757
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042162
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.027617
+      }
+    ]
+  },
+  {
+    "sample_idx": 1136,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.08583
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042451
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.033069
+      }
+    ]
+  },
+  {
+    "sample_idx": 660,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.086976
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.043597
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.036368
+      }
+    ]
+  },
+  {
+    "sample_idx": 599,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.082604
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040146
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027865
+      }
+    ]
+  },
+  {
+    "sample_idx": 820,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085026
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.040945
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.028271
+      }
+    ]
+  },
+  {
+    "sample_idx": 1341,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085838
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041538
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.038933
+      }
+    ]
+  },
+  {
+    "sample_idx": 981,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.087036
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042535
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035058
+      }
+    ]
+  },
+  {
+    "sample_idx": 637,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.086386
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042946
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.028476
+      }
+    ]
+  },
+  {
+    "sample_idx": 403,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084983
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040476
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.037979
+      }
+    ]
+  },
+  {
+    "sample_idx": 817,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.087666
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.0424
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.035459
+      }
+    ]
+  },
+  {
+    "sample_idx": 1934,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085126
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042048
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.03525
+      }
+    ]
+  },
+  {
+    "sample_idx": 1047,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.08192
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.04327
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.028426
+      }
+    ]
+  },
+  {
+    "sample_idx": 164,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083156
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042896
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037629
+      }
+    ]
+  },
+  {
+    "sample_idx": 368,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084758
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041164
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.038291
+      }
+    ]
+  },
+  {
+    "sample_idx": 1055,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.0851
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.04112
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037338
+      }
+    ]
+  },
+  {
+    "sample_idx": 964,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084319
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041115
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035278
+      }
+    ]
+  },
+  {
+    "sample_idx": 822,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.08581
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041131
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.026956
+      }
+    ]
+  },
+  {
+    "sample_idx": 512,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.08669
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042724
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035353
+      }
+    ]
+  },
+  {
+    "sample_idx": 177,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084383
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.04279
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037833
+      }
+    ]
+  },
+  {
+    "sample_idx": 155,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.086849
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042715
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037903
+      }
+    ]
+  },
+  {
+    "sample_idx": 1550,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085466
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.04243
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.0352
+      }
+    ]
+  },
+  {
+    "sample_idx": 1524,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083064
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041827
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037357
+      }
+    ]
+  },
+  {
+    "sample_idx": 1073,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085596
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.040553
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037658
+      }
+    ]
+  },
+  {
+    "sample_idx": 656,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.0863
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042965
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035168
+      }
+    ]
+  },
+  {
+    "sample_idx": 1732,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.082882
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041216
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.034477
+      }
+    ]
+  },
+  {
+    "sample_idx": 1303,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.08692
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042752
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.0276
+      }
+    ]
+  },
+  {
+    "sample_idx": 893,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.086288
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043307
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035028
+      }
+    ]
+  },
+  {
+    "sample_idx": 555,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.081827
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041336
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.03641
+      }
+    ]
+  },
+  {
+    "sample_idx": 1373,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084613
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.043787
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.034665
+      }
+    ]
+  },
+  {
+    "sample_idx": 13,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.082362
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042759
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.039715
+      }
+    ]
+  },
+  {
+    "sample_idx": 784,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.082712
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042637
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035715
+      }
+    ]
+  },
+  {
+    "sample_idx": 1403,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083292
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042582
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.031774
+      }
+    ]
+  },
+  {
+    "sample_idx": 309,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.08603
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042703
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.027214
+      }
+    ]
+  },
+  {
+    "sample_idx": 1593,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083447
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041615
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.03654
+      }
+    ]
+  },
+  {
+    "sample_idx": 741,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083466
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041639
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.028079
+      }
+    ]
+  },
+  {
+    "sample_idx": 1476,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083589
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.044014
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.029684
+      }
+    ]
+  },
+  {
+    "sample_idx": 1227,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084711
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040384
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.03401
+      }
+    ]
+  },
+  {
+    "sample_idx": 1856,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085868
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.043761
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.036941
+      }
+    ]
+  },
+  {
+    "sample_idx": 1903,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.082212
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042833
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.027946
+      }
+    ]
+  },
+  {
+    "sample_idx": 1818,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084966
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042711
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035371
+      }
+    ]
+  },
+  {
+    "sample_idx": 877,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084984
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.04269
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.028584
+      }
+    ]
+  },
+  {
+    "sample_idx": 983,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.086463
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042832
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.036847
+      }
+    ]
+  },
+  {
+    "sample_idx": 921,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085705
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042907
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.029221
+      }
+    ]
+  },
+  {
+    "sample_idx": 1218,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084629
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041893
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.026139
+      }
+    ]
+  },
+  {
+    "sample_idx": 1608,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.08499
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041197
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.038796
+      }
+    ]
+  },
+  {
+    "sample_idx": 277,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.082845
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.044073
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027567
+      }
+    ]
+  },
+  {
+    "sample_idx": 1660,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.086144
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043183
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.036801
+      }
+    ]
+  },
+  {
+    "sample_idx": 1791,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085879
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043102
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.033618
+      }
+    ]
+  },
+  {
+    "sample_idx": 1243,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083953
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043951
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.033291
+      }
+    ]
+  },
+  {
+    "sample_idx": 792,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.082798
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.045242
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.034101
+      }
+    ]
+  },
+  {
+    "sample_idx": 1140,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.08219
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042764
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035177
+      }
+    ]
+  },
+  {
+    "sample_idx": 492,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083462
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042238
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.034637
+      }
+    ]
+  },
+  {
+    "sample_idx": 412,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085663
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041999
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.028331
+      }
+    ]
+  },
+  {
+    "sample_idx": 1711,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085309
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041449
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.034655
+      }
+    ]
+  },
+  {
+    "sample_idx": 795,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084622
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042139
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.033762
+      }
+    ]
+  },
+  {
+    "sample_idx": 1228,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.082324
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042202
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.033194
+      }
+    ]
+  },
+  {
+    "sample_idx": 43,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.086309
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041513
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027274
+      }
+    ]
+  },
+  {
+    "sample_idx": 1489,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083642
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040587
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.038303
+      }
+    ]
+  },
+  {
+    "sample_idx": 612,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084683
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040341
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.029085
+      }
+    ]
+  },
+  {
+    "sample_idx": 1350,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085793
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043011
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.028186
+      }
+    ]
+  },
+  {
+    "sample_idx": 1633,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085034
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042077
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037423
+      }
+    ]
+  },
+  {
+    "sample_idx": 1445,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083052
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043817
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.029586
+      }
+    ]
+  },
+  {
+    "sample_idx": 292,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085238
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042496
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.036609
+      }
+    ]
+  },
+  {
+    "sample_idx": 1378,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.086453
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.040309
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035219
+      }
+    ]
+  },
+  {
+    "sample_idx": 1056,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085377
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.039715
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.039036
+      }
+    ]
+  },
+  {
+    "sample_idx": 1253,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085391
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043857
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.037489
+      }
+    ]
+  },
+  {
+    "sample_idx": 880,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083355
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.044123
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.036176
+      }
+    ]
+  },
+  {
+    "sample_idx": 439,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083297
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042689
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.026119
+      }
+    ]
+  },
+  {
+    "sample_idx": 1212,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085742
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042232
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.026004
+      }
+    ]
+  },
+  {
+    "sample_idx": 1453,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083443
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041735
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.027478
+      }
+    ]
+  },
+  {
+    "sample_idx": 1865,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085601
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041924
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.028927
+      }
+    ]
+  },
+  {
+    "sample_idx": 710,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084598
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042797
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.0283
+      }
+    ]
+  },
+  {
+    "sample_idx": 150,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085436
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043279
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.03945
+      }
+    ]
+  },
+  {
+    "sample_idx": 212,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.086815
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042133
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.025694
+      }
+    ]
+  },
+  {
+    "sample_idx": 1744,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.082757
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040893
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.034719
+      }
+    ]
+  },
+  {
+    "sample_idx": 69,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084221
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040422
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.028367
+      }
+    ]
+  },
+  {
+    "sample_idx": 1334,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084091
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040654
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037346
+      }
+    ]
+  },
+  {
+    "sample_idx": 228,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.087187
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043662
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.02759
+      }
+    ]
+  },
+  {
+    "sample_idx": 1482,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084368
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041749
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.02954
+      }
+    ]
+  },
+  {
+    "sample_idx": 1339,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085689
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.04238
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027988
+      }
+    ]
+  },
+  {
+    "sample_idx": 1541,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083228
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041138
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.038186
+      }
+    ]
+  },
+  {
+    "sample_idx": 961,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.082842
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041729
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.034056
+      }
+    ]
+  },
+  {
+    "sample_idx": 1475,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.08397
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042466
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.029304
+      }
+    ]
+  },
+  {
+    "sample_idx": 953,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084629
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042322
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027913
+      }
+    ]
+  },
+  {
+    "sample_idx": 1440,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083595
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.043521
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.028255
+      }
+    ]
+  },
+  {
+    "sample_idx": 871,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085722
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.044982
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.028496
+      }
+    ]
+  },
+  {
+    "sample_idx": 456,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084109
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043994
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027656
+      }
+    ]
+  },
+  {
+    "sample_idx": 1727,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085428
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.044888
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035959
+      }
+    ]
+  },
+  {
+    "sample_idx": 147,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085044
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.04218
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037295
+      }
+    ]
+  },
+  {
+    "sample_idx": 764,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084834
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042474
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.034063
+      }
+    ]
+  },
+  {
+    "sample_idx": 1870,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085496
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040897
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.03562
+      }
+    ]
+  },
+  {
+    "sample_idx": 1026,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.08511
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040756
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.038957
+      }
+    ]
+  },
+  {
+    "sample_idx": 797,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.08416
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.04164
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.0348
+      }
+    ]
+  },
+  {
+    "sample_idx": 1647,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085197
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.043611
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.032046
+      }
+    ]
+  },
+  {
+    "sample_idx": 1532,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.087245
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041272
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.029495
+      }
+    ]
+  },
+  {
+    "sample_idx": 1847,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084278
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042629
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.03362
+      }
+    ]
+  },
+  {
+    "sample_idx": 836,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083482
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042378
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.033927
+      }
+    ]
+  },
+  {
+    "sample_idx": 1428,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083896
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042109
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.027207
+      }
+    ]
+  },
+  {
+    "sample_idx": 113,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.085648
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.040678
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.036786
+      }
+    ]
+  },
+  {
+    "sample_idx": 1054,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.08329
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041707
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.038728
+      }
+    ]
+  },
+  {
+    "sample_idx": 1920,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084996
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041227
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.028039
+      }
+    ]
+  },
+  {
+    "sample_idx": 321,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084074
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042041
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.026225
+      }
+    ]
+  },
+  {
+    "sample_idx": 773,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083992
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042684
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.034414
+      }
+    ]
+  },
+  {
+    "sample_idx": 796,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083237
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042393
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035531
+      }
+    ]
+  },
+  {
+    "sample_idx": 225,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.086184
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040629
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.028608
+      }
+    ]
+  },
+  {
+    "sample_idx": 1258,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085172
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041861
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035387
+      }
+    ]
+  },
+  {
+    "sample_idx": 1217,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.081395
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.040898
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.029907
+      }
+    ]
+  },
+  {
+    "sample_idx": 663,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.083874
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.042953
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.033847
+      }
+    ]
+  },
+  {
+    "sample_idx": 1148,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084322
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043439
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035742
+      }
+    ]
+  },
+  {
+    "sample_idx": 1319,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.086941
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041885
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.038633
+      }
+    ]
+  },
+  {
+    "sample_idx": 569,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084561
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.040868
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.027417
+      }
+    ]
+  },
+  {
+    "sample_idx": 1392,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084401
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041632
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.034574
+      }
+    ]
+  },
+  {
+    "sample_idx": 699,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.084709
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.04261
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.03007
+      }
+    ]
+  },
+  {
+    "sample_idx": 1360,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083537
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.043045
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.027792
+      }
+    ]
+  },
+  {
+    "sample_idx": 734,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.086148
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.042656
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035901
+      }
+    ]
+  },
+  {
+    "sample_idx": 1551,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083689
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.043465
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.036909
+      }
+    ]
+  },
+  {
+    "sample_idx": 348,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.086012
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.041199
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.028379
+      }
+    ]
+  },
+  {
+    "sample_idx": 1522,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures > 0.00",
+        "lime_weight": 0.085993
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.044409
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.036222
+      }
+    ]
+  },
+  {
+    "sample_idx": 57,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.082155
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041191
+      },
+      {
+        "name": "delai_soin_depot_anormal <= 0.00",
+        "lime_weight": -0.028189
+      }
+    ]
+  },
+  {
+    "sample_idx": 1170,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.083582
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.04187
+      },
+      {
+        "name": "nb_sinistres_30j_assure > 18.00",
+        "lime_weight": 0.037532
+      }
+    ]
+  },
+  {
+    "sample_idx": 1801,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084328
+      },
+      {
+        "name": "0.00 < flag_weekend_care <= 1.00",
+        "lime_weight": 0.041513
+      },
+      {
+        "name": "nb_sinistres_meme_iban > 231.00",
+        "lime_weight": 0.035964
+      }
+    ]
+  },
+  {
+    "sample_idx": 235,
+    "top_features": [
+      {
+        "name": "saisie_hors_heures <= 0.00",
+        "lime_weight": -0.084238
+      },
+      {
+        "name": "flag_weekend_care <= 0.00",
+        "lime_weight": -0.043144
+      },
+      {
+        "name": "0.00 < delai_soin_depot_anormal <= 1.00",
+        "lime_weight": 0.027905
+      }
+    ]
+  }
+]

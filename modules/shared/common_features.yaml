@@ -1,0 +1,111 @@
+# ======================================================================
+# modules/shared/common_features.yaml
+# Features communes pour le modèle générique M_makora / M_makora_dif
+#
+# Ces 13 features sont présentes dans TOUS les modules MAKORA avec
+# exactement le même nom. Elles constituent l'espace partagé pour
+# l'entraînement multi-tâche (expérience H0) et pour M_makora_dif.
+#
+# PRINCIPE YAML-DRIVEN :
+#   Ce fichier est la source de vérité documentaire pour les features
+#   communes. Le script t12_1_experiment_h0.py calcule l'intersection
+#   dynamiquement via set(feats_sante) ∩ set(feats_auto) — ce fichier
+#   sert à la validation (assertion len == n_features) et à la
+#   traçabilité académique dans le mémoire.
+#
+# RÈGLE : ne jamais hardcoder ces noms dans le code Python.
+#         Toujours les dériver dynamiquement ou lire depuis ce fichier.
+#
+# RÉFÉRENCES :
+# - [Caruana1997] Caruana, R. (1997). Multitask Learning. Machine Learning,
+#   28(1), 41-75. → L'intersection des features inter-branches constitue
+#   la structure latente partagée. Ces 13 features comportementales
+#   transcendent l'hétérogénéité Santé/Auto.
+# - [Xu2023] Xu et al. (2023). Deep Isolation Forest for Anomaly Detection.
+#   IEEE TKDE. → M_makora_dif bénéficie d'un espace de features riche
+#   pour que son réseau [64,32] capte la non-linéarité inter-branches.
+#   4 features booléennes insuffisantes (résultat H0 DIF-4feat) ;
+#   13 features fournissent un signal adéquat.
+# - ADR-012 : M_makora = intersection features communes (étendu Scénarios A→C)
+#
+# HISTORIQUE :
+#   v1.0.0 — 4 features (ADR-012, T12.1 H0 baseline)
+#   v2.0.0 — 10 features (Scénario A — alignement noms, 2026-06-08)
+#   v2.1.0 — 12 features (Scénario B — nb_sinistres_recents, document_age_anormal)
+#   v3.0.0 — 13 features (Scénario C — montant_log, 2026-06-08)
+# ======================================================================
+
+version: "3.0.0"
+scenario: "C"
+n_features: 13
+validated_date: "2026-06-08"
+
+features:
+  # ── Groupe 1 : Features comportementales contractuelles (v1.0.0) ──────────
+  - anciennete_contrat_courte # Contrat récent → fraude opportuniste [Viaene2002]
+  - document_altere # Document retouché → fraude documentaire [Bauder2017]
+  - ocr_confiance_faible # OCR < 0.5 → doc suspect (contexte CM) [domaine CIMA]
+  - saisie_hors_heures # Saisie < 7h ou > 20h → signal comportemental atypique
+
+  # ── Groupe 2 : Features temporelles et déclaratives (Scénario A) ─────────
+  - is_weekend_event # ★ COMMUN — Sinistre/soin un weekend [Bauder2017]
+    #   Santé : Date_Soin.dayofweek >= 5
+    #   Auto  : Date_Sinistre.dayofweek >= 5
+  - delai_depot_anormal # ★ COMMUN — Délai de dépôt anormal (seuil 30j)
+    #   Santé : Delai_Soin_Depot > 30j [Code CIMA Art.25]
+    #   Auto  : Delai_Declaration > 30j [Viaene2002]
+
+  # ── Groupe 3 : Features réseau et doublons (Scénario A) ──────────────────
+  - flag_doublon # ★ COMMUN — Dossier soumis en double [Bauder2017]
+    #   Santé : Flag_Doublon (hash SHA-256 composite)
+    #   Auto  : Flag_Doublon_Auto (même principe)
+  - community_score # ★ COMMUN — Score communauté suspecte Louvain [Blondel2008]
+    #   Santé : community_id_sante via GraphEngine
+    #   Auto  : community_id_auto via GraphEngine
+  - prestataire_concentration # ★ COMMUN — Concentration sinistres sur un prestataire [Jiang2014]
+    #   Santé : praticien_concentration (ID_Praticien)
+    #   Auto  : garage_concentration_score (ID_Garage)
+  - acte_incomplet # ★ COMMUN — Acte/dossier marqué incomplet [domaine]
+    #   Source commune : Flag_Acte_Incomp (les deux datasets)
+
+  # ── Groupe 4 : Features fréquence et temporalité documentaire (Scénario B)
+  - nb_sinistres_recents # ★ COMMUN — Sinistres assuré sur 12 mois [Viaene2002]
+    #   Source : Nb_Sinistres_12m (les deux datasets)
+  - document_age_anormal # ★ COMMUN — Document déposé > 180j après l'événement
+    #   Santé : Date_Saisie_Systeme - Date_Soin > 180j
+    #   Auto  : Delai_Declaration > 180j [Chandola2009]
+
+  # ── Groupe 5 : Feature montant normalisé (Scénario C) ────────────────────
+  - montant_log # ★ COMMUN — log1p(montant) [Liu2008]
+    #   Santé : log1p(Montant_Facture)
+    #   Auto  : log1p(Montant_Devis)
+    #   Note : distributions incompatibles en valeur absolue
+    #   (XAF vs EUR, μ très différents) mais la transformation
+    #   log les rend comparables en termes de rang [Liu2008].
+
+metadata:
+  source: "ADR-012 + T12.1 + Scénarios A/B/C (juin 2026)"
+  branches_covered:
+    - sante
+    - auto
+  h0_results_before:
+    version: "v1.0.0 (4 features)"
+    delta_f1_sante: "+6.98%"
+    delta_f1_auto: "-17.52% (inversion — DIF manque de signal sur espace 4D booléen)"
+    conclusion: "Motivé l'extension aux Scénarios A→C"
+  note: >
+    La détermination des features communes en production se fait
+    dynamiquement : common_feats = sorted(set(feats_sante) & set(feats_auto))
+    dans t12_1_experiment_h0.py. Ce fichier sert à la validation
+    (assert len(common) == 13) et à la traçabilité du mémoire.
+    Scénario C éliminé (Ratio_Prix) : distributions incompatibles
+    (Santé μ=72/σ=5254, Auto μ=1.006/σ=0.096) — remplacé par montant_log.
+  references:
+    - "[Caruana1997] Multitask Learning"
+    - "[Xu2023] Deep Isolation Forest"
+    - "[Blondel2008] Louvain communities"
+    - "[Viaene2002] Auto insurance fraud"
+    - "[Bauder2017] Medicare fraud"
+    - "[Liu2008] Isolation Forest"
+    - "[Chandola2009] Anomaly detection survey"
+    - "[Jiang2014] CatchSync"

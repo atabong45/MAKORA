@@ -1,0 +1,211 @@
+{
+  "n_total": 100000,
+  "n_normal": 92000,
+  "n_anomalie": 8000,
+  "taux_anomalie": 0.08,
+  "n_features": 18,
+  "categories": {
+    "NORMAL": 92000,
+    "FRAUDE": 3200,
+    "ERREUR_OP": 2400,
+    "BIAIS": 1200,
+    "TECHNIQUE": 1200
+  },
+  "scenarios": {
+    "Double_Declaration": 400,
+    "Sinistre_Hors_Garantie": 400,
+    "Erreur_Bareme_MO": 400,
+    "Inversion_Montant": 400,
+    "Erreur_Codification_Reparation": 400,
+    "Corruption_Hash": 300,
+    "Schema_Drift_Dates": 300,
+    "Derive_Nomenclature": 300,
+    "Doublon_Batch_API": 300,
+    "Derive_Bareme_Inflation": 240,
+    "Biais_OCR_Rural": 240,
+    "Rejet_OCR_Matriciel": 240,
+    "Surestimation_Expert": 240,
+    "Biais_Geographique_BonusMalus": 240,
+    "Vol_Fictif": 214,
+    "Multi_Sinistres": 214,
+    "Staging_Accident": 214,
+    "Antidatage_Contrat": 214,
+    "Vehicule_Sur_Value": 214,
+    "Pieces_Reemploi": 213,
+    "Constat_Retroactif": 213,
+    "Surfacturation": 213,
+    "Expert_Corrompu": 213,
+    "Benford_Deviation": 213,
+    "Recyclage_Numerique": 213,
+    "Faux_Conducteur": 213,
+    "Collusion_Garage_Assure": 213,
+    "Falsification_Constat": 213,
+    "Pieces_Non_Montees": 213,
+    "RAS": 210,
+    "Oubli_Conversion_XAF_EUR": 190
+  },
+  "features_stats": {
+    "ratio_devis_bareme": {
+      "dtype": "float64",
+      "nan_pct": 0.0,
+      "n_unique": 99877,
+      "mean": 1.0062,
+      "std": 0.0954,
+      "min": 0.831,
+      "max": 3.9121
+    },
+    "vehicule_sur_value": {
+      "dtype": "bool",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.002,
+      "std": 0.0447,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "sinistre_nuit_sans_temoin": {
+      "dtype": "bool",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.4172,
+      "std": 0.4931,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "document_altere": {
+      "dtype": "bool",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.0021,
+      "std": 0.0461,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "garage_concentration_score": {
+      "dtype": "float64",
+      "nan_pct": 0.0,
+      "n_unique": 132,
+      "mean": 0.1513,
+      "std": 0.149,
+      "min": 0.0001,
+      "max": 0.348
+    },
+    "garage_non_agree": {
+      "dtype": "bool",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.6378,
+      "std": 0.4806,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "constat_manquant": {
+      "dtype": "bool",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.223,
+      "std": 0.4162,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "expertise_manquante": {
+      "dtype": "bool",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.153,
+      "std": 0.3599,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "delai_declaration_anormal": {
+      "dtype": "bool",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.0183,
+      "std": 0.1342,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "anciennete_contrat_courte": {
+      "dtype": "bool",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.013,
+      "std": 0.1134,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "ocr_confiance_faible": {
+      "dtype": "bool",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.0502,
+      "std": 0.2184,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "ratio_mo_reference": {
+      "dtype": "float64",
+      "nan_pct": 0.0,
+      "n_unique": 339,
+      "mean": 0.9997,
+      "std": 0.1166,
+      "min": 0.75,
+      "max": 1.25
+    },
+    "nb_sinistres_12m": {
+      "dtype": "float64",
+      "nan_pct": 0.0,
+      "n_unique": 9,
+      "mean": 0.3111,
+      "std": 0.6106,
+      "min": 0.0,
+      "max": 8.0
+    },
+    "montant_devis_log": {
+      "dtype": "float64",
+      "nan_pct": 0.0,
+      "n_unique": 89761,
+      "mean": 9.0198,
+      "std": 3.3735,
+      "min": 2.9565,
+      "max": 16.1112
+    },
+    "saisie_hors_heures": {
+      "dtype": "bool",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.003,
+      "std": 0.0547,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "flag_doublon_auto": {
+      "dtype": "int8",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.0006,
+      "std": 0.0239,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "community_score_auto": {
+      "dtype": "float32",
+      "nan_pct": 0.0,
+      "n_unique": 2,
+      "mean": 0.004,
+      "std": 0.0631,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "expert_garage_correlation": {
+      "dtype": "float32",
+      "nan_pct": 0.0,
+      "n_unique": 1298,
+      "mean": 0.1522,
+      "std": 0.1492,
+      "min": 0.0,
+      "max": 0.4261
+    }
+  }
+}

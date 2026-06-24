@@ -1,0 +1,179 @@
+# data/referentials/mercuriale_cima_sante.yaml
+# Mercuriale CIMA — Actes médicaux (nomenclature ASAC Cameroun)
+# Devise : XAF (Franc CFA BEAC)
+# Source : Tarification ASAC / Mercuriale CIMA (simulée pour prototype)
+# Mise à jour : Mai 2026
+#
+# NOTE ACADÉMIQUE :
+# Les prix ci-dessous sont des valeurs représentatives à des fins de prototype.
+# La mercuriale officielle CIMA est un document réglementaire non public.
+# [INSURANCE_DOMAIN_CONTEXT §3.2] : les prix sont en XAF, révisés périodiquement.
+# Jitter de tolérance : ±5% considéré conforme.
+
+entries:
+  # ── Gynécologie / Obstétrique ──────────────────────────────────────────────
+  - code: "GYNECO_001"
+    Libelle_Officiel: "Consultation gynécologique standard"
+    Prix_Ref_XAF: 15000
+    Categorie: "Acte médical"
+
+  - code: "GYNECO_002"
+    Libelle_Officiel: "Consultation gynécologique spécialisée"
+    Prix_Ref_XAF: 22000
+    Categorie: "Acte médical"
+
+  - code: "GYNECO_003"
+    Libelle_Officiel: "Échographie obstétricale"
+    Prix_Ref_XAF: 35000
+    Categorie: "Acte médical"
+
+  - code: "OBSTET_001"
+    Libelle_Officiel: "Accouchement normal"
+    Prix_Ref_XAF: 120000
+    Categorie: "Acte médical"
+
+  - code: "OBSTET_002"
+    Libelle_Officiel: "Accouchement par césarienne"
+    Prix_Ref_XAF: 280000
+    Categorie: "Acte médical"
+
+  - code: "OBSTET_003"
+    Libelle_Officiel: "Consultation prénatale"
+    Prix_Ref_XAF: 12000
+    Categorie: "Acte médical"
+
+  - code: "MAMMO_001"
+    Libelle_Officiel: "Mammographie bilatérale"
+    Prix_Ref_XAF: 45000
+    Categorie: "Radiologie"
+
+  - code: "MAMMO_002"
+    Libelle_Officiel: "Mammographie unilatérale"
+    Prix_Ref_XAF: 28000
+    Categorie: "Radiologie"
+
+  - code: "CERVI_001"
+    Libelle_Officiel: "Frottis cervico-vaginal"
+    Prix_Ref_XAF: 18000
+    Categorie: "Biologie"
+
+  - code: "CERVI_002"
+    Libelle_Officiel: "Colposcopie"
+    Prix_Ref_XAF: 55000
+    Categorie: "Acte médical"
+
+  # ── Andrologie / Urologie masculine ────────────────────────────────────────
+  - code: "PROSTA_001"
+    Libelle_Officiel: "Bilan prostatique PSA"
+    Prix_Ref_XAF: 25000
+    Categorie: "Biologie"
+
+  - code: "PROSTA_002"
+    Libelle_Officiel: "Biopsie prostatique"
+    Prix_Ref_XAF: 95000
+    Categorie: "Acte médical"
+
+  - code: "ANDRO_001"
+    Libelle_Officiel: "Consultation andrologique"
+    Prix_Ref_XAF: 18000
+    Categorie: "Acte médical"
+
+  - code: "ANDRO_002"
+    Libelle_Officiel: "Spermogramme"
+    Prix_Ref_XAF: 30000
+    Categorie: "Biologie"
+
+  # ── Médecine générale ───────────────────────────────────────────────────────
+  - code: "MG_001"
+    Libelle_Officiel: "Consultation médecine générale"
+    Prix_Ref_XAF: 8000
+    Categorie: "Acte médical"
+
+  - code: "MG_002"
+    Libelle_Officiel: "Consultation médecine générale complexe"
+    Prix_Ref_XAF: 12000
+    Categorie: "Acte médical"
+
+  - code: "MG_003"
+    Libelle_Officiel: "Visite à domicile"
+    Prix_Ref_XAF: 18000
+    Categorie: "Acte médical"
+
+  # ── Biologie / Analyses ────────────────────────────────────────────────────
+  - code: "BIO_001"
+    Libelle_Officiel: "Numération formule sanguine (NFS)"
+    Prix_Ref_XAF: 6000
+    Categorie: "Biologie"
+
+  - code: "BIO_002"
+    Libelle_Officiel: "Bilan hépatique complet"
+    Prix_Ref_XAF: 22000
+    Categorie: "Biologie"
+
+  - code: "BIO_003"
+    Libelle_Officiel: "Glycémie à jeun"
+    Prix_Ref_XAF: 3500
+    Categorie: "Biologie"
+
+  - code: "BIO_004"
+    Libelle_Officiel: "Test paludisme (TDR)"
+    Prix_Ref_XAF: 4500
+    Categorie: "Biologie"
+
+  - code: "BIO_005"
+    Libelle_Officiel: "Test VIH (ELISA)"
+    Prix_Ref_XAF: 8000
+    Categorie: "Biologie"
+
+  # ── Radiologie / Imagerie ──────────────────────────────────────────────────
+  - code: "RAD_001"
+    Libelle_Officiel: "Radiographie thoracique"
+    Prix_Ref_XAF: 15000
+    Categorie: "Radiologie"
+
+  - code: "RAD_002"
+    Libelle_Officiel: "Échographie abdominale"
+    Prix_Ref_XAF: 40000
+    Categorie: "Radiologie"
+
+  - code: "RAD_003"
+    Libelle_Officiel: "Scanner (TDM) thoracique"
+    Prix_Ref_XAF: 180000
+    Categorie: "Radiologie"
+
+  - code: "RAD_004"
+    Libelle_Officiel: "IRM cérébrale"
+    Prix_Ref_XAF: 320000
+    Categorie: "Radiologie"
+
+  # ── Hospitalisation ────────────────────────────────────────────────────────
+  - code: "HOSP_001"
+    Libelle_Officiel: "Forfait journalier hospitalisation chambre simple"
+    Prix_Ref_XAF: 35000
+    Categorie: "Hospitalisation"
+
+  - code: "HOSP_002"
+    Libelle_Officiel: "Forfait journalier hospitalisation chambre double"
+    Prix_Ref_XAF: 22000
+    Categorie: "Hospitalisation"
+
+  - code: "HOSP_003"
+    Libelle_Officiel: "Forfait journalier soins intensifs"
+    Prix_Ref_XAF: 120000
+    Categorie: "Hospitalisation"
+
+  # ── Médicaments (exemples) ─────────────────────────────────────────────────
+  - code: "MED_ANTIPAL_001"
+    Libelle_Officiel: "Traitement antipaludéen standard (Arthémether-Luméfantrine)"
+    Prix_Ref_XAF: 4200
+    Categorie: "Médicament"
+
+  - code: "MED_ANTIPAL_002"
+    Libelle_Officiel: "Traitement antipaludéen grave (Artésunate IV)"
+    Prix_Ref_XAF: 35000
+    Categorie: "Médicament"
+
+  - code: "MED_ANTIBIO_001"
+    Libelle_Officiel: "Amoxicilline 500mg (boîte 30 gélules)"
+    Prix_Ref_XAF: 2800
+    Categorie: "Médicament"

@@ -1,0 +1,47 @@
+# ============================================================
+# Dockerfile.api — MAKORA API + Tests
+# Python 3.12-slim | Cache pip monté → rebuild ~30s
+# ============================================================
+FROM python:3.12-slim
+
+# ── Dépendances système ──────────────────────────────────────
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    tesseract-ocr \
+    tesseract-ocr-fra \
+    libgl1 \
+    libglib2.0-0 \
+    libpq-dev \
+    gcc \
+    g++ \
+    postgresql-client \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# ── Dépendances Python avec cache monté ─────────────────────
+# Le cache BuildKit persiste entre les builds → pip ne retélécharge
+# que les packages qui ont changé dans requirements.txt
+COPY requirements.txt .
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install --upgrade pip \
+    && pip install -r requirements.txt \
+    && pip install setuptools wheel "cython<3.0" \
+    && pip install --no-build-isolation eif==2.0.2
+
+# ── Code source ──────────────────────────────────────────────
+COPY . .
+
+# ── Variables d'environnement ────────────────────────────────
+ENV PYTHONPATH=/app \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+# ── Healthcheck ──────────────────────────────────────────────
+HEALTHCHECK --interval=15s --timeout=5s --start-period=30s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+EXPOSE 8000
+
+CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+

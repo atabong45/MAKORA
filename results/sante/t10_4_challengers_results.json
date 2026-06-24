@@ -1,0 +1,35 @@
+[
+  {
+    "branch": "sante"
+  },
+  {
+    "algo": "LOF_k50",
+    "metrics": {
+      "f1": 0.1513,
+      "precision": 0.1047,
+      "recall": 0.2726,
+      "auc_roc": 0.5999,
+      "n_pred_anomalie": 3802,
+      "n_true_anomalie": 1460,
+      "train_time_s": 79.089,
+      "n_neighbors": 50,
+      "contamination": 0.07
+    },
+    "model_key": "lof_k50"
+  },
+  {
+    "algo": "SGDOneClassSVM",
+    "metrics": {
+      "f1": 0.0431,
+      "precision": 0.0379,
+      "recall": 0.05,
+      "auc_roc": 0.3389,
+      "n_pred_anomalie": 1924,
+      "n_true_anomalie": 1460,
+      "train_time_s": 0.233,
+      "nu": 0.07,
+      "scaler": "StandardScaler"
+    },
+    "model_key": "ocsvm_sgd"
+  }
+]

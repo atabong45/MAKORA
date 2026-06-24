@@ -1,0 +1,1 @@
+"""MAKORA — tests package."""

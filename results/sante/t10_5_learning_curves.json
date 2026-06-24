@@ -1,0 +1,54 @@
+{
+  "branch": "sante",
+  "contamination": 0.07,
+  "points": [
+    {
+      "n_train": 2000,
+      "auc_mean": 0.6271,
+      "auc_std": 0.009,
+      "f1_mean": 0.2081,
+      "f1_std": 0.0181,
+      "n_repeats": 5
+    },
+    {
+      "n_train": 5000,
+      "auc_mean": 0.6243,
+      "auc_std": 0.0064,
+      "f1_mean": 0.2037,
+      "f1_std": 0.0108,
+      "n_repeats": 5
+    },
+    {
+      "n_train": 10000,
+      "auc_mean": 0.6229,
+      "auc_std": 0.0041,
+      "f1_mean": 0.198,
+      "f1_std": 0.0147,
+      "n_repeats": 5
+    },
+    {
+      "n_train": 25000,
+      "auc_mean": 0.6234,
+      "auc_std": 0.0044,
+      "f1_mean": 0.1998,
+      "f1_std": 0.0136,
+      "n_repeats": 5
+    },
+    {
+      "n_train": 50000,
+      "auc_mean": 0.6262,
+      "auc_std": 0.0042,
+      "f1_mean": 0.2045,
+      "f1_std": 0.0117,
+      "n_repeats": 5
+    },
+    {
+      "n_train": 75000,
+      "auc_mean": 0.6217,
+      "auc_std": 0.0049,
+      "f1_mean": 0.1919,
+      "f1_std": 0.0172,
+      "n_repeats": 5
+    }
+  ]
+}

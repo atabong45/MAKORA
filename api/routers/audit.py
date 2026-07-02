@@ -42,7 +42,7 @@ from core.db.models.iam import User
 
 router = APIRouter(prefix="/audit", tags=["Audit HITL"])
 _access = Depends(require_roles("gestionnaire", "auditeur", "administrateur"))
-_decide = Depends(require_roles("gestionnaire", "auditeur"))
+_decide = Depends(require_roles("gestionnaire", "auditeur", "administrateur"))
 
 
 @router.get("/stats", response_model=AuditStatsResponse)

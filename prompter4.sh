@@ -1,28 +1,36 @@
 #!/bin/bash
 # ============================================================
 # prompter.sh — Générateur de contexte projet MAKORA
-# Version 4.0 — Juin 2026
+# Version 4.1 — Juillet 2026
+#
+# CORRECTIFS v4.1 (par rapport à v4.0) :
+#   1. .git/ exclu totalement (S1 et S2) — ajout au prune find
+#   2. results/ ajouté en listing-only (JSON lourds : lime_sample,
+#      top3_features, eda_signal_report, t12_3_fp_fn_all...)
+#   3. prompter4.sh exclu par pattern glob (couvre api/prompter4.sh)
+#   4. En-tête mis à jour pour refléter ces règles
 #
 # SECTION 1 — Arborescence complète (TOUS les fichiers + taille)
 #             Seuls __pycache__, .pytest_cache, node_modules,
-#             venv et assimilés sont exclus. Tout le reste apparaît.
+#             venv, .git et assimilés sont exclus. Tout le reste apparaît.
 #
 # SECTION 2 — Contenu des fichiers selon ces règles :
 #
 #   EXCLUS TOTALEMENT (silencieux, ni S1 ni S2) :
 #     → fichiers 0 octet
 #     → project_context.txt (fichier de sortie)
-#     → prompter4.sh (ce script)                             ← v4.0
+#     → prompter4.sh (ce script, où qu'il soit)               ← v4.1
 #     → package-lock.json, yarn.lock, *.log, etc.
 #
 #   LISTING ONLY dans S2 (chemin + taille, pas de contenu) :
 #     [BINARY]   → extensions binaires : .pyc .joblib .pkl .npy .parquet
 #                   .h5 .pt .bin .png .jpg .gif .ico .sqlite .jar .swp
-#                   .pdf .docx .doc .xlsx .xls .pptx .ppt              ← v4.0
-#     [DATA]     → data/raw|processed|splits|models|documents          ← v4.0
-#                   docs/context/                                       ← v4.0
+#                   .pdf .docx .doc .xlsx .xls .pptx .ppt
+#     [DATA]     → data/raw|processed|splits|models|documents
+#                   docs/context/
+#                   results/                                    ← v4.1
 #     [JSON-L]   → JSON > 10K hors JSON_WHITELIST
-#     [SCRIPT-L] → scripts ML terminés (t10_* t12_* t13_* _ml_common) ← v4.0
+#     [SCRIPT-L] → scripts ML terminés (t10_* t12_* t13_* _ml_common)
 #
 #   CONTENU COMPLET (tout le reste) :
 #     → code Python actif, YAML, Markdown de travail, SQL, Shell
@@ -44,22 +52,6 @@ DEFAULT_PROJECT_PATH="."
 PROJECT_PATH="${1:-$DEFAULT_PROJECT_PATH}"
 OUTPUT_FILENAME="project_context.txt"
 
-# Dossiers exclus TOTALEMENT (S1 et S2) — exclusion par nom récursif
-EXCLUDE_DIRS_BY_NAME=(
-    "__pycache__"
-    ".pytest_cache"
-    "node_modules"
-    "vendor"
-    "build"
-    "dist"
-    "target"
-    ".next"
-    "venv"
-    ".venv"
-    "env"
-    "storage"
-)
-
 # Dossiers listing-only dans S2 (toujours visibles en S1)
 # Préfixes de chemin relatif depuis la racine du projet
 LISTING_ONLY_DIR_PREFIXES=(
@@ -67,8 +59,9 @@ LISTING_ONLY_DIR_PREFIXES=(
     "data/processed/"
     "data/splits/"
     "data/models/"
-    "data/documents/"   # v4.0 — PDFs/docs uploadés par les sinistres (OCR testing)
-    "docs/context/"     # v4.0 — Anciens fichiers contexte IA, doublons déjà en PK
+    "data/documents/"   # PDFs/docs uploadés par les sinistres (OCR testing)
+    "docs/context/"     # Anciens fichiers contexte IA, doublons déjà en PK
+    "results/"          # v4.1 — JSON lourds (lime_sample, top3_features, eda_signal...)
 )
 
 # Extensions listing-only (binaires, images, Office, données volumineuses)
@@ -76,17 +69,18 @@ BINARY_EXTENSIONS=(
     "pyc" "joblib" "pkl" "npy" "parquet" "csv"
     "h5" "pt" "bin" "png" "jpg" "jpeg" "gif" "ico"
     "sqlite" "jar" "class" "swp" "bak" "tmp"
-    "pdf" "docx" "doc" "xlsx" "xls" "pptx" "ppt"  # v4.0 — binaires Office/PDF
+    "pdf" "docx" "doc" "xlsx" "xls" "pptx" "ppt"
 )
 
 # Fichiers exclus totalement par nom exact (basename)
 EXCLUDE_FILES_EXACT=(
     "$OUTPUT_FILENAME"
-    "prompter4.sh"      # v4.0 — ce script lui-même, inutile dans le contexte IA
 )
 
-# Fichiers exclus totalement par pattern glob
+# Fichiers exclus totalement par pattern glob (basename)
+# v4.1 : prompter4.sh exclu par pattern pour couvrir api/prompter4.sh aussi
 EXCLUDE_FILES_PATTERN=(
+    "prompter4.sh"
     "package-lock.json"
     "yarn.lock"
     "composer.lock"
@@ -104,6 +98,7 @@ LISTING_ONLY_SCRIPTS=(
 )
 
 # JSON toujours inclus en contenu complet (résultats scientifiques clés)
+# Note : ces fichiers passent même s'ils sont dans un dossier listing-only
 JSON_WHITELIST=(
     "metrics_final.json"
     "t10_3_if_results.json"
@@ -208,34 +203,36 @@ rm -f "$OUTPUT_FILE"
 echo "Project Context — MAKORA Backend"
 echo "Generated  : $(date)"
 echo "Root       : $PROJECT_PATH"
+echo "Version    : prompter4.sh v4.1"
 echo "Strategy   :"
-echo "  S1 = Arborescence complète (tous fichiers, hors dépendances)"
+echo "  S1 = Arborescence complète (tous fichiers, hors .git et dépendances)"
 echo "  S2 = Contenu complet : core/, api/, modules/, scripts/ actifs,"
 echo "                          docs/doc_frontend/, docs/session/, docs/*.md"
-echo "       [BINARY]   : binaires, PDF, Office (pdf doc docx xls xlsx ppt pptx)"
-echo "       [DATA]     : data/raw|processed|splits|models|documents, docs/context/"
+echo "       [BINARY]   : binaires, PDF, Office"
+echo "       [DATA]     : data/raw|processed|splits|models|documents, docs/context/, results/"
 echo "       [JSON-L]   : JSON > 10K hors whitelist"
 echo "       [SCRIPT-L] : scripts ML terminés (t10_* t12_* t13_* _ml_common)"
-echo "       Exclus total: 0B, __pycache__, locks, .log, project_context.txt, prompter4.sh"
+echo "       Exclus total: 0B, .git/, __pycache__, locks, .log, project_context.txt, prompter4.sh"
 echo "==============================================================="
 echo ""
 } > "$OUTPUT_FILE"
 
 # ============================================================
 # SECTION 1 — ARBORESCENCE COMPLÈTE
-# Tout apparaît ici sauf les dossiers de dépendances.
+# Tout apparaît ici sauf les dossiers de dépendances et .git.
 # ============================================================
 {
 echo "==============================================================="
 echo "SECTION 1 — ARBORESCENCE COMPLÈTE DU PROJET"
-echo "(tous fichiers sur disque, hors dépendances compilées)"
+echo "(tous fichiers sur disque, hors .git et dépendances compilées)"
 echo "Colonnes : taille    chemin/relatif/depuis/racine"
 echo "==============================================================="
 echo ""
 } >> "$OUTPUT_FILE"
 
 find "$PROJECT_PATH" \
-    \( -name "__pycache__" -o -name ".pytest_cache" -o \
+    \( -name ".git" -o \
+       -name "__pycache__" -o -name ".pytest_cache" -o \
        -name "node_modules" -o -name "venv" -o -name ".venv" -o \
        -name "build" -o -name "dist" -o -name "target" -o \
        -name ".next" -o -name "vendor" -o -name "storage" -o \
@@ -263,7 +260,7 @@ echo ""
 echo "==============================================================="
 echo "SECTION 2 — CONTENU DES FICHIERS"
 echo "  [BINARY]   = extension binaire ou Office/PDF — contenu non textuel"
-echo "  [DATA]     = dossier data volumineuse ou docs/context/ (doublons PK)"
+echo "  [DATA]     = dossier data volumineuse, docs/context/ ou results/"
 echo "  [JSON-L]   = JSON > 10K hors whitelist"
 echo "  [SCRIPT-L] = script ML terminé (training/évaluation) — résultats figés"
 echo "==============================================================="
@@ -316,7 +313,7 @@ while IFS= read -r FILE_PATH; do
         continue
     fi
 
-    # 5. Dossier data volumineuse ou docs/context/ → listing only
+    # 5. Dossier data volumineuse, docs/context/ ou results/ → listing only
     if is_in_listing_only_dir "$RELATIVE_PATH"; then
         echo "// [DATA]     $RELATIVE_PATH  ($HR)" >> "$OUTPUT_FILE"
         continue
@@ -345,7 +342,8 @@ while IFS= read -r FILE_PATH; do
 
 done < <(
     find "$PROJECT_PATH" \
-        \( -name "__pycache__" -o -name ".pytest_cache" -o \
+        \( -name ".git" -o \
+           -name "__pycache__" -o -name ".pytest_cache" -o \
            -name "node_modules" -o -name "venv" -o -name ".venv" -o \
            -name "build" -o -name "dist" -o -name "target" -o \
            -name ".next" -o -name "vendor" -o -name "storage" -o \

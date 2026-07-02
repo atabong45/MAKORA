@@ -37,7 +37,7 @@ from core.db.models.iam import User
 router = APIRouter(prefix="/escalations", tags=["Escalades"])
 
 # Création : gestionnaire uniquement (il escalade depuis DecisionPanel)
-_gestionnaire = Depends(require_roles("gestionnaire"))
+_gestionnaire = Depends(require_roles("gestionnaire", "administrateur"))
 
 # Lecture : gestionnaire + auditeur + admin — BUG-ESCAL-03
 _read = Depends(require_roles("gestionnaire", "auditeur", "administrateur"))

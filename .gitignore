@@ -37,3 +37,7 @@ pytest
 sys
 =1.24.0
 project_context.txt
+backend.txt
+project backend.txt
+project_context.txt
+.env

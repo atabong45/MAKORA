@@ -30,6 +30,7 @@ DÉCISIONS DE CONCEPTION :
 from __future__ import annotations
 
 import hashlib
+from importlib.resources import path
 import json
 import re
 import time
@@ -475,3 +476,5 @@ def _extract_pdf_native_text(self, path: Path) -> str:
     except Exception as e:
         logger.warning("[OCR] PyMuPDF erreur : %s", e)
         return ""
+    
+    

@@ -33,8 +33,11 @@ DÉCISIONS DE CONCEPTION :
     (Flag_Doublon, community_id_sante) — elles ne recalculent pas le graphe.
   - Le graphe complet (NetworkX + Louvain) est activé via graph_engine.py (T13.1).
     Ces features sont le "pont" qui permet à l'IF de consommer le signal réseau.
-  - prestataire_concentration est calculé en-ligne sur le batch (stateless)
-    car la persistance inter-batches est une dette DT-002 non résolue.
+  - prestataire_concentration : en mode BATCH (CSV import), calculé sur le
+    DataFrame courant (comportement original). En mode SINGLE-CLAIM (soumission
+    individuelle), utilise la colonne _prestataire_concentration_hist pré-calculée
+    depuis l'historique DB par claim_crud_service.py (B-DOSSIER-02).
+    [Jiang2014] : meaningful uniquement sur fenêtre historique suffisante.
   - Toutes les valeurs nulles sont gérées vers 0.0 (pas de NaN dans l'IF).
   - Invariant : result.name == clé du registre FEATURE_RESEAU_FUNCTIONS_SANTE.
     Vérifié par TestRegistreFonctions.test_noms_series_coherents.
@@ -44,6 +47,11 @@ CHANGEMENTS v0.5.0 (Scénario A) :
   - Clé registre "community_score_sante" -> "community_score" (feature commune)
   - Clé registre "praticien_concentration" -> "prestataire_concentration" (feature commune)
   - .rename() ajouté dans chaque fonction pour garantir l'invariant name == clé
+
+CHANGEMENTS B-DOSSIER-02 :
+  - compute_praticien_concentration : mode hybride batch/single-claim.
+    Si colonne _prestataire_concentration_hist présente → valeur DB historique.
+    Sinon → calcul sur le DataFrame (comportement batch original préservé).
 """
 from __future__ import annotations
 
@@ -118,22 +126,27 @@ def compute_community_score_sante(df: pd.DataFrame) -> pd.Series:
 
 def compute_praticien_concentration(df: pd.DataFrame) -> pd.Series:
     """
-    Part des sinistres du batch concentrée sur le praticien de ce dossier.
+    Part des sinistres concentrée sur le praticien — mode hybride batch/single.
 
-    Calcul : nb_sinistres_praticien / nb_total_sinistres_batch
+    MODE SINGLE-CLAIM (colonne _prestataire_concentration_hist présente) :
+      Utilise la valeur pré-calculée par claim_crud_service.py depuis
+      l'historique DB sur 30j glissants. Cette valeur est significative
+      car elle reflète la vraie concentration du praticien dans le temps.
+      [Jiang2014] : meaningful uniquement sur fenêtre historique suffisante.
 
-    Un praticien normal représente < 0.5% des dossiers.
-    Un praticien fraudeur concentré peut représenter 30-40% (Pareto).
+    MODE BATCH (colonne absente — comportement original) :
+      Calcul en-ligne sur le DataFrame : nb_sinistres_praticien / nb_total_batch.
+      Un praticien normal représente < 0.5% des dossiers.
+      Un praticien fraudeur concentré peut représenter 30-40% (Pareto).
+      [Bauder2017] — la concentration des actes sur un petit nombre de
+      prestataires est le signal le plus robuste de fraude Medicare.
+      [Jiang2014] — corrélé avec la densité du graphe praticien/assuré.
 
-    Feature commune Santé/Auto : "prestataire_concentration" [Xu2023].
-    [Bauder2017] — la concentration des actes sur un petit nombre de
-    prestataires est le signal le plus robuste de fraude Medicare.
-    [Jiang2014] — corrélé avec la densité du graphe praticien/assuré.
-
-    Note : proxy stateless — persistance inter-batches est une dette DT-002.
+    Note : le flag column _prestataire_concentration_hist est nettoyé
+    du DataFrame après extraction (ne pollue pas les features DIF).
 
     Returns:
-        pd.Series nommée "prestataire_concentration", dtype float32, valeurs [0.0, 1.0].
+        pd.Series nommée "prestataire_concentration", dtype float32, [0.0, 1.0].
     """
     if "ID_Praticien" not in df.columns:
         return pd.Series(0.0, index=df.index, dtype="float32").rename(

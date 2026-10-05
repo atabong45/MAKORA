@@ -2,23 +2,27 @@
 MODULE : api/routers/escalations.py
 DESCRIPTION : Router FastAPI — Escalades HITL (6 endpoints).
 
-CORRECTIONS APPLIQUÉES :
+MODIFICATIONS PHASE 1 :
 
-BUG-ESCAL-01 — list_escalations : assigned_to ignoré
-  Ajout du query param assigned_to: UUID | None.
-  Permet à l'onglet "Mes escalades" du frontend de filtrer correctement.
+BUG-5 — RBAC : administrateur pouvait lire mais pas créer d'escalade
+  _gestionnaire passe de require_roles("gestionnaire") à
+  require_roles("gestionnaire", "administrateur").
+  Cohérent avec la matrice RBAC : ADM peut tout faire.
 
-BUG-ESCAL-03 — RBAC : gestionnaire ne pouvait pas voir les escalades
-  Ajout de _read = require_roles("gestionnaire", "auditeur", "administrateur")
-  pour les endpoints de lecture (GET / et GET /{id}).
-  Le gestionnaire peut donc consulter les escalades qu'il a créées.
-  Les endpoints mutants (assign, resolve) restent réservés aux auditeurs.
+CORRECTIONS PRÉCÉDENTES CONSERVÉES :
+
+BUG-ESCAL-01 — list_escalations : assigned_to filtré correctement
+  Query param assigned_to: UUID | None pour l'onglet "Mes escalades".
+
+BUG-ESCAL-03 — Visibilité gestionnaire
+  _read = require_roles("gestionnaire", "auditeur", "administrateur").
+  Le gestionnaire voit ses propres escalades.
 
 RÉFÉRENCES ACADÉMIQUES :
 - [Amershi2019] §IV.D — HITL à deux niveaux : le gestionnaire escalade,
-  l'auditeur senior arbitre. Les deux rôles doivent pouvoir lire les
-  escalades pour que la boucle de feedback fonctionne.
+  l'auditeur senior arbitre. L'admin peut intervenir à tout niveau.
 """
+
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, Query
@@ -36,13 +40,14 @@ from core.db.models.iam import User
 
 router = APIRouter(prefix="/escalations", tags=["Escalades"])
 
-# Création : gestionnaire uniquement (il escalade depuis DecisionPanel)
+# Phase 1 — Bug 5 corrigé : "administrateur" ajouté
+# Création : gestionnaire + administrateur
 _gestionnaire = Depends(require_roles("gestionnaire", "administrateur"))
 
-# Lecture : gestionnaire + auditeur + admin — BUG-ESCAL-03
+# Lecture : gestionnaire + auditeur + admin (inchangé)
 _read = Depends(require_roles("gestionnaire", "auditeur", "administrateur"))
 
-# Mutation (assign/resolve) : auditeur + admin uniquement
+# Mutation assign/resolve : auditeur + admin (inchangé)
 _auditeur = Depends(require_roles("auditeur", "administrateur"))
 
 
@@ -52,6 +57,10 @@ def create_escalation(
     db: Session = Depends(get_db),
     current_user: User = _gestionnaire,
 ):
+    """
+    Crée une escalade PENDING non assignée.
+    Phase 1 - Redesign A : assigned_to supprimé du payload.
+    """
     return svc.create_escalation(db, data, current_user.id)
 
 
@@ -62,6 +71,7 @@ def get_pending(
     db: Session = Depends(get_db),
     _: User = _read,
 ):
+    """Escalades PENDING non assignées — onglet 'En attente'."""
     total, items = svc.get_pending_escalations(db, (page - 1) * page_size, page_size)
     return PaginatedResponse(total=total, page=page, page_size=page_size, results=items)
 
@@ -69,13 +79,13 @@ def get_pending(
 @router.get("/", response_model=PaginatedResponse[EscalationResponse])
 def list_escalations(
     statut: str | None = Query(None),
-    # BUG-ESCAL-01 : query param pour filtrer par auditeur assigné
     assigned_to: UUID | None = Query(None),
     page: int = Query(1, ge=1),
     page_size: int = Query(50, ge=1, le=200),
     db: Session = Depends(get_db),
-    current_user: User = _read,  # BUG-ESCAL-03 : _read (inclut gestionnaire)
+    current_user: User = _read,
 ):
+    """Liste filtrée avec visibilité selon rôle."""
     roles = [ur.role.name for ur in current_user.user_roles]
     total, items = svc.list_escalations(
         db, current_user.id, roles, statut, assigned_to,
@@ -88,7 +98,7 @@ def list_escalations(
 def get_escalation(
     escalation_id: UUID,
     db: Session = Depends(get_db),
-    _: User = _read,  # BUG-ESCAL-03 : _read (inclut gestionnaire)
+    _: User = _read,
 ):
     return svc.get_escalation(db, escalation_id)
 
@@ -100,6 +110,7 @@ def assign_escalation(
     db: Session = Depends(get_db),
     _: User = _auditeur,
 ):
+    """Auto-assignation : l'auditeur passe son propre UUID."""
     return svc.assign_escalation(db, escalation_id, data)
 
 
@@ -110,4 +121,9 @@ def resolve_escalation(
     db: Session = Depends(get_db),
     current_user: User = _auditeur,
 ):
+    """
+    Résolution avec verdict obligatoire.
+    Phase 1 - Redesign C : data.decision_final est obligatoire.
+    Déclenche la transaction 3-en-1 côté service.
+    """
     return svc.resolve_escalation(db, escalation_id, data, current_user.id)

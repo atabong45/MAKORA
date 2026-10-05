@@ -7,7 +7,9 @@ RÉFÉRENCE : [Sculley2015] Hidden technical debt in ML systems — l'import bat
 réduit la dette de pipeline jungle liée à la saisie manuelle.
 
 DÉCISIONS (Sprint 8) :
-- D1 Option A : 1 ligne CSV = 1 sinistre + 1 ligne prestation.
+- D1 Option B : N lignes CSV avec même claim_id = 1 sinistre + N lignes prestation.
+  (Remplace Option A "1 ligne = 1 sinistre" — trop restrictif pour les sinistres
+   multi-actes camerounais. Si claim_id vide, auto-généré → comportement Option A.)
 - D2 : import mono-branche (branch_code en form-data, pas dans le CSV).
 - D3 : CSV = champs métier uniquement. Les 17 features DIF sont dérivées
        au Submit comme pour les sinistres manuels (cohérence pipeline).
@@ -21,6 +23,7 @@ Auto-analyse : N exécutions séquentielles encapsulées dans UNE BackgroundTask
 import csv
 import io
 import logging
+from collections import OrderedDict
 from datetime import date, datetime
 from typing import Any
 from uuid import UUID, uuid4
@@ -210,7 +213,7 @@ def _process_batch_pipeline(pipeline_payload: list[dict[str, Any]]) -> None:
 
 
 # ───────────────────────────────────────────────────────────────────────────
-# 4. Import principal
+# 4. Import principal — D1 Option B : groupBy claim_id
 # ───────────────────────────────────────────────────────────────────────────
 
 def import_claims(
@@ -221,7 +224,15 @@ def import_claims(
     auto_analyze: bool,
     background_tasks: BackgroundTasks | None = None,
 ) -> ImportReport:
-    """Boucle principale : validation + création + auto-analyse optionnelle."""
+    """
+    Boucle principale : validation + création + auto-analyse optionnelle.
+
+    D1 Option B : les lignes sont d'abord groupées par claim_id.
+    Toutes les lignes d'un même claim_id produisent UN seul sinistre
+    avec N lignes de prestation. Si claim_id est vide, un identifiant
+    auto-généré est assigné (comportement identique à Option A).
+    montant_facture du sinistre = somme des montant_ligne du groupe.
+    """
     if branch_code not in ("sante", "auto", "vie", "agricole"):
         raise HTTPException(
             status_code=400, detail=f"Branche inconnue : {branch_code}"
@@ -232,41 +243,98 @@ def import_claims(
     duplicates: list[str] = []
     pipeline_payload: list[dict[str, Any]] = []
 
+    # ── Étape 1 : grouper les lignes par claim_id (ordre CSV préservé) ───
+    groups: OrderedDict[str, list[tuple[int, dict]]] = OrderedDict()
+
     for idx, row in enumerate(rows, start=2):
-        result = _validate_row(row, branch_code, idx)
+        raw_id = (row.get("claim_id") or "").strip()
+        # claim_id vide → auto-généré unique par ligne (Option A fallback)
+        group_key = raw_id if raw_id else f"SIN-{branch_code.upper()}-{uuid4().hex[:8].upper()}"
+        if group_key not in groups:
+            groups[group_key] = []
+        groups[group_key].append((idx, row))
+
+    logger.info(
+        "import_claims — %d ligne(s) CSV → %d sinistre(s) (branch=%s)",
+        len(rows), len(groups), branch_code,
+    )
+
+    # ── Étape 2 : traiter chaque groupe ──────────────────────────────────
+    for group_key, group_rows in groups.items():
+
+        # Doublon en base : tout le groupe est ignoré
+        existing = (
+            db.query(Claim)
+            .filter(Claim.claim_id == group_key)
+            .first()
+        )
+        if existing:
+            duplicates.append(group_key)
+            continue
+
+        # Valider la première ligne pour les champs Claim (date, devise…)
+        first_idx, first_row = group_rows[0]
+        result = _validate_row(first_row, branch_code, first_idx)
         if isinstance(result, ImportRowError):
             errors.append(result)
             continue
 
-        claim_payload, line_payload = result
+        claim_payload, _ = result
 
-        existing = (
-            db.query(Claim)
-            .filter(Claim.claim_id == claim_payload.claim_id)
-            .first()
+        # Forcer le claim_id au group_key (peut être auto-généré)
+        claim_payload.claim_id = group_key
+
+        # montant_facture du sinistre = somme des montant_ligne du groupe
+        total_montant = sum(
+            _parse_float(r.get("montant_facture")) or 0.0
+            for _, r in group_rows
         )
-        if existing:
-            duplicates.append(claim_payload.claim_id)
-            continue
+        if total_montant > 0:
+            claim_payload.montant_facture = total_montant
 
+        # Créer le sinistre (1 seul par groupe)
         try:
             claim = claim_svc.create_claim(db, claim_payload, created_by)
-            if line_payload.code_acte or line_payload.montant_ligne:
-                claim_svc.add_line(db, claim.claim_id, line_payload)
         except HTTPException as e:
             errors.append(ImportRowError(
-                row_number=idx, field=None,
-                message=f"Erreur création : {e.detail}",
+                row_number=first_idx, field=None,
+                message=f"Erreur création sinistre : {e.detail}",
             ))
             continue
         except Exception as e:
-            logger.exception("Import ligne %d : erreur inattendue", idx)
+            logger.exception("Import groupe %s : erreur inattendue", group_key)
             errors.append(ImportRowError(
-                row_number=idx, field=None,
+                row_number=first_idx, field=None,
                 message=f"Erreur inattendue : {e}",
             ))
             continue
 
+        # Ajouter toutes les lignes du groupe
+        for row_idx, row in group_rows:
+            line_result = _validate_row(row, branch_code, row_idx)
+            if isinstance(line_result, ImportRowError):
+                errors.append(line_result)
+                continue
+            _, line_payload = line_result
+            if line_payload.code_acte or line_payload.montant_ligne:
+                try:
+                    claim_svc.add_line(db, claim.claim_id, line_payload)
+                except HTTPException as e:
+                    errors.append(ImportRowError(
+                        row_number=row_idx, field=None,
+                        message=f"Erreur ajout ligne : {e.detail}",
+                    ))
+                except Exception as e:
+                    logger.exception(
+                        "Import ligne %d du groupe %s : erreur inattendue",
+                        row_idx, group_key,
+                    )
+                    errors.append(ImportRowError(
+                        row_number=row_idx, field=None,
+                        message=f"Erreur inattendue ligne : {e}",
+                    ))
+
+        # Auto-analyse : soumettre le sinistre et préparer le pipeline
         final_status = "DRAFT"
         if auto_analyze:
             try:
@@ -276,19 +344,18 @@ def import_claims(
                 db.refresh(claim)
                 final_status = "SUBMITTED"
                 pipeline_payload.append({
-                    "claim_id": claim.claim_id,
-                    "claim_uuid": claim.id,
-                    "branch_code": branch_code,
-                    "dossier": dossier,
+                    "claim_id":        claim.claim_id,
+                    "claim_uuid":      claim.id,
+                    "branch_code":     branch_code,
+                    "dossier":         dossier,
                     "triggered_by_id": created_by,
                 })
             except Exception as e:
                 logger.exception(
-                    "Auto-analyze : impossible de soumettre %s",
-                    claim.claim_id,
+                    "Auto-analyze : impossible de soumettre %s", claim.claim_id,
                 )
                 errors.append(ImportRowError(
-                    row_number=idx, field=None,
+                    row_number=first_idx, field=None,
                     message=f"Création OK mais auto-soumission impossible : {e}",
                 ))
 
@@ -298,6 +365,7 @@ def import_claims(
             statut=final_status,
         ))
 
+    # Déclencher l'analyse en une seule BackgroundTask
     if auto_analyze and background_tasks is not None and pipeline_payload:
         background_tasks.add_task(_process_batch_pipeline, pipeline_payload)
         logger.info(
@@ -315,3 +383,4 @@ def import_claims(
         duplicates=duplicates,
         errors=errors,
     )
+

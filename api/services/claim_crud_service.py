@@ -12,9 +12,18 @@ PATCH B-AI-NEW-01 — Pipeline IA post-submit :
 - get_claim() : enrichit l'ORM avec latest_anomaly_score / latest_is_anomaly
   (attributs Python dynamiques, lus par Pydantic via from_attributes).
 
+PATCH B-DOSSIER-02 — Features batch calculées depuis l'historique DB :
+- praticien_concentration : calculé sur 30j glissants (plus hardcodé à 1.0).
+- historique_ratio_praticien : moyenne des ratio_prix stockés dans ClaimLine.
+- Montant_Facture / Prix_Unitaire_Ref : agrégés sur TOUTES les lignes pour
+  sinistres multi-actes (ratio pondéré, cohérent avec [Bauder2017]).
+- Même correction appliquée à garage_concentration (branche Auto).
+
 RÉFÉRENCES :
 - [Xu2023] DIF — pipeline de production déclenché en background.
 - [Sculley2015] §4 — séparer le service HTTP du compute ML.
+- [Bauder2017] — ratio total facturé / total référence mercuriale.
+- [Jiang2014] — concentration praticien sur fenêtre glissante 30j.
 """
 from typing import Optional
 from uuid import UUID
@@ -66,12 +75,137 @@ def _enrich_with_latest_analysis(db: Session, claim: Claim) -> Claim:
     )
     claim.latest_anomaly_score = latest.anomaly_score if latest else None
     claim.latest_is_anomaly = latest.is_anomaly if latest else None
-    claim.latest_analysis_id   = str(latest.id)       if latest else None 
+    claim.latest_analysis_id = str(latest.id) if latest else None
     return claim
 
 
 # ───────────────────────────────────────────────────────────────────────────
-# claim_to_dossier_dict (B-AI-NEW-01)
+# Helpers B-DOSSIER-02 — features contextuelles depuis l'historique DB
+# ───────────────────────────────────────────────────────────────────────────
+
+def _compute_praticien_concentration(
+    db: Session, branch_id: UUID, praticien_hash: str,
+    source_flux: str = "batch",
+) -> float:
+    """
+    Concentration du praticien = nb de ses lignes / total lignes branche
+    sur les 30 derniers jours, filtrée par source_flux.
+
+    B-DOSSIER-02 — Filtre source_flux :
+      - source_flux="batch"  : concentration parmi les imports batch
+        uniquement (seed "structured" exclus → ratio représentatif du batch).
+      - autres               : concentration sur tous les sinistres (30j).
+
+    [Jiang2014] Fallback 0.0 si erreur DB ou praticien inconnu.
+    """
+    from datetime import date, timedelta
+
+    if not praticien_hash:
+        return 0.0
+
+    try:
+        cutoff = str(date.today() - timedelta(days=30))
+        base_q = (
+            db.query(ClaimLine.id)
+            .join(Claim, ClaimLine.claim_id == Claim.id)
+            .filter(Claim.branch_id == branch_id)
+            .filter(Claim.date_soin >= cutoff)
+        )
+        # Filtre source_flux sur la valeur brute stockée en DB
+        if source_flux == "batch":
+            base_q = base_q.filter(Claim.source_flux.in_(["batch", "BATCH"]))
+
+        total = base_q.count()
+        if total == 0:
+            return 0.0
+
+        praticien_count = (
+            base_q.filter(ClaimLine.praticien_id_hash == praticien_hash)
+            .count()
+        )
+        return round(min(praticien_count / total, 1.0), 4)
+
+    except Exception as exc:
+        import logging
+        logging.getLogger(__name__).warning(
+            "_compute_praticien_concentration échec : %s — fallback 0.0", exc
+        )
+        return 0.0
+
+
+def _compute_historique_ratio_praticien(
+    db: Session, branch_id: UUID, praticien_hash: str
+) -> float:
+    """
+    Historique ratio praticien = moyenne des ratio_prix stockés dans ClaimLine.
+
+    [Bauder2017] : un praticien avec un ratio moyen élevé sur l'ensemble
+    de ses dossiers est suspect même si chaque dossier semble raisonnable.
+
+    Fallback : 1.0 (valeur neutre) si aucun historique ou erreur DB.
+    """
+    if not praticien_hash:
+        return 1.0
+
+    try:
+        lines = (
+            db.query(ClaimLine)
+            .join(Claim, ClaimLine.claim_id == Claim.id)
+            .filter(Claim.branch_id == branch_id)
+            .filter(ClaimLine.praticien_id_hash == praticien_hash)
+            .all()
+        )
+        ratios = []
+        for ln in lines:
+            rp = getattr(ln, "ratio_prix", None)
+            if rp and float(rp) > 0:
+                ratios.append(float(rp))
+        if not ratios:
+            return 1.0
+        return round(sum(ratios) / len(ratios), 4)
+
+    except Exception as exc:
+        import logging
+        logging.getLogger(__name__).warning(
+            "_compute_historique_ratio_praticien échec : %s — fallback 1.0", exc
+        )
+        return 1.0
+
+
+def _compute_garage_concentration(
+    db: Session, branch_id: UUID, garage_hash: str
+) -> float:
+    """Même logique que praticien_concentration pour la branche Auto."""
+    from datetime import date, timedelta
+
+    if not garage_hash:
+        return 0.0
+
+    cutoff = str(date.today() - timedelta(days=30))
+
+    total = (
+        db.query(ClaimLine)
+        .join(Claim, ClaimLine.claim_id == Claim.id)
+        .filter(Claim.branch_id == branch_id)
+        .filter(Claim.date_soin >= cutoff)
+        .count()
+    )
+    if total == 0:
+        return 0.0
+
+    garage_count = (
+        db.query(ClaimLine)
+        .join(Claim, ClaimLine.claim_id == Claim.id)
+        .filter(Claim.branch_id == branch_id)
+        .filter(Claim.date_soin >= cutoff)
+        .filter(ClaimLine.garage_id_hash == garage_hash)
+        .count()
+    )
+    return round(min(garage_count / total, 1.0), 4)
+
+
+# ───────────────────────────────────────────────────────────────────────────
+# claim_to_dossier_dict (B-AI-NEW-01 + B-DOSSIER-02)
 # ───────────────────────────────────────────────────────────────────────────
 
 def claim_to_dossier_dict(db: Session, claim: Claim) -> dict:
@@ -85,8 +219,14 @@ def claim_to_dossier_dict(db: Session, claim: Claim) -> dict:
         Montant_Devis, Montant_Ref_Reparation, Devise, Taux_Change,
         Date_Sinistre, Source_Flux.
 
+    B-DOSSIER-02 : pour les sinistres multi-lignes, Montant_Facture et
+    Prix_Unitaire_Ref sont les SOMMES sur toutes les lignes (ratio pondéré).
+    Les features contextuelles (concentration, historique) sont calculées
+    depuis l'historique DB et non hardcodées à 1.0.
+
     [Bauder2017] : Prix_Unitaire_Ref est la feature centrale d'upcoding.
     """
+    from math import log1p as _log1p
     from core.db.models.referentiels import Branch, Contract
 
     branch = db.query(Branch).filter(Branch.id == claim.branch_id).first()
@@ -98,35 +238,54 @@ def claim_to_dossier_dict(db: Session, claim: Claim) -> dict:
         if contract and getattr(contract, "insured", None):
             insured_hash = contract.insured.id_hash or ""
 
-    first_line = (
-        db.query(ClaimLine)
-        .filter(ClaimLine.claim_id == claim.id)
-        .order_by(ClaimLine.created_at)
-        .first()
-    )
+    # ── Récupération de TOUTES les lignes (multi-actes) ──────────────────
+    try:
+        all_lines = (
+            db.query(ClaimLine)
+            .filter(ClaimLine.claim_id == claim.id)
+            .all()
+        )
+    except Exception:
+        all_lines = []
+    first_line = all_lines[0] if all_lines else None
 
-    montant = float(claim.montant_xaf or claim.montant_facture or 0.0)
-    devise = claim.devise or "XAF"
-    date_str = claim.date_soin.isoformat() if claim.date_soin else ""
+    # ── Montant agrégé : somme de toutes les lignes (B-DOSSIER-02) ────────
+    # Pour mono-ligne : identique à l'ancien comportement.
+    # Pour multi-lignes : ratio pondéré = total_facturé / total_référence.
+    if all_lines:
+        total_facture = sum(float(getattr(l, "montant_ligne", None) or 0) for l in all_lines)
+        total_ref     = sum(float(getattr(l, "prix_ref", None) or 0) for l in all_lines)
+        montant  = total_facture if total_facture > 0 else float(claim.montant_facture or 0.0)
+        prix_ref = total_ref     if total_ref > 0     else (
+            float(getattr(first_line, "prix_ref", None) or 0.0) if first_line else 0.0
+        )
+    else:
+        montant  = float(claim.montant_xaf or claim.montant_facture or 0.0)
+        prix_ref = float(getattr(first_line, "prix_ref", None) or 0.0) if first_line else 0.0
+
+    devise      = claim.devise or "XAF"
+    date_str    = claim.date_soin.isoformat() if claim.date_soin else ""
     source_flux = claim.source_flux or "structured"
-    prix_ref = (
-        float(first_line.prix_ref)
-        if first_line and first_line.prix_ref is not None else 0.0
+
+    _is_weekend  = int(claim.date_soin.weekday() >= 5) if claim.date_soin else 0
+    _montant_log = round(_log1p(montant / 1_000), 6) if montant > 0 else 0.0
+    _delai_days  = (
+        (claim.date_declaration - claim.date_soin).days
+        if claim.date_declaration and claim.date_soin else 0
     )
 
     if branch_code == "sante":
-        from math import log1p as _log1p
-        _is_weekend = int(claim.date_soin.weekday() >= 5) if claim.date_soin else 0
-        _montant_log = round(_log1p(montant / 1_000), 6) if montant > 0 else 0.0
-        _delai_days = (
-            (claim.date_declaration - claim.date_soin).days
-            if claim.date_declaration and claim.date_soin else 0
-        )
+        _praticien_hash = (first_line.praticien_id_hash if first_line else "") or ""
+
+        # B-DOSSIER-02 : features contextuelles depuis historique DB
+        _concentration      = _compute_praticien_concentration(db, claim.branch_id, _praticien_hash, source_flux)
+        _historique_ratio   = _compute_historique_ratio_praticien(db, claim.branch_id, _praticien_hash)
+
         return {
-            # ── Colonnes brutes (inchangées) ──────────────────────────────
+            # ── Colonnes brutes ───────────────────────────────────────────
             "ID_Sinistre":       claim.claim_id,
             "ID_Assure":         insured_hash,
-            "ID_Praticien":      (first_line.praticien_id_hash if first_line else "") or "",
+            "ID_Praticien":      _praticien_hash,
             "Code_Acte":         (first_line.code_acte if first_line else "") or "",
             "Montant_Facture":   montant,
             "Prix_Unitaire_Ref": prix_ref,
@@ -134,32 +293,30 @@ def claim_to_dossier_dict(db: Session, claim: Claim) -> dict:
             "Taux_Change":       1.0,
             "Date_Soin":         date_str,
             "Source_Flux":       source_flux,
-            # ── Features DIF dérivées — defaults pour claims UI ──────────
-            # [Xu2023] Le MinMaxScaler attend exactement 17 features.
-            # Ces 6 ne peuvent pas être calculées depuis les données de soumission
-            # seules. Le feature engineering les recalcule si les colonnes sources
-            # sont présentes ; sinon ces defaults garantissent la cohérence.
+            # ── Features DIF pré-calculées (noms v0.4.0 — NE PAS RENOMMER) ──────
+            # [Xu2023] Le MinMaxScaler a été entraîné avec ces noms exacts.
+            # Renommer flag_doublon_sante/community_score_sante/praticien_concentration
+            # enlève 3 features → 14/17 → crash "MinMaxScaler is expecting 17 features".
+            # B-DOSSIER-02 : praticien_concentration passe de 1.0 hardcodé
+            # à une valeur calculée depuis l'historique DB (source_flux filtre).
             "flag_weekend_care":        _is_weekend,
-            "flag_doublon_sante":       0,
-            "community_score_sante":    0.0,
+            "flag_doublon_sante":       0,           # ← NOM v0.4.0 — NE PAS CHANGER
+            "community_score_sante":    0.0,         # ← NOM v0.4.0 — NE PAS CHANGER
             "montant_normalise_log":    _montant_log,
             "delai_soin_depot_anormal": int(_delai_days > 30),
-            "praticien_concentration":  1.0,
+            "praticien_concentration":  _concentration,        # ← NOM v0.4.0 + valeur dynamique
+            "historique_ratio_praticien": _historique_ratio,  # ← pré-calculé DB
         }
 
     if branch_code == "auto":
-        from math import log1p as _log1p
-        _is_weekend = int(claim.date_soin.weekday() >= 5) if claim.date_soin else 0
-        _montant_log = round(_log1p(montant / 1_000), 6) if montant > 0 else 0.0
-        _delai_days = (
-            (claim.date_declaration - claim.date_soin).days
-            if claim.date_declaration and claim.date_soin else 0
-        )
+        _garage_hash = (first_line.garage_id_hash if first_line else "") or ""
+        _concentration = _compute_garage_concentration(db, claim.branch_id, _garage_hash)
+
         return {
-            # ── Colonnes brutes (inchangées) ──────────────────────────────
+            # ── Colonnes brutes ───────────────────────────────────────────
             "ID_Sinistre":            claim.claim_id,
             "ID_Assure":              insured_hash,
-            "ID_Garage":              (first_line.garage_id_hash if first_line else "") or "",
+            "ID_Garage":              _garage_hash,
             "Poste_Reparation":       (first_line.libelle if first_line else "") or "",
             "Montant_Devis":          montant,
             "Montant_Ref_Reparation": prix_ref,
@@ -167,13 +324,13 @@ def claim_to_dossier_dict(db: Session, claim: Claim) -> dict:
             "Taux_Change":            1.0,
             "Date_Sinistre":          date_str,
             "Source_Flux":            source_flux,
-            # ── Features DIF dérivées — defaults pour claims UI ──────────
-            "flag_weekend_care":         _is_weekend,
-            "flag_doublon_auto":         0,
-            "community_score_auto":      0.0,
-            "montant_normalise_log":     _montant_log,
-            "delai_sinistre_depot_anormal": int(_delai_days > 30),
-            "garage_concentration":      1.0,
+            # ── Features DIF pré-calculées (noms originaux — NE PAS RENOMMER) ──
+            "flag_weekend_care":              _is_weekend,
+            "flag_doublon_auto":              0,
+            "community_score_auto":           0.0,
+            "montant_normalise_log":          _montant_log,
+            "delai_sinistre_depot_anormal":   int(_delai_days > 30),
+            "garage_concentration":           _concentration,  # ← dynamique
         }
 
     return {
@@ -234,12 +391,12 @@ def list_claims(
             a = latest_by_claim.get(c.id)
             c.latest_anomaly_score = a.anomaly_score if a else None
             c.latest_is_anomaly = a.is_anomaly if a else None
-            c.latest_analysis_id   = str(a.id)       if a else None 
+            c.latest_analysis_id = str(a.id) if a else None
     else:
         for c in claims:
             c.latest_anomaly_score = None
             c.latest_is_anomaly = None
-            c.latest_analysis_id   = None
+            c.latest_analysis_id = None
 
     if is_anomaly is not None:
         claims = [c for c in claims if c.latest_is_anomaly == is_anomaly]
@@ -360,10 +517,6 @@ def submit_claim(
     return claim
 
 
-
-
-
-
 # ───────────────────────────────────────────────────────────────────────────
 # Helpers — enrichissement mercuriale (B-LIN-01/06)
 # ───────────────────────────────────────────────────────────────────────────
@@ -417,12 +570,6 @@ def _enrich_line_with_reference(
         line.ratio_prix = round(line.montant_ligne / ref.prix_ref_xaf, 3)
 
 
-
-
-
-
-
-
 # ───────────────────────────────────────────────────────────────────────────
 # Lignes de détail — inchangé
 # ───────────────────────────────────────────────────────────────────────────
@@ -439,6 +586,7 @@ def add_line(db: Session, claim_id: str, data: ClaimLineCreate) -> ClaimLine:
     db.commit()
     db.refresh(line)
     return line
+
 
 def update_line(
     db: Session, claim_id: str, line_id: UUID, data: ClaimLineCreate
@@ -478,6 +626,3 @@ def delete_line(db: Session, claim_id: str, line_id: UUID) -> None:
         raise HTTPException(status_code=404, detail="Ligne introuvable")
     db.delete(line)
     db.commit()
-
-
-

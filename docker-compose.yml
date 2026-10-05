@@ -35,7 +35,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
       # Script RLS appliqué au démarrage si présent
-      - ./rls_setup.sql:/docker-entrypoint-initdb.d/02_rls_setup.sql
+      # - ./rls_setup.sql:/docker-entrypoint-initdb.d/02_rls_setup.sql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U makora -d makora"]
       interval: 10s
